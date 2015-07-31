@@ -1,0 +1,10 @@
+Pritika Vig
+CS 50 
+Tiny Search Enging
+Part 1: Crawler
+
+
+Usage: crawler url directory depth
+Command line options: none
+
+Assumptions: Current directory input as argument must exist, or the program will return an error and quit. All URLs to be crawled must begin with the prefix: "http://old-www.cs.dartmouth.edu/~cs50/tse". Program checks for 404s and other attachments in the links. Max Depth input must be less than or equal to 4. 
