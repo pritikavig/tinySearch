@@ -89,8 +89,6 @@ int HashTableAdd(char * url){
 
         //get the last item at that key and add to the next
         tempNode = URLSVisited.table[key];
-        //tempNode->next=URLSVisited.table[key]->next;
-        //tempNode->url=URLSVisited.table[key]->url;
 
         while(tempNode->next != NULL){
             
@@ -100,18 +98,16 @@ int HashTableAdd(char * url){
                 return(0);
             }
 
-            tempNode=tempNode->next;
-            
+            tempNode=tempNode->next; 
 
         }
-
-       
         
         tempNode->next=newNode;
         
     }
-    //free(tempNode->url);
-    //free(tempNode);
+    free(tempNode->url);
+    free(tempNode->next);
+    free(tempNode);
     
     return(1);
 }
@@ -141,7 +137,14 @@ int HashTableLookUp(char * url){
 
             //compare node urls, return 0 on match 
             if(strcmp(url, tempNode->url) == 0){
-            
+                
+                free(tempNode->url);
+                tempNode->url = NULL;
+                free(tempNode->next);
+                tempNode->next = NULL;
+                free(tempNode);
+                tempNode = NULL;
+
                 return(0);
             }
             //tempNode=tempNode->next->url;
@@ -150,13 +153,53 @@ int HashTableLookUp(char * url){
         }
         //check last node in list
         if(strcmp(url, tempNode->url) == 0){
-             
+
+                        
                 return(0);
             }       
     }    
 
 
     return(1);
+
+}
+
+// Clean the hashtable
+
+void cleanHash(){
+    // loop through each hash slot
+    unsigned long hashkey = 0;
+
+    while (hashkey < MAX_HASH_SLOT){
+
+        if(!URLSVisited.table[hashkey])
+        {
+            hashkey = hashkey +1;
+        }
+        else
+        {
+        // free the first node in the bin
+        HashTableNode *node = URLSVisited.table[hashkey];
+
+        if(node->next != NULL){
+            HashTableNode *tempNode = node->next;
+            HashTableNode *freeNode = node->next;
+            while(tempNode->next != NULL){
+                freeNode = tempNode;
+                tempNode = tempNode->next;
+                free(freeNode);
+                freeNode = NULL;
+            }
+            free(tempNode);
+            tempNode=NULL;
+        }
+        
+        free(node);
+        node = NULL;
+        hashkey = hashkey +1; 
+        }
+
+    }
 
 }
 

@@ -66,6 +66,7 @@ void listAdd(WebPage *page){
 		toVisit.tail=newNode;
 		toVisit.head=newNode;
 	}
+
 	else{
 		toVisit.tail->next = newNode;
 		newNode->prev = toVisit.tail;
@@ -93,18 +94,12 @@ WebPage* listRemove(){
 	page = tempNode->page;
 	toVisit.head = tempNode->next; 
 	
-	if(tempNode->next == toVisit.tail){
-		toVisit.tail=toVisit.head;
-	}
-	
 	if(!toVisit.head){
 		toVisit.tail=NULL;
 	}
 	if(toVisit.head){
 		toVisit.head->prev = NULL;
 	}
-
-
 
 	free(tempNode);
 	return page;

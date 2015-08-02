@@ -53,6 +53,7 @@ int isDirec(char * dir);
 int writePage(WebPage *page, char *dir, int x);
 int crawlPage(WebPage *page);
 int saveCrawl();
+void cleanup();
 
 // Global:
 HashTable URLSVisited;
@@ -74,7 +75,7 @@ int main(int argc, char* argv[])
     }
 
     // check that last argument is an integer less than or equal to three
-    if(atoi(argv[3]) == 0 || atoi(argv[3]) > MAX_DEPTH){
+    if(atoi(argv[3]) < 0 || atoi(argv[3]) > MAX_DEPTH){
         printf("Argument 3 needs to be an integer for maximum depth. Maximum depth should not be greater than 4. ");
         return(1);
     }
@@ -115,16 +116,21 @@ int main(int argc, char* argv[])
     
     // get seed webpage
     GetWebPage(page);
-   
-    // write seed file 
+
+    // write seed file & update counter
     writePage(page, dir, fileCounter);
+    fileCounter=2;
+  
 
     // add seed page to hashtable
     HashTableAdd(page->url);
 
+    if (max_depth != 0)
+    {
     crawlPage(page);
    
     saveCrawl(dir, fileCounter, max_depth);
+    }
     // cleanup curl
     curl_global_cleanup();
 
@@ -132,6 +138,9 @@ int main(int argc, char* argv[])
     //// FREE STUFF
     free(page->url);
     free(page);
+
+    // cleanup memory
+    cleanup();
     
 
 
@@ -193,6 +202,7 @@ int writePage(WebPage *page, char *dir, int x){
         fprintf(fp, "\nDepth: %i\n", page->depth);
         fputs(page->html, fp);
         fclose(fp);
+
         return(0);
     }
     if (fp == NULL){
@@ -211,15 +221,19 @@ int crawlPage(WebPage *page){
 
     while (pos != -1){
         pos = GetNextURL(page->html, pos, page->url, &result);
-       
         // normalize URL
         NormalizeURL(result);
         // check to see if it's in the domain
-        if(isValidURL(result) == 0){
+        if(isValidURL(result) == 0)
+        {
+            printf("\nurl: %s", result);
         // check to see if it's in hash table
         
         int visited = HashTableLookUp(result);
+        printf("\n lookup code: %i", visited);
         if (visited == 1){
+
+            printf("\n URL hasnt been visited, add to linked list");
             // get new depth value
             int newDepth = page->depth +1;
             // create web struct
@@ -231,11 +245,12 @@ int crawlPage(WebPage *page){
                 listAdd(newPage); 
             // Add to hash table
                 HashTableAdd(newPage->url); 
+                
         }
 
       }
         
-    }    
+    }  
     
     return(1);
 }
@@ -246,12 +261,12 @@ int saveCrawl(char *dir, int fileCounter, int max_depth){
 // for page in linked list: 
     WebPage *page;
     
-    while(toVisit.tail!=toVisit.head){
+    while(toVisit.head){
          page = listRemove();
          int status = GetWebPage(page);
          // save each page in dir
+        
 
-         // TODO: INSERT CHECK 
          if (status == 1 )
          {
             writePage(page, dir, fileCounter);
@@ -264,8 +279,16 @@ int saveCrawl(char *dir, int fileCounter, int max_depth){
             }  
         }
 
-
     }
+
     return 0;   
  }
 
+// Cleanup memory
+
+ void cleanup(){
+    printf("Cleaning");
+    //free the hash table
+    cleanHash();         
+
+ }

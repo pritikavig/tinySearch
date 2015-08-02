@@ -86,7 +86,6 @@ int GetWebPage(WebPage* page)
     int status = 1;                          // return value
     CURL* curl_handle;
     CURLcode res;                            // curl response code
-    //CURLcode fail;                           // fail on 404s
 
     // check page
     if(!page) { return 0; }
@@ -112,7 +111,15 @@ int GetWebPage(WebPage* page)
 
     /* Add any additional options here */
     curl_easy_setopt(curl_handle, CURLOPT_FAILONERROR, 1);
-  KK;LO>O>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    // get the page
+    res = curl_easy_perform(curl_handle);
+
+    // check response code
+    if(res != CURLE_OK) {
+        status = 0;
+    }
+
     // cleanup curl stuff
     curl_easy_cleanup(curl_handle);
 
