@@ -277,10 +277,8 @@ int saveCrawl(char *dir, int fileCounter, int max_depth){
     while(toVisit.head){
          page = listRemove();
          int status = GetWebPage(page);
-         sleep(1);
-         // save each page in dir
-        
-
+         //sleep(1);
+      
          if (status == 1 )
          {
             writePage(page, dir, fileCounter);
