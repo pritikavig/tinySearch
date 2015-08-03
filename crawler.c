@@ -144,11 +144,12 @@ int main(int argc, char* argv[])
 
 
     //// FREE STUFF
+
     free(page->url);
     free(page);
 
     // cleanup memory
-    cleanup();
+   // cleanup();
     
 
 

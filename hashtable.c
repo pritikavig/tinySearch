@@ -105,10 +105,6 @@ int HashTableAdd(char * url){
         tempNode->next=newNode;
         
     }
-
-    free(tempNode->url);
-    free(tempNode->next);
-    free(tempNode);
     
     return(1);
 }
@@ -138,13 +134,6 @@ int HashTableLookUp(char * url){
 
             //compare node urls, return 0 on match 
             if(strcmp(url, tempNode->url) == 0){
-                
-                free(tempNode->url);
-                tempNode->url = NULL;
-                free(tempNode->next);
-                tempNode->next = NULL;
-                free(tempNode);
-                tempNode = NULL;
 
                 return(0);
             }
