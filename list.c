@@ -46,6 +46,7 @@
 
 
 // add page to linked list of pages to visit
+// modelled after class example
 
 void listAdd(WebPage *page){
 	ListNode *newNode = malloc(sizeof(ListNode));
@@ -81,6 +82,7 @@ void listAdd(WebPage *page){
 
 
 //pop out a web page from the beginning
+// modelled after class example
 WebPage* listRemove(){
 	WebPage *page;
 	ListNode *tempNode;
@@ -89,12 +91,12 @@ WebPage* listRemove(){
 		return NULL;
 	}
 
-
 	tempNode = toVisit.head;
 	page = tempNode->page;
 	toVisit.head = tempNode->next; 
 	
 	if(!toVisit.head){
+		printf("\nLast node in list");
 		toVisit.tail=NULL;
 	}
 	if(toVisit.head){

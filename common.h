@@ -19,7 +19,7 @@
 
 #define MAX_DEPTH 4                          // don't want to go too far do
 
-#define STATUS_LOG 0						// switch to one for output				
+#define STATUS_LOG 1						// switch to one for output				
 
 
 // limit crawling to only this domain

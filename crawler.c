@@ -120,14 +120,11 @@ int main(int argc, char* argv[])
     }
     
     // get seed webpage
-    int completed = GetWebPage(page);
-    if (completed == 0){
-        free(page->html);
-    }
+    GetWebPage(page);
 
     // write seed file & update counter
     writePage(page, dir, fileCounter);
-    fileCounter=2;
+    fileCounter=fileCounter+1;
   
 
     // add seed page to hashtable
@@ -144,12 +141,11 @@ int main(int argc, char* argv[])
 
 
     //// FREE STUFF
-
     free(page->url);
     free(page);
 
     // cleanup memory
-   // cleanup();
+    //cleanup();
     
 
 
@@ -281,19 +277,16 @@ int saveCrawl(char *dir, int fileCounter, int max_depth){
     while(toVisit.head){
          page = listRemove();
          int status = GetWebPage(page);
+         sleep(1);
          // save each page in dir
         
 
          if (status == 1 )
          {
-            //if GetWebPage was successful, sleep for 1 second to protect servers
-            sleep(1);
-
-            // write the page data
             writePage(page, dir, fileCounter);
             fileCounter= fileCounter+1;
-            
-            // crawl until depth 
+         // get next page
+         // crawl until depth 
             if(page->depth < max_depth)
             {
                 crawlPage(page);
