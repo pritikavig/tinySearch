@@ -286,10 +286,14 @@ int saveCrawl(char *dir, int fileCounter, int max_depth){
 
          if (status == 1 )
          {
+            //if GetWebPage was successful, sleep for 1 second to protect servers
+            sleep(1);
+
+            // write the page data
             writePage(page, dir, fileCounter);
             fileCounter= fileCounter+1;
-         // get next page
-         // crawl until depth 
+            
+            // crawl until depth 
             if(page->depth < max_depth)
             {
                 crawlPage(page);
