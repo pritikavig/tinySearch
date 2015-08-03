@@ -113,9 +113,17 @@ int main(int argc, char* argv[])
     page->url = (char*) malloc(strlen(argv[1])+1);
     strcpy(page->url, argv[1]);
     page->depth = 0;
+
+    //Print output in STATUS_LOG mode
+    if(STATUS_LOG == 1){
+        printf("\nSeed URL: %s", page->url);
+    }
     
     // get seed webpage
-    GetWebPage(page);
+    int completed = GetWebPage(page);
+    if (completed == 0){
+        free(page->html);
+    }
 
     // write seed file & update counter
     writePage(page, dir, fileCounter);
@@ -219,6 +227,11 @@ int crawlPage(WebPage *page){
     int pos =0;
     char *result = NULL;
 
+    //STATUS_LOG mode print log
+    if(STATUS_LOG == 1){
+        printf("\n\nParsing page for urls: %s", page->url);
+    }
+
     while (pos != -1){
         pos = GetNextURL(page->html, pos, page->url, &result);
         // normalize URL
@@ -226,14 +239,12 @@ int crawlPage(WebPage *page){
         // check to see if it's in the domain
         if(isValidURL(result) == 0)
         {
-            printf("\nurl: %s", result);
         // check to see if it's in hash table
         
         int visited = HashTableLookUp(result);
-        printf("\n lookup code: %i", visited);
+       
         if (visited == 1){
 
-            printf("\n URL hasnt been visited, add to linked list");
             // get new depth value
             int newDepth = page->depth +1;
             // create web struct
@@ -241,6 +252,11 @@ int crawlPage(WebPage *page){
                 newPage->url = (char*) malloc(strlen(result)+1);
                 strcpy(newPage->url, result);
                 newPage->depth = newDepth;
+
+            //STATUS_LOG mode print log
+            if(STATUS_LOG == 1){
+                printf("\nFound url: %s", newPage->url);
+            }
             // add to linked list
                 listAdd(newPage); 
             // Add to hash table
@@ -287,7 +303,6 @@ int saveCrawl(char *dir, int fileCounter, int max_depth){
 // Cleanup memory
 
  void cleanup(){
-    printf("Cleaning");
     //free the hash table
     cleanHash();         
 

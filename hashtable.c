@@ -71,7 +71,7 @@ int HashTableAdd(char * url){
     tempNode->next = malloc(sizeof(HashTableNode));
 
 
-    //get key
+    // get key
    
     unsigned long key = JenkinsHash(url, MAX_HASH_SLOT);
  
@@ -105,6 +105,7 @@ int HashTableAdd(char * url){
         tempNode->next=newNode;
         
     }
+
     free(tempNode->url);
     free(tempNode->next);
     free(tempNode);
@@ -147,14 +148,12 @@ int HashTableLookUp(char * url){
 
                 return(0);
             }
-            //tempNode=tempNode->next->url;
+            
             tempNode=tempNode->next;
 
         }
         //check last node in list
-        if(strcmp(url, tempNode->url) == 0){
-
-                        
+        if(strcmp(url, tempNode->url) == 0){          
                 return(0);
             }       
     }    
@@ -176,24 +175,10 @@ void cleanHash(){
         {
             hashkey = hashkey +1;
         }
-        else
+        else if(URLSVisited.table[hashkey])
         {
         // free the first node in the bin
         HashTableNode *node = URLSVisited.table[hashkey];
-
-        if(node->next != NULL){
-            HashTableNode *tempNode = node->next;
-            HashTableNode *freeNode = node->next;
-            while(tempNode->next != NULL){
-                freeNode = tempNode;
-                tempNode = tempNode->next;
-                free(freeNode);
-                freeNode = NULL;
-            }
-            free(tempNode);
-            tempNode=NULL;
-        }
-        
         free(node);
         node = NULL;
         hashkey = hashkey +1; 

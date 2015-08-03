@@ -1,6 +1,6 @@
 # myApp makefile2
 CC = gcc
-CFLAGS = -Wall -pedantic -std=c11 
+CFLAGS = -Wall -pedantic -std=c11  
 
 
 # my project details
@@ -19,12 +19,11 @@ debug: $(SRCS)
 	$(CC) $(CFLAGS) -g -ggdb -o $(EXEC) $(OBJS)
 
 test:
+	mkdir testHold/
 	testCrawl.sh
+	rm -rf testHold/
 
-# clean:
-#         rm -f *~
-#         rm -f *#
-#         rm -f ./myApp
-#         rm -f *.o
-#         cd $(UTILDIR); make clean 
-#remove the .gch
+force:
+	touch crawler.c
+	make
+

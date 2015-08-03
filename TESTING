@@ -11,3 +11,5 @@ For other occurrences within the program, such as collisions in the hash table, 
 This program was tested on the Moose.cs.dartmouth.edu machine by Pritika Vig. Before completion, I also individually tested the linked list and hash table files to deal with edge cases, such as collisions, adding the same element twice, and deleting from the list. 
 
 A test shell script has been included in the lab folder, please type "make test" to run.
+
+To test crawler on Status Log mode, please change STATUS_LOG in commons.h to equal 1. To turn off STATUS LOG, reset the variable to 0. 
