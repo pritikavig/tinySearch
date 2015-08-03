@@ -141,11 +141,8 @@ int main(int argc, char* argv[])
 
 
     //// FREE STUFF
-    free(page->url);
-    free(page);
-
     // cleanup memory
-    //cleanup();
+    cleanup();
     
 
 
@@ -289,6 +286,10 @@ int saveCrawl(char *dir, int fileCounter, int max_depth){
             {
                 crawlPage(page);
             }  
+            free(page->html);
+            free(page);
+            page->html=NULL;
+            page=NULL;
         }
 
     }

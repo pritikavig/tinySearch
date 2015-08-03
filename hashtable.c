@@ -65,10 +65,7 @@ int HashTableAdd(char * url){
     newNode->next = NULL;
 
    
-    // create a temp node
-    HashTableNode *tempNode = malloc(sizeof(HashTableNode));
-    tempNode->url = (char*) malloc(strlen(url)+1000);
-    tempNode->next = malloc(sizeof(HashTableNode));
+
 
 
     // get key
@@ -87,6 +84,10 @@ int HashTableAdd(char * url){
     //else add it to the end of the list
     else{
 
+        // create a temp node
+        HashTableNode *tempNode;
+        
+
         //get the last item at that key and add to the next
         tempNode = URLSVisited.table[key];
 
@@ -94,6 +95,7 @@ int HashTableAdd(char * url){
             
             if(strcmp(url, tempNode->url) == 0)
             {
+
                 
                 return(0);
             }
@@ -103,8 +105,10 @@ int HashTableAdd(char * url){
         }
         
         tempNode->next=newNode;
+
         
     }
+
     
     return(1);
 }
@@ -121,9 +125,8 @@ int HashTableLookUp(char * url){
     if(URLSVisited.table[key] != NULL){
         
        //while it node has next
-        HashTableNode *tempNode = malloc(sizeof(HashTableNode));
-        tempNode->url = (char*) malloc(strlen(url)+1000);
-        tempNode->next = malloc(sizeof(HashTableNode));
+        HashTableNode *tempNode;
+
         tempNode=URLSVisited.table[key];
         tempNode->next=URLSVisited.table[key]->next;
       
@@ -134,6 +137,7 @@ int HashTableLookUp(char * url){
 
             //compare node urls, return 0 on match 
             if(strcmp(url, tempNode->url) == 0){
+
 
                 return(0);
             }
@@ -156,7 +160,7 @@ int HashTableLookUp(char * url){
 
 void cleanHash(){
     // loop through each hash slot
-    unsigned long hashkey = 0;
+    int hashkey = 0;
 
     while (hashkey < MAX_HASH_SLOT){
 
@@ -166,10 +170,21 @@ void cleanHash(){
         }
         else if(URLSVisited.table[hashkey])
         {
+
+        // write to status log
+        if (STATUS_LOG == 1){
+            printf("\nCleaning hashtable");
+        }
         // free the first node in the bin
-        HashTableNode *node = URLSVisited.table[hashkey];
-        free(node);
-        node = NULL;
+        free(URLSVisited.table[hashkey]->url);
+        free(URLSVisited.table[hashkey]->next);
+        free(URLSVisited.table[hashkey]);
+        URLSVisited.table[hashkey]->url=NULL;
+        URLSVisited.table[hashkey]->next=NULL;
+        URLSVisited.table[hashkey]=NULL;
+
+
+
         hashkey = hashkey +1; 
         }
 
