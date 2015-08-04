@@ -27,3 +27,6 @@ force:
 	touch crawler.c
 	make
 
+clean:
+	rm *.o
+
