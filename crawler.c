@@ -141,6 +141,10 @@ int main(int argc, char* argv[])
 
 
     //// FREE STUFF
+    if (max_depth == 0){
+        free(page->html);
+        free(page);
+    }
     // cleanup memory
     cleanup();
     

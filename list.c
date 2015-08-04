@@ -96,7 +96,6 @@ WebPage* listRemove(){
 	toVisit.head = tempNode->next; 
 	
 	if(!toVisit.head){
-		printf("\nLast node in list");
 		toVisit.tail=NULL;
 	}
 	if(toVisit.head){
