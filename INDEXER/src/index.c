@@ -88,16 +88,18 @@
 
  		// create index
       HashTable *Index = malloc(sizeof(HashTable));
+      unsigned long key =0;
 
-      // test lookup
-         char *word = "the";
-         int hi = HashIndexLookUp(word, Index);
-         printf("\n looked up %i", hi);
- 		
+      while(key <= MAX_HASH_SLOT) {
+        Index->table[key]=NULL;
+        key = key +1;
+      }
+    
+
  		buildIndex(argv[1], Index);
 
  		// write to output
- 		//saveFile(argv[2], Index);
+ 		saveFile(argv[2], Index);
 
  		// clean data
  		//cleanHash(Index);
@@ -193,14 +195,9 @@
 
  		 	NormalizeWord(word);
          	// do something with word
-         printf("\nGot word");
- 		 	
-         int hi = HashIndexLookUp(word, Index);
-         printf("\n looked up %i", hi);
 
-
- 		// 	HashIndexAdd(word, filenames[i], Index);
-         printf("\n pos: %i", pos);
+ 		   HashIndexAdd(word, filenames[i], Index);
+      
  		 	
          }
          printf("exited while");
