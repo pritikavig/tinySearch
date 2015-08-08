@@ -32,11 +32,9 @@
 // ---------------- Private variables
 
 // ---------------- Private prototypes
- int buildIndex(char *path);
- int saveFile(char *fileName);
+ int buildIndex(char *path, HashTable *Index);
+ int saveFile(char *fileName, HashTable *Index);
 
- // Global Variables
- HashTable Index;
 
  /* ============================================================================= */
 
@@ -89,14 +87,20 @@
  		// initialize data structures
 
  		// create index
+      HashTable *Index = malloc(sizeof(HashTable));
+
+      // test lookup
+         char *word = "the";
+         int hi = HashIndexLookUp(word, Index);
+         printf("\n looked up %i", hi);
  		
- 		buildIndex(argv[1]);
+ 		buildIndex(argv[1], Index);
 
  		// write to output
- 		saveFile(argv[2]);
+ 		//saveFile(argv[2], Index);
 
  		// clean data
- 		cleanHash();
+ 		//cleanHash(Index);
 
  		//////////////////////////////////////////////////////
 
@@ -127,7 +131,7 @@
  * puts files into doc nodes in hastable of word nodes
  */
 
- int buildIndex(char *path){
+ int buildIndex(char *path, HashTable *Index){
 
  	// get files in directory path
 
@@ -149,7 +153,7 @@
          printf("File: %s\n", filenames[i]);
 
          char name[30];
-    	 sprintf(name, "%s%s", path, filenames[i]);
+    	   sprintf(name, "%s%s", path, filenames[i]);
     	 
 
 
@@ -182,24 +186,30 @@
          }
          // TESTING: Print all the words in the file:
          int pos = 0;
- 		 char *word;
+ 		   char *word;
 
  
  		 while((pos = GetNextWord(buffer, pos, &word)) > 0) {
 
  		 	NormalizeWord(word);
          	// do something with word
+         printf("\nGot word");
  		 	
+         int hi = HashIndexLookUp(word, Index);
+         printf("\n looked up %i", hi);
 
- 		 	HashIndexAdd(word, filenames[i]);
 
- 		 	//free(word);
+ 		// 	HashIndexAdd(word, filenames[i], Index);
+         printf("\n pos: %i", pos);
+ 		 	
          }
+         printf("exited while");
          free(buffer);
-         //free(filenames[i]);
+
       }
-      free(filenames);
+      
 	}
+   free(filenames);
 	
 	return(0);
  }
@@ -207,13 +217,13 @@
 
 // saveFile
 // writes contents of hashtable out to file specified in command line
-int saveFile(char *fileName){
+int saveFile(char *fileName, HashTable *Index){
 	// create file
 
 	FILE *fp = freopen(fileName, "w+", stdout);
 	if(fp){
 		// loop through and write hash table to file
-		PrintIndex();
+		PrintIndex(Index);
 	}
 	else{
 		fclose(fp);

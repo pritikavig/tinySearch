@@ -11,7 +11,3 @@ SRCS = index.c file.c web.c hashIndex.c
 
 index: $(SRCS)
 	$(CC) $(CFLAGS) -o index $(SRCS) $(LIBFLAG)
-
-#debug: $(SRCS)
-#	$(CC) $(CFLAGS) -g -ggdb -c $(SRCS)
- #   $(CC) $(CFLAGS) -g -ggdb -o $(EXEC) $(OBJS) $(UTILFLAG)

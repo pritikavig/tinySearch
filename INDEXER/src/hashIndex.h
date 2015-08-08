@@ -36,8 +36,6 @@ typedef struct HashTable {
 
 // ---------------- Public Variables
 
-extern HashTable Index;
-
 // ---------------- Prototypes/Macros
 
 /*
@@ -52,11 +50,11 @@ extern HashTable Index;
 unsigned long JenkinsHash(const char *str, unsigned long mod);
 
 // add to hash table
-int HashIndexAdd(char *word, char *docName);
-int HashIndexLookUp(char *word);
-void cleanHash();
+int HashIndexAdd(char *word, char *docName, HashTable *Index);
+int HashIndexLookUp(char *word, HashTable *Index);
+void cleanHash(HashTable *Index);
 int addDocNode(wordNode *wordNode, char* docName);
-void PrintIndex();
+void PrintIndex(HashTable *Index);
 void PrintDocs(wordNode *wNode);
 void clearDocs(wordNode *wNode);
 

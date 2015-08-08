@@ -58,9 +58,9 @@ unsigned long JenkinsHash(const char *str, unsigned long mod)
 
 // HashIndexAdd
 //returns 1 on problem
-int HashIndexAdd(char *word, char *docName){
+int HashIndexAdd(char *word, char *docName, HashTable *Index){
                 
-    int added = HashIndexLookUp(word);
+    int added = HashIndexLookUp(word, Index);
     unsigned long key = JenkinsHash(word, MAX_HASH_SLOT);
 
 
@@ -70,16 +70,16 @@ int HashIndexAdd(char *word, char *docName){
        
         // create word node & add it
         wordNode *node = malloc(sizeof(wordNode));
-        node->word = malloc(strlen(word)+1);
+        
         node->word = word;
-        node->next = malloc(sizeof(wordNode));
+        node->next;
         node->next = NULL;
         
 
         // dont worry about collisons for now
-        wordNode *tempNode = Index.table[key];
+        wordNode *tempNode = Index->table[key];
         if (tempNode == NULL){
-            Index.table[key] = node;
+            Index->table[key] = node;
         }
 
         // CHECK FOR KEY COLLISIONS
@@ -99,7 +99,7 @@ int HashIndexAdd(char *word, char *docName){
     }
 
     if (added ==1){
-            wordNode *tmp = Index.table[key];
+            wordNode *tmp = Index->table[key];
         // add doc node to word node 
             addDocNode(tmp, docName);
            
@@ -115,14 +115,14 @@ int HashIndexAdd(char *word, char *docName){
 // hashIndexLookUp
 // returns 1 if word is in index
 // returns 0 if not
-int HashIndexLookUp(char *word){
+int HashIndexLookUp(char *word, HashTable *Index){
 	// if word is in index, return 1
 	unsigned long hashkey = JenkinsHash(word, MAX_HASH_SLOT);
 
 
-	if(Index.table[hashkey] != NULL){
+	if(Index->table[hashkey] != NULL){
 		// if the word node matches the word return 1
-        wordNode *node = Index.table[hashkey];
+        wordNode *node = Index->table[hashkey];
         while (node != NULL){
 
             // compare strings
@@ -142,27 +142,26 @@ int HashIndexLookUp(char *word){
 }
 // clean Hash table
 // clean all allocated data
-void cleanHash(){
+void cleanHash(HashTable *Index){
         unsigned long key =0;
 
-        while(key <= MAX_HASH_SLOT){
-        
-        if(Index.table[key] != NULL){
-            wordNode *tmpNode = Index.table[key];
-            wordNode *nextNode;
-            if(tmpNode->next != NULL){
-                nextNode = tmpNode->next;
-                clearDocs(tmpNode);
+        while(key <= MAX_HASH_SLOT) {
+            if(Index->table[key] != NULL){
+                wordNode *tmpNode = Index->table[key];
+                wordNode *nextNode;
+                if(tmpNode->next != NULL){
+                    nextNode = tmpNode->next;
+                    //clearDocs(tmpNode);
+                    free(tmpNode);
+                    tmpNode=nextNode;
+                    
+                }
+                //clearDocs(tmpNode);
                 free(tmpNode);
-                tmpNode=nextNode;
-                
+
             }
-            clearDocs(tmpNode);
-            free(tmpNode);
 
-        }
-
-        key = key +1;
+            key = key +1;
         }
 }
 
@@ -172,11 +171,11 @@ void clearDocs(wordNode *wNode){
         docNode *nextDoc;
         while(tmpDoc->next != NULL){
             nextDoc = tmpDoc->next;
-            free(tmpDoc->docID);
+            //free(tmpDoc->docID);
             free(tmpDoc);
             tmpDoc=nextDoc;
         }
-        free(tmpDoc->docID);
+        //free(tmpDoc->docID);
         free(tmpDoc);
 
     }
@@ -227,13 +226,13 @@ int addDocNode(wordNode *wordNode, char* docName){
     return(0);
 }
 
-void PrintIndex(){
+void PrintIndex(HashTable *Index){
         unsigned long key =0;
 
         while(key <= MAX_HASH_SLOT){
         
-        if(Index.table[key] != NULL){
-            wordNode *tmpNode = Index.table[key];
+        if(Index->table[key] != NULL){
+            wordNode *tmpNode = Index->table[key];
             while(tmpNode->next != NULL){
                 printf("\n%s", tmpNode->next);
                 PrintDocs(tmpNode->next);
