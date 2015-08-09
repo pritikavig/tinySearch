@@ -48,7 +48,7 @@ typedef struct HashTable {
  *     http://www.burtleburtle.net/bob/hash/doobs.html
  */
 unsigned long JenkinsHash(const char *str, unsigned long mod);
-
+void initializeIndex(HashTable *Index);
 // add to hash table
 int HashIndexAdd(char *word, char *docName, HashTable *Index);
 int HashIndexLookUp(char *word, HashTable *Index);

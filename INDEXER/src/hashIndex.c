@@ -31,7 +31,15 @@
 // ---------------- Private prototypes
 
 
+// Initialize Index
+void initializeIndex(HashTable *Index){
+    unsigned long key =0;
+    while(key <= MAX_HASH_SLOT) {
+        Index->table[key]=NULL;
+        key = key +1;
+    }
 
+}
 
 // Hash Function
 
@@ -90,8 +98,9 @@ int HashIndexAdd(char *word, char *docName, HashTable *Index){
             }
             tempNode->next = node;
         }
-
+        if (docName != NULL){
         addDocNode(node, docName);
+        }
         
 
       

@@ -34,6 +34,8 @@
 // ---------------- Private prototypes
  int buildIndex(char *path, HashTable *Index);
  int saveFile(char *fileName, HashTable *Index);
+ int readLine(char *fileName, HashTable *Index);
+ int parseLine(char *buffer, HashTable *Index);
 
 
  /* ============================================================================= */
@@ -52,6 +54,7 @@
  		printf("This program takes 2 or 3 arguments: a valid directory and a file for output. If you input a third option, another output file, the program will test itself.");
  		return(1);
  		}
+      testingMode =1;
  	}
 
  	// check that arg 1 is a valid directory
@@ -77,7 +80,7 @@
  			return(1);
  		}
  		// enable testing mode
- 		testingMode = 1;
+ 		//testingMode = 1;
  	}
 
 
@@ -86,39 +89,44 @@
  	
  		// initialize data structures
 
- 		// create index
+ 		// create and initialize index
       HashTable *Index = malloc(sizeof(HashTable));
-      unsigned long key =0;
-
-      while(key <= MAX_HASH_SLOT) {
-        Index->table[key]=NULL;
-        key = key +1;
-      }
+      initializeIndex(Index);
     
+      printf("building index");
 
  		buildIndex(argv[1], Index);
+
+      printf("saving file");
 
  		// write to output
  		saveFile(argv[2], Index);
 
  		// clean data
- 		//cleanHash(Index);
+ 		cleanHash(Index);
+
+      printf("finished first part");
+
 
  		//////////////////////////////////////////////////////
 
  		// continue if testing
 
  		if (testingMode == 1){
+         printf("Entered if statement");
+         // create and initialize a new index
+         HashTable *wordIndex = malloc(sizeof(HashTable));
+         initializeIndex(wordIndex);
 
  			// rebuild index from file
- 			// readFile(argv[2]);
+ 			readLine(argv[2], wordIndex);
 
- 			// saveFile(argv[3]);
+ 			//saveFile(argv[3], wordIndex);
 
  			// clean
  			// cleanDynamicList(wordIndex);
  		}
-
+      return(0);
 
  }
 
@@ -200,7 +208,6 @@
       
  		 	
          }
-         printf("exited while");
          free(buffer);
 
       }
@@ -222,17 +229,84 @@ int saveFile(char *fileName, HashTable *Index){
 		// loop through and write hash table to file
 		PrintIndex(Index);
 	}
-	else{
-		fclose(fp);
-		return(1);
-	}
 	fclose(fp);
+   freopen ("/dev/tty", "a", stdout);
+   printf("exiting sf");
 	return(0);
 }
 
-//readFile
+//readLine
 // make hashtable out of file
+// modelled after code at: http://stackoverflow.com/questions/3081289/how-to-read-a-line-from-a-text-file-in-c-c
 
-int readFile(char *fileName){
+int readLine(char *fileName, HashTable *Index){
+   // open the index filename
+   FILE *fp = fopen(fileName, "r");
+
+   int size = 2048;  // pick an arbitrary starting size
+   int charCount;
+   int c;
+   char *buffer = (char *)malloc(size);
+
+   if(fp){
+      do{
+         charCount=0;
+         
+
+         do {
+            c=fgetc(fp);
+            if(c != EOF)
+            {
+              buffer[charCount++] = (char)c; 
+            } 
+            if(charCount >= size -1)
+            {
+               size = size*2; // double buffer size to prevent overflows if character count is close to size
+               buffer= (char*)realloc(buffer,size);
+               // 
+            }
+         }while(c != EOF && c != '\n');
+
+
+         buffer[charCount] = 0; // set end for protection
+
+
+         // line is now in buffer DO STUFF
+         printf("\n LINE: %s", buffer);
+         parseLine(buffer, Index);
+      } while (c != EOF);
+   }
+
+
+   fclose(fp);
+   free(buffer);
+
 return(0);
+}
+
+int parseLine(char *buffer, HashTable *Index){
+   // parse line and add nodes
+   printf("\nBuffer : %s", buffer);
+   const char s[2] = " ";
+   char *token = strtok(buffer, s);
+   int count = 0;
+   char *word;
+
+   while (token != NULL){
+      printf(" %s\n", token );
+      // add first token to as word node
+      // if count = 0 : create word node, increment count
+      if(0 == count){
+         word = token;
+         HashIndexAdd(word, NULL, Index);
+
+      }
+      // else: if count is odd, create doc node, save doc name somewhere, increment count
+      // else: if count is even, add number to value of doc node saved, set doc name to null, increment count
+
+      // create doc node and add 
+      token = strtok(NULL, s);
+   }
+
+   return(0);
 }
