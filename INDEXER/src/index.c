@@ -326,7 +326,7 @@ int parseLine(char *buffer, HashTable *wordIndex){
          int i = 0;
          
          while ( i <= filecount){
-            //HashIndexAdd(word, filename, wordIndex);
+            HashIndexAdd(word, filename, wordIndex);
             i++;
          }
          
