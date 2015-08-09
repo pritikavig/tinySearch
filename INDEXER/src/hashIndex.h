@@ -51,12 +51,14 @@ unsigned long JenkinsHash(const char *str, unsigned long mod);
 void initializeIndex(HashTable *Index);
 // add to hash table
 int HashIndexAdd(char *word, char *docName, HashTable *Index);
-int HashIndexLookUp(char *word, HashTable *Index);
-void cleanHash(HashTable *Index);
 int addDocNode(wordNode *wordNode, char* docName);
+int HashIndexLookUp(char *word, HashTable *Index);
+// clear memory
+void cleanHash(HashTable *Index);
+void clearDocs(wordNode *wNode);
+// print index
 void PrintIndex(HashTable *Index);
 void PrintDocs(wordNode *wNode);
-void clearDocs(wordNode *wNode);
 
 
 #endif // HASHTABLE_H

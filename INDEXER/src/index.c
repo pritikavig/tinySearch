@@ -34,8 +34,8 @@
 // ---------------- Private prototypes
  int buildIndex(char *path, HashTable *Index);
  int saveFile(char *fileName, HashTable *Index);
- int readLine(char *fileName, HashTable *Index);
- int parseLine(char *buffer, HashTable *Index);
+ int readLine(char *fileName, HashTable *wordIndex);
+ int parseLine(char *buffer, HashTable *wordIndex);
 
 
  /* ============================================================================= */
@@ -92,20 +92,14 @@
  		// create and initialize index
       HashTable *Index = malloc(sizeof(HashTable));
       initializeIndex(Index);
-    
-      printf("building index");
 
  		buildIndex(argv[1], Index);
-
-      printf("saving file");
 
  		// write to output
  		saveFile(argv[2], Index);
 
  		// clean data
  		cleanHash(Index);
-
-      printf("finished first part");
 
 
  		//////////////////////////////////////////////////////
@@ -118,8 +112,13 @@
          HashTable *wordIndex = malloc(sizeof(HashTable));
          initializeIndex(wordIndex);
 
+
+         
+
  			// rebuild index from file
  			readLine(argv[2], wordIndex);
+
+         //PrintIndex(wordIndex);
 
  			//saveFile(argv[3], wordIndex);
 
@@ -239,7 +238,7 @@ int saveFile(char *fileName, HashTable *Index){
 // make hashtable out of file
 // modelled after code at: http://stackoverflow.com/questions/3081289/how-to-read-a-line-from-a-text-file-in-c-c
 
-int readLine(char *fileName, HashTable *Index){
+int readLine(char *fileName, HashTable *wordIndex){
    // open the index filename
    FILE *fp = fopen(fileName, "r");
 
@@ -273,7 +272,7 @@ int readLine(char *fileName, HashTable *Index){
 
          // line is now in buffer DO STUFF
          printf("\n LINE: %s", buffer);
-         parseLine(buffer, Index);
+         parseLine(buffer, wordIndex);
       } while (c != EOF);
    }
 
@@ -284,7 +283,7 @@ int readLine(char *fileName, HashTable *Index){
 return(0);
 }
 
-int parseLine(char *buffer, HashTable *Index){
+int parseLine(char *buffer, HashTable *wordIndex){
    // parse line and add nodes
    printf("\nBuffer : %s", buffer);
    const char s[2] = " ";
@@ -299,30 +298,40 @@ int parseLine(char *buffer, HashTable *Index){
       // add first token to as word node
       // if count = 0 : create word node, increment count
       if(0 == count){
-         //word = malloc(strlen(token)+1);
-         word = token;
-         printf("\ncount:  %i", count);
-         printf("\nword: %s", word);
          
-         count = count + 1;
+         word = token;
+         printf("\ncount:  %i, word: %s", count, word);
+
+         
+         
+          count = count + 1;
 
       }
       // else: if count is odd, create doc node, save doc name somewhere, increment count
       else if (count%2){
-         //filename=malloc(strlen(token)+1);
+      
          filename = token;
-         printf("filename: %s", filename);
-         printf("\ncount: %i", count);
+         
+         printf("\ncount: %i, filename: %s", count, filename);
+
          count = count +1;
 
 
       }
       else if(count%2 == 0){
       // else: if count is even, add number to value of doc node saved, set doc name to null, increment count
+         
          filecount = atoi(token);
-         printf("\nfilec: %i", filecount);
-         printf("\ncount: %i", count);
+         printf("\ncount: %i, filecount: %i", count, filecount);
+         int i = 0;
+         
+         while ( i <= filecount){
+            //HashIndexAdd(word, filename, wordIndex);
+            i++;
+         }
+         
          count = count +1;
+         i = 0;
 
       }
       
