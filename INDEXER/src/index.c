@@ -291,18 +291,41 @@ int parseLine(char *buffer, HashTable *Index){
    char *token = strtok(buffer, s);
    int count = 0;
    char *word;
+   char *filename;
+   int filecount;
 
    while (token != NULL){
-      printf(" %s\n", token );
+      
       // add first token to as word node
       // if count = 0 : create word node, increment count
       if(0 == count){
+         //word = malloc(strlen(token)+1);
          word = token;
-         HashIndexAdd(word, NULL, Index);
+         printf("\ncount:  %i", count);
+         printf("\nword: %s", word);
+         
+         count = count + 1;
 
       }
       // else: if count is odd, create doc node, save doc name somewhere, increment count
+      else if (count%2){
+         //filename=malloc(strlen(token)+1);
+         filename = token;
+         printf("filename: %s", filename);
+         printf("\ncount: %i", count);
+         count = count +1;
+
+
+      }
+      else if(count%2 == 0){
       // else: if count is even, add number to value of doc node saved, set doc name to null, increment count
+         filecount = atoi(token);
+         printf("\nfilec: %i", filecount);
+         printf("\ncount: %i", count);
+         count = count +1;
+
+      }
+      
 
       // create doc node and add 
       token = strtok(NULL, s);
