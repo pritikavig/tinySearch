@@ -90,16 +90,16 @@
  		// initialize data structures
 
  		// create and initialize index
-      HashTable *Index = malloc(sizeof(HashTable));
-      initializeIndex(Index);
+      //HashTable *Index = malloc(sizeof(HashTable));
+      //initializeIndex(Index);
 
- 		buildIndex(argv[1], Index);
+ 		//buildIndex(argv[1], Index);
 
  		// write to output
- 		saveFile(argv[2], Index);
+ 		//saveFile(argv[2], Index);
 
  		// clean data
- 		cleanHash(Index);
+ 		//cleanHash(Index);
 
 
  		//////////////////////////////////////////////////////
@@ -275,7 +275,6 @@ int readLine(char *fileName, HashTable *wordIndex){
       } while (c != EOF);
    }
 
-
    fclose(fp);
    free(buffer);
 
@@ -288,8 +287,8 @@ int parseLine(char *buffer, HashTable *wordIndex){
    const char s[2] = " ";
    char *token = strtok(buffer, s);
    int count = 0;
-   char *word;
-   char *filename;
+   char *word[1000];
+   char *filename[1000];
    int filecount;
 
    while (token != NULL){
@@ -298,14 +297,16 @@ int parseLine(char *buffer, HashTable *wordIndex){
       // if count = 0 : create word node, increment count
       if(0 == count){
          
-         word = token;
+         strcpy(word, token);
+         //word = token;
          count = count + 1;
 
       }
       // else: if count is odd, create doc node, save doc name somewhere, increment count
       else if (count%2){
       
-         filename = token; 
+         strcpy(filename, token); 
+         //filename = token;
          count = count +1;
 
 
@@ -327,7 +328,6 @@ int parseLine(char *buffer, HashTable *wordIndex){
 
       }
       
-
       // create doc node and add 
       token = strtok(NULL, s);
    }
