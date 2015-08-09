@@ -120,7 +120,7 @@
 
          //PrintIndex(wordIndex);
 
- 			//saveFile(argv[3], wordIndex);
+ 			saveFile(argv[3], wordIndex);
 
  			// clean
  			// cleanDynamicList(wordIndex);
@@ -271,7 +271,6 @@ int readLine(char *fileName, HashTable *wordIndex){
 
 
          // line is now in buffer DO STUFF
-         printf("\n LINE: %s", buffer);
          parseLine(buffer, wordIndex);
       } while (c != EOF);
    }
@@ -300,20 +299,13 @@ int parseLine(char *buffer, HashTable *wordIndex){
       if(0 == count){
          
          word = token;
-         printf("\ncount:  %i, word: %s", count, word);
-
-         
-         
-          count = count + 1;
+         count = count + 1;
 
       }
       // else: if count is odd, create doc node, save doc name somewhere, increment count
       else if (count%2){
       
-         filename = token;
-         
-         printf("\ncount: %i, filename: %s", count, filename);
-
+         filename = token; 
          count = count +1;
 
 
@@ -322,7 +314,7 @@ int parseLine(char *buffer, HashTable *wordIndex){
       // else: if count is even, add number to value of doc node saved, set doc name to null, increment count
          
          filecount = atoi(token);
-         printf("\ncount: %i, filecount: %i", count, filecount);
+         printf("\nword: %s, filename: %s, filecount: %i", word, filename, filecount);
          int i = 0;
          
          while ( i <= filecount){
@@ -339,6 +331,6 @@ int parseLine(char *buffer, HashTable *wordIndex){
       // create doc node and add 
       token = strtok(NULL, s);
    }
-
+   count = 0;
    return(0);
 }
