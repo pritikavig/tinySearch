@@ -90,16 +90,18 @@
  		// initialize data structures
 
  		// create and initialize index
-      //HashTable *Index = malloc(sizeof(HashTable));
-      //initializeIndex(Index);
+      //HashTable *myIndex = malloc(sizeof(HashTable));
+      //initializeIndex(myIndex);
 
- 		//buildIndex(argv[1], Index);
+      //if(myIndex){
+ 		   //buildIndex(argv[1], myIndex);
 
- 		// write to output
- 		//saveFile(argv[2], Index);
+ 		   // write to output
+ 		   //saveFile(argv[2], myIndex);
 
- 		// clean data
- 		//cleanHash(Index);
+ 		   // clean data
+ 		   //cleanHash(myIndex);
+      //}
 
 
  		//////////////////////////////////////////////////////
@@ -109,22 +111,21 @@
  		if (testingMode == 1){
          printf("Entered if statement");
          // create and initialize a new index
-         HashTable *wordIndex = malloc(sizeof(HashTable));
-         initializeIndex(wordIndex);
+         HashTable *reIndex = malloc(sizeof(HashTable));
+         initializeIndex(reIndex);
 
 
          
-
+         if(reIndex){
  			// rebuild index from file
- 			readLine(argv[2], wordIndex);
+ 			     readLine(argv[2], reIndex);
 
-         //PrintIndex(wordIndex);
+ 			     saveFile(argv[3], reIndex);
 
- 			saveFile(argv[3], wordIndex);
-
- 			// clean
- 			cleanHash(wordIndex);
- 		}
+ 			     cleanHash(reIndex);
+         }
+ 	
+   	}
       return(0);
 
  }
@@ -167,7 +168,7 @@
 
 
          // looping through files in index here. 
-         // TODO: Open file and make buffer
+         // Open file and make buffer
          // modelled after stack overflow: http://stackoverflow.com/questions/2029103/correct-way-to-read-a-text-file-into-a-buffer-in-c
          char *buffer = NULL;
          FILE *fp = fopen(name, "rb");
@@ -193,7 +194,7 @@
          	fclose(fp);
 
          }
-         // TESTING: Print all the words in the file:
+         
          int pos = 0;
  		   char *word;
 
@@ -208,9 +209,7 @@
  		 	
          }
          free(buffer);
-
-      }
-      
+      }      
 	}
    free(filenames);
 	
@@ -271,7 +270,9 @@ int readLine(char *fileName, HashTable *wordIndex){
 
 
          // line is now in buffer DO STUFF
-         parseLine(buffer, wordIndex);
+         if(buffer){
+            parseLine(buffer, wordIndex);
+         }
       } while (c != EOF);
    }
 
@@ -283,7 +284,6 @@ return(0);
 
 int parseLine(char *buffer, HashTable *wordIndex){
    // parse line and add nodes
-   printf("\nBuffer : %s", buffer);
    const char s[2] = " ";
    char *token = strtok(buffer, s);
    int count = 0;
@@ -298,7 +298,6 @@ int parseLine(char *buffer, HashTable *wordIndex){
       if(0 == count){
          word = malloc(strlen(token)+1);
          strcpy(word, token);
-         //word = token;
          count = count + 1;
 
       }
@@ -306,7 +305,6 @@ int parseLine(char *buffer, HashTable *wordIndex){
       else if (count%2){
          filename = malloc(sizeof(token)+1);
          strcpy(filename, token); 
-         //filename = token;
          count = count +1;
 
 
@@ -315,10 +313,10 @@ int parseLine(char *buffer, HashTable *wordIndex){
       // else: if count is even, add number to value of doc node saved, set doc name to null, increment count
          
          filecount = atoi(token);
-         printf("\nword: %s, filename: %s, filecount: %i", word, filename, filecount);
+       
          int i = 0;
          
-         while ( i <= filecount){
+         while ( i < filecount){
             HashIndexAdd(word, filename, wordIndex);
             i++;
          }

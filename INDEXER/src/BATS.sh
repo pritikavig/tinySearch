@@ -14,8 +14,9 @@
 # 1. specify the log file
 
 logfile=indexTestLog.$(date +"%a_%b_%d_%T_%Y")
-datapath=../data
+datapath=data/
 indexfile=index.dat
+reIndexfile=reInd.dat
 
 echo "start testing indexer" >> $logfile
 
@@ -35,11 +36,22 @@ echo "Successfully built indexer." >> $logfile
 
 echo "test input parameters" >> $logfile
 
+index invaliddir $indexfile >> $logfile
+
+index $datapath too many arguments >> $logfile
 
 
 # 4. test indexer in testing mode and compare results
 # run indexer
-./indexer $datapath ./index.dat ./tmpnewindex.dat
+index $datapath $indexfile $reIndexfile
 # sort index and tmpnewindex
+sort $indexfile > test1
+sort $reIndexfile > test2
 # check diff between two files
-	# exit status 0 means they are the same
+
+echo "Number of differences in Index file and Reindex file: " >> $logfile
+diff test1 test2
+echo $? >> $logfile
+
+echo "Total number of lines in Index file: "  >> $logfile
+echo wc -l test1 >> $logfile

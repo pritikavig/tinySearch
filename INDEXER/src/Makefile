@@ -11,3 +11,11 @@ SRCS = index.c file.c web.c hashIndex.c
 
 index: $(SRCS)
 	$(CC) $(CFLAGS) -o index $(SRCS) $(LIBFLAG)
+test:	
+	BATS.sh
+#clean:
+#	 rm -f *~
+#    rm -f *#
+#    rm -f ./Index
+#    rm -f *.o
+      
