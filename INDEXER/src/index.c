@@ -123,7 +123,7 @@
  			saveFile(argv[3], wordIndex);
 
  			// clean
- 			// cleanDynamicList(wordIndex);
+ 			cleanHash(wordIndex);
  		}
       return(0);
 
@@ -287,8 +287,8 @@ int parseLine(char *buffer, HashTable *wordIndex){
    const char s[2] = " ";
    char *token = strtok(buffer, s);
    int count = 0;
-   char *word[1000];
-   char *filename[1000];
+   char *word;
+   char *filename;
    int filecount;
 
    while (token != NULL){
@@ -296,7 +296,7 @@ int parseLine(char *buffer, HashTable *wordIndex){
       // add first token to as word node
       // if count = 0 : create word node, increment count
       if(0 == count){
-         
+         word = malloc(strlen(token)+1);
          strcpy(word, token);
          //word = token;
          count = count + 1;
@@ -304,7 +304,7 @@ int parseLine(char *buffer, HashTable *wordIndex){
       }
       // else: if count is odd, create doc node, save doc name somewhere, increment count
       else if (count%2){
-      
+         filename = malloc(sizeof(token)+1);
          strcpy(filename, token); 
          //filename = token;
          count = count +1;
