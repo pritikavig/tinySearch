@@ -214,7 +214,7 @@ int addDocNode(wordNode *wordNode, char* docName){
         
         docNode *node = malloc(sizeof(docNode));
         node->docID = malloc(strlen(docName)+1);
-        node->docID = docName;
+        strcpy(node->docID,docName);
         node->wordCount = (int) 1;
         node->next = malloc(sizeof(docNode));
         node->next = NULL;
@@ -261,9 +261,11 @@ void PrintIndex(HashTable *Index){
 void PrintDocs(wordNode *wNode){
     if(wNode->doc != NULL){
         docNode *tmpDoc = wNode->doc;
-        while(tmpDoc->next != NULL){
-            printf(" %s %i", tmpDoc->docID, tmpDoc->wordCount);
-            tmpDoc=tmpDoc->next;
+        if(tmpDoc->next){
+            while(tmpDoc->next != NULL){
+                printf(" %s %i", tmpDoc->docID, tmpDoc->wordCount);
+                tmpDoc=tmpDoc->next;
+            }
         }
         printf(" %s %i", tmpDoc->docID, tmpDoc->wordCount);
     }

@@ -90,18 +90,18 @@
  		// initialize data structures
 
  		// create and initialize index
-      //HashTable *myIndex = malloc(sizeof(HashTable));
-      //initializeIndex(myIndex);
+      HashTable *myIndex = malloc(sizeof(HashTable));
+      initializeIndex(myIndex);
 
-      //if(myIndex){
- 		   //buildIndex(argv[1], myIndex);
+      if(myIndex){
+ 		   buildIndex(argv[1], myIndex);
 
  		   // write to output
- 		   //saveFile(argv[2], myIndex);
+ 		   saveFile(argv[2], myIndex);
 
  		   // clean data
- 		   //cleanHash(myIndex);
-      //}
+ 		   cleanHash(myIndex);
+      }
 
 
  		//////////////////////////////////////////////////////
@@ -115,9 +115,10 @@
          initializeIndex(reIndex);
 
 
-         
+         printf("reindex: %d", reIndex);
          if(reIndex){
  			// rebuild index from file
+
  			     readLine(argv[2], reIndex);
 
  			     saveFile(argv[3], reIndex);
@@ -126,6 +127,7 @@
          }
  	
    	}
+
       return(0);
 
  }
@@ -253,6 +255,7 @@ int readLine(char *fileName, HashTable *wordIndex){
 
          do {
             c=fgetc(fp);
+            printf("%c", c);
             if(c != EOF)
             {
               buffer[charCount++] = (char)c; 
@@ -270,6 +273,7 @@ int readLine(char *fileName, HashTable *wordIndex){
 
 
          // line is now in buffer DO STUFF
+         printf("buffer: %s",buffer);
          if(buffer){
             parseLine(buffer, wordIndex);
          }
@@ -298,7 +302,9 @@ int parseLine(char *buffer, HashTable *wordIndex){
       if(0 == count){
          word = malloc(strlen(token)+1);
          strcpy(word, token);
+         
          count = count + 1;
+
 
       }
       // else: if count is odd, create doc node, save doc name somewhere, increment count
@@ -317,6 +323,13 @@ int parseLine(char *buffer, HashTable *wordIndex){
          int i = 0;
          
          while ( i < filecount){
+            printf("count: %d, word: %s\n",count, word);
+
+            printf("word: %s ", word);
+            printf("do");
+            if(1) {int i;
+               i=10;
+               printf("%d",i);}
             HashIndexAdd(word, filename, wordIndex);
             i++;
          }
@@ -325,10 +338,12 @@ int parseLine(char *buffer, HashTable *wordIndex){
          i = 0;
 
       }
+      //printf("count: %d, word: %s\n",count-1, word);
       
       // create doc node and add 
       token = strtok(NULL, s);
    }
    count = 0;
+   printf("exiting");
    return(0);
 }
