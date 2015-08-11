@@ -64,7 +64,7 @@ unsigned long JenkinsHash(const char *str, unsigned long mod)
 }
 
 
-// HashIndexAdd
+///////////////////////////////////////////////// HashIndexAdd //////////////////////////////////////////////
 //returns 1 on problem
 int HashIndexAdd(char *word, char *docName, HashTable *Index){
                 
@@ -78,9 +78,7 @@ int HashIndexAdd(char *word, char *docName, HashTable *Index){
        
         // create word node & add it
         wordNode *node = malloc(sizeof(wordNode));
-        
         node->word = word;
-        node->next;
         node->next = NULL;
         
 
@@ -98,22 +96,27 @@ int HashIndexAdd(char *word, char *docName, HashTable *Index){
             }
             tempNode->next = node;
         }
+
+
+        // now add a document to the word node
         if (docName != NULL){
-        addDocNode(node, docName);
+           addDocNode(node, docName);
         }
         
-
-      
         return(0);
     }
 
-    if (added ==1){
-            wordNode *tmp = Index->table[key];
-        // add doc node to word node 
-            addDocNode(tmp, docName);
+
+    // WORD IS ALREADY IN INDEX
+    if (added == 1){
+            //= Index->table[key];
+            // add doc node to word node 
+            addDocNode(Index->table[key], docName);
            
             return(0);
     }
+
+
     
     return(1);     
 
@@ -149,6 +152,90 @@ int HashIndexLookUp(char *word, HashTable *Index){
     
 	return(0);
 }
+
+
+// returns 1 on a problem
+// returns 0 if added
+int addDocNode(wordNode *wordNode, char* docName){
+    
+
+    if(!wordNode){
+        return 1;
+    }
+
+
+
+    // if there is no doc node yet
+    if(wordNode->doc == NULL){
+        // create a doc and add it
+        docNode *newNode = malloc(sizeof(docNode));
+
+            if(newNode){
+                
+                newNode->docID = malloc(strlen(docName)+1);
+                strcpy(newNode->docID, docName);
+                newNode->wordCount = (int) 1;
+                wordNode->doc = newNode;
+
+             }
+
+        return 0;
+    }
+
+    
+
+
+
+
+
+    if (wordNode->doc){
+        // word node has docs attached
+        docNode *tmpDoc = wordNode->doc;
+
+        // loop through docs attached and check to see if docName is there
+        while(tmpDoc->next != NULL){
+            if (strcmp(tmpDoc->docID, docName) ==0){
+                // increment count and return
+            
+                tmpDoc->wordCount= tmpDoc->wordCount + 1;
+                return 0;
+           }
+            tmpDoc = tmpDoc->next;
+        }
+
+        // else if no match, create new doc node and add to end
+
+        docNode *newNode = malloc(sizeof(docNode));
+        newNode->docID = malloc(strlen(docName)+1);
+        strcpy(newNode->docID, docName);
+        newNode->wordCount = (int) 1;
+
+        tmpDoc->next=newNode;
+        return 0;
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////// Methods to Clean /////////////////////////////////////
+
+
 // clean Hash table
 // clean all allocated data
 void cleanHash(HashTable *Index){
@@ -191,86 +278,36 @@ void clearDocs(wordNode *wNode){
 
 }
 
-int addDocNode(wordNode *wordNode, char* docName){
-    // go through docs in wordnode, if doc there, increment count and return
-    if(wordNode->doc != NULL){
-        // check all doc nodes for a match
-        docNode *tmpDoc = wordNode->doc;
-        while(tmpDoc != NULL){
-            // compare words
-             if(strcmp(docName, tmpDoc->docID) == 0){
-               
-                tmpDoc->wordCount = tmpDoc->wordCount +1;
-                return(1);
-            }
-
-            tmpDoc=tmpDoc->next;
-        }
-    }
-
-        // if doc not there, create doc node
-
-
-        
-        docNode *node = malloc(sizeof(docNode));
-        node->docID = malloc(strlen(docName)+1);
-        strcpy(node->docID,docName);
-        node->wordCount = (int) 1;
-        node->next = malloc(sizeof(docNode));
-        node->next = NULL;
-
-        if (wordNode->doc == NULL){
-            wordNode->doc = node;
-            return(1);
-        }else{
-            docNode *tmp = wordNode->doc;
-            while(tmp->next != NULL){
-                tmp=tmp->next;
-            }
-            tmp->next=node;
-            return(1);
-        }
-
-
-    return(0);
-}
 
 void PrintIndex(HashTable *Index){
-        unsigned long key =0;
-
-        while(key <= MAX_HASH_SLOT){
-        
+    unsigned long key =0;
+    while(key <= MAX_HASH_SLOT){
         if(Index->table[key] != NULL){
             wordNode *tmpNode = Index->table[key];
             while(tmpNode->next != NULL){
-                printf("\n%s", tmpNode->next);
-                PrintDocs(tmpNode->next);
-                tmpNode=tmpNode->next;
-                
-            }
-            printf("\n%s", tmpNode->word);
-            PrintDocs(tmpNode);
-
-        }
-
-        key = key +1;
-        }
-}
-
-// print out any docs attached to a word node
+                  printf("\n%s", tmpNode->next);
+                  PrintDocs(tmpNode->next);
+                  tmpNode=tmpNode->next;
+             }
+              printf("\n%s", tmpNode->word);
+              PrintDocs(tmpNode);
+ 
+         }
+ 
+          key = key +1;
+          }
+  }
+ // print out any docs attached to a word node
 void PrintDocs(wordNode *wNode){
     if(wNode->doc != NULL){
         docNode *tmpDoc = wNode->doc;
-        if(tmpDoc->next){
-            while(tmpDoc->next != NULL){
-                printf(" %s %i", tmpDoc->docID, tmpDoc->wordCount);
-                tmpDoc=tmpDoc->next;
-            }
-        }
-        printf(" %s %i", tmpDoc->docID, tmpDoc->wordCount);
-    }
-}
-
+        while(tmpDoc->next != NULL){
+            printf(" %s %i", tmpDoc->docID, tmpDoc->wordCount);
+            tmpDoc=tmpDoc->next;
+          }
+          printf(" %s %i", tmpDoc->docID, tmpDoc->wordCount);
+      }
+ }
 
 
 
