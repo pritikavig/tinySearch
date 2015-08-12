@@ -1,0 +1,10 @@
+Indexer
+Pritika Vig
+TinySearchEngine
+
+
+
+The Indexer componenet of TinySearchEngine takes two to three input arguments on the command line. The first argument must be a valid directory which Indexer assumes to be full of valid html files. The second argument is a plain text file that will be created with a print out of the hash table. The third argument is optional and if it exists it will enter the program into testing mode in which Indexer will read in the hashtable output file, rehash it and read it out again to the new file. 
+
+Indexer assumes that valid output from crawler will be in the directory input. 
+

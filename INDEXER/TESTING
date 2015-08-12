@@ -1,0 +1,7 @@
+Testing
+Pritika Vig
+Indexer
+Tiny Search Engine
+
+
+	The program will handle many errors silently, such as invalid files in the directory and invalid pointers. However, the program will report user errors and quit when the user inputs incorrect parameters when calling the program. A testing script, BATS.sh will create a log with test inputs and an evaluation of the items produced. To run the test script and view the log, call make test. 
