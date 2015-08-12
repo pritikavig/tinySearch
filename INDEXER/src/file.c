@@ -9,7 +9,7 @@
  * of files and directories.
  */
 /* ========================================================================== */
-#define _BSD_SOURCE                          // scandir,
+#define _DEFAULT_SOURCE                          // scandir,
                                              // students shouldn't take advantage
                                              // of the bsd extensions, but
                                              // it makes it easier to test file

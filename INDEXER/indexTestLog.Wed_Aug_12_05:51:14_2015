@@ -1,0 +1,9 @@
+start testing indexer
+Successfully built indexer.
+
+
+Test input parameters:
+Argument 1 is not a valid directory.This program takes 2 or 3 arguments: a valid directory and a file for output. If you input a third option, another output file, the program will test itself.
+
+Number of differences in Index file and Reindex file: 
+0
