@@ -15,7 +15,7 @@
 #include <stdio.h>   
 
 // ---------------- Constants
-#define MAX_HASH_SLOT 1               // number of "buckets" 10000 
+#define MAX_HASH_SLOT 10000               // number of "buckets" 10000 
 
 // ---------------- Structures/Types
 typedef struct docNode {

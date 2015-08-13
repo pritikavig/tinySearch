@@ -183,32 +183,25 @@ int parseLine(char *buffer, HashTable *wordIndex);
          char name[30];
          sprintf(name, "%s%s", path, filenames[i]);
 
-
          // looping through files in index here. 
          // Open file and make buffer
          // modelled after stack overflow: http://stackoverflow.com/questions/2029103/correct-way-to-read-a-text-file-into-a-buffer-in-c
          char *buffer = NULL;
-         FILE *fp = fopen(name, "rb");
+         FILE *fp = fopen(name, "r");
          if (fp != NULL){
             // go to end of file
             if (fseek(fp, 0L, SEEK_END) == 0){
                long bufsize = ftell(fp);
 
-               // allocate memory for source
-               buffer = malloc((sizeof(char) * (bufsize+1)));
+              // allocate memory for source
+               buffer = (char *) calloc((bufsize+1), sizeof(char));
                // go to start of file
                if (fseek(fp, 0L, SEEK_SET) != 0){}
                // read into memory
                size_t newLen = fread(buffer, sizeof(char), bufsize, fp);
-               if(newLen ==0)
-               {
-               fputs("error reading file", stderr);
-               }else{
-                  buffer[++newLen]= '\0';
-               }
 
             }
-            fclose(fp);
+		fclose(fp);
 
          }
          
