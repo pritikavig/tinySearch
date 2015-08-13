@@ -139,7 +139,6 @@ int parseLine(char *buffer, HashTable *wordIndex);
    
    if(fp){
       // loop through and write hash table to file
-      printf("howdy");
       printIndex(Index);
    }
 
