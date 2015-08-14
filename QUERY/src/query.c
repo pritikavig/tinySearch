@@ -47,6 +47,7 @@
 
 void printURL(char *docName, char *pathToDir);
 void grabURL(char *docName, char *pathToDir);
+int getWord(char array[big]);
 /*====================================================================*/
 
 int main(int argc, char* argv[]){
@@ -129,7 +130,6 @@ int main(int argc, char* argv[]){
 		char *name = "hi";
 		printURL(name, argv[1]);
 
-		return 0;
 	}
 
 
@@ -144,7 +144,8 @@ int main(int argc, char* argv[]){
 		// print line back 
 		if (fgets(line, big, stdin) != NULL){
 
-         fputs(line, stdout);
+         //fputs(line, stdout);
+			getWord(line);
 
          // V0: 
          // parse word by word
@@ -204,6 +205,21 @@ void grabURL(char *docName, char *pathToDir){
     	fputs(string, stdout);
     }
     fclose(fp);
+}
+
+int getWord(char *array){
+	const char s[2] = " ";
+	char *token;
+
+	token = strtok(array, s);
+
+	while(token != NULL)
+	{
+		printf( " %s\n", token);
+		token = strtok(NULL, s);
+	}
+
+	return 0;
 }
 
 
