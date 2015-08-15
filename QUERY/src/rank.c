@@ -198,7 +198,6 @@ wordNode* returnWord(char *word, HashTable *Index){
 	unsigned long key = JenkinsHash(word, MAX_HASH_SLOT);
 
 	if (Index->table[key] == NULL){
-		printf("Word not in index - no hits");
 		return NULL;
 	}
 
@@ -207,7 +206,6 @@ wordNode* returnWord(char *word, HashTable *Index){
 
 		// if string matches, return node;
 		if (strcmp(tmp->word, word)==0){
-			printf("found word");
 			return tmp;
 		}
 
@@ -221,19 +219,19 @@ wordNode* returnWord(char *word, HashTable *Index){
 
 ////////////////////////////////////// Functions to create list //////////////////////////////
 
-wordHead addToList(wordNode *wNode, wordHead *head){
+wordHead* addToList(wordNode *wNode, wordHead *head){
 
 	// make word Node a word head
 	if (!wNode){
-		return;
+		return NULL;
 	}
 
 	// make a wordHead
 	wordHead *newHead = malloc(sizeof(wordHead));
 	newHead->word = malloc(strlen(wNode->word)+1);
-	strcpy(newHead>word, wNode->word);
-	newHead->doc = null; 
-	newHead->next = null;
+	strcpy(newHead->word, wNode->word);
+	newHead->doc = NULL; 
+	newHead->next = NULL;
 
 	// link head to the list
 	if (head){
@@ -261,6 +259,38 @@ wordHead addToList(wordNode *wNode, wordHead *head){
 	return newHead;
 
 }
+
+void finalPrint(docRank *first, char *pathToDir){
+	if(!first){
+		return;
+	}
+
+	// print doc name and rank
+	docRank *tmp = first;
+	while(tmp){
+		// find URL and print that too
+		printf("Doc ID: %s Rank: %i", tmp->docID, tmp->wordCount);
+		// get url
+		grabURL(tmp->docID, pathToDir);
+		tmp=tmp->next;
+	}
+	return;
+	
+}
+
+void grabURL(char *docName, char *pathToDir){
+	char name[30];
+	char string [10000];
+    sprintf(name, "%s%s", pathToDir, docName);
+    FILE *fp = fopen(name, "r");
+    if (fp){
+    	fgets(string, 10000, fp);
+    	printf(" URL: %s", string);
+    }
+    fclose(fp);
+    return;
+}
+
 
 
 

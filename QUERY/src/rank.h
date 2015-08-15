@@ -46,7 +46,9 @@ docRank* mergeSort(docRank *firstHead);
 int addDocToWord(docRank *dNode, wordHead *wNode);
 void printDoc(docRank *node);
 wordNode* returnWord(char *word, HashTable *Index);
-
+wordHead* addToList(wordNode *wNode, wordHead *head);
+void grabURL(char *docName, char *pathToDir);
+void finalPrint(docRank *first, char *pathToDir);
 
 
 

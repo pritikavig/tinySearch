@@ -51,10 +51,10 @@
 // ---------------- Private prototypes 
 
 
-void grabURL(char *docName, char *pathToDir);
+
 int parseLine(char *buffer, HashTable *wordIndex);
 int rebuildIndex(char *fileName, HashTable *wordIndex);
-int getWord(char *array, HashTable *Index);
+int getWord(char *array, HashTable *Index, char *pathToDir);
 /*====================================================================*/
 
 int main(int argc, char* argv[]){
@@ -94,7 +94,7 @@ int main(int argc, char* argv[]){
 		// get line 
 		// print line back 
 		if (fgets(line, big, stdin) != NULL){
-			getWord(line, Index);
+			getWord(line, Index, argv[1]);
 			
 
 
@@ -124,20 +124,9 @@ int main(int argc, char* argv[]){
 }
 
 
-void grabURL(char *docName, char *pathToDir){
-	char name[30];
-	char string [10000];
-    sprintf(name, "%s%s", pathToDir, docName);
-    FILE *fp = fopen(name, "r");
-    if (fp){
-    	fgets(string, 10000, fp);
-    	fputs(string, stdout);
-    }
-    fclose(fp);
-}
 
 
-int getWord(char *array, HashTable *Index){
+int getWord(char *array, HashTable *Index, char *pathToDir){
     const char s[2] = " ";
     char *token;
 
@@ -155,16 +144,22 @@ int getWord(char *array, HashTable *Index){
     		else {
     			strcpy(word, token);
     		}
-    		returnWord(word, Index);
+    		wordNode *tmp = returnWord(word, Index);
             printf( " %s\n", word);
+
 
             // now that I have the word I should: 
 
             // add docs to a doc rank list 
+            if(tmp){
+            	wordHead *tmp2 = addToList(tmp, NULL);
 
             // merge sort the list
+            	docRank *head = mergeSort(tmp2->doc);
+            
+            	finalPrint(head, pathToDir);
+            }
 
-            // grab the docs from the list and print the top 20
 
 
             token = strtok(NULL, s);
