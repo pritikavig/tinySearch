@@ -29,10 +29,15 @@
 //#include <../util/web.h>
 //#include <../util/common.h>
 #include <dirent.h> 						// loop through files in dir
-#include "rank.h"
+
 
 
 // ---------------- Local includes  e.g., "file.h"
+
+#include "rank.h"
+#include "hash.h"
+#include "file.h"
+#include "web.h"
 
 // ---------------- Constant definitions 
 #define big 1000
@@ -45,117 +50,66 @@
 
 // ---------------- Private prototypes 
 
-void printURL(char *docName, char *pathToDir);
+
 void grabURL(char *docName, char *pathToDir);
-int getWord(char array[big]);
+int parseLine(char *buffer, HashTable *wordIndex);
+int rebuildIndex(char *fileName, HashTable *wordIndex);
+int getWord(char *array, HashTable *Index);
 /*====================================================================*/
 
 int main(int argc, char* argv[]){
 
-
+	printf("Rebuilding index ...");
 	// check command line arguments
 	if(argc != 3){
 		perror("Incorrect number of arguments");
-		return 1;
+		return 0;
 	}
 	// use isFile from library and isdir
 
+	if(IsDir(argv[1]) == 0){
+		perror("Arg 2 must be a valid directory. Format: ./example/direc/");
+		return 0;
+	}
 
+	if(IsFile(argv[2]) == 0){
+		perror("Arg 3 must be a valid file.");
+		return 0;
+	}
 
 
 	// rebuild index with readFile
-
-	// TEST merge sort
-
-	if (argc == 3){
-		// head word node
-		char *word = "the";
-		wordHead *head = malloc(sizeof(wordHead));
-		head->word = word;
-		head->doc = NULL;
-
-		// create some docs and add them to a list
-		char *ID = "document1";
-		int count = 5;
-		docRank *node = malloc(sizeof(docRank));
-		node->docID = ID;
-		node->wordCount = count;
-		node->next=NULL;
-
-
-		addDocToWord(node, head);
-
-
-		// create some docs and add them to a list
-		char *ID1 = "document2";
-		int count1 = 7;
-		docRank *node1 = malloc(sizeof(docRank));
-		node1->docID = ID1;
-		node1->wordCount = count1;
-		node1->next=NULL;
-
-	
-		addDocToWord(node1, head);
-
-
-		// create some docs and add them to a list
-		char *ID3 = "document3";
-		int count3 = 3;
-		docRank *node3 = malloc(sizeof(docRank));
-		node3->docID = ID3;
-		node3->wordCount = count3;
-		node3->next=NULL;
-
-		addDocToWord(node3, head);
-
-
-		char *ID4 = "document4";
-		int count4 = 10;
-		docRank *node4 = malloc(sizeof(docRank));
-		node4->docID = ID4;
-		node4->wordCount = count4;
-		node4->next=NULL;
-
-
-		addDocToWord(node4, head);
-
-		printList(head);
-
-		docRank *newDoc = mergeSort(head->doc);
-		printf("\nsorted");
-		printDocs(newDoc);
-
-
-		printf("\n\n Testing dir function");
-		char *name = "hi";
-		printURL(name, argv[1]);
-
-	}
+	HashTable *Index = malloc(sizeof(HashTable));
+	initializeIndex(Index);
+	rebuildIndex(argv[2], Index);
+	printf("Rebuilt");
 
 
 	// start taking input from command line. run until quit 
 	while(1){
 		char *line = malloc(sizeof(char) * big);
-		// print "query"
-		fputs("<Query>", stdout);
 
-      
+		fputs("\n<Query>", stdout);
+
 		// get line 
 		// print line back 
 		if (fgets(line, big, stdin) != NULL){
+			getWord(line, Index);
+			
 
-         //fputs(line, stdout);
-			getWord(line);
 
+			// parse buffer by word
+
+
+		 // depth 1 searchable words: "aside", "programmable"
+		 // depth 1 words not in index: "maybe", "lovely"
          // V0: 
-         // parse word by word
          // normalize word
-         //look words up in hashtable 
+         // look words up in hashtable, print word and docs
          // create a big linked list
          // sort results
          // print top 20 + urls
 
-         // todo: write the parse word by word/ normalize word
 		}
 
 
@@ -169,31 +123,6 @@ int main(int argc, char* argv[]){
 
 }
 
-	// loop through files in directory
-	// while files in directory
-	// strcmpr docname, path/filename
-	//print out the first line of the file
-void printURL(char *docName, char *pathToDir)
-{
-	DIR *dirp = opendir(pathToDir);
-	if (!dirp){
-		printf("Error opening directory");
-		return;
-	}
-	struct dirent *dp;
-	while ((dp = readdir(dirp)) != NULL){
-		if(strcmp(dp->d_name, docName) == 0){
-			closedir(dirp);
-			printf("\n%s == %s", docName, dp->d_name);
-			// function to print first line
-			grabURL(docName, pathToDir);
-			return;
-		}
-	}
-	closedir(dirp);
-	printf("File not in directory");
-	return;
-}
 
 void grabURL(char *docName, char *pathToDir){
 	char name[30];
@@ -207,20 +136,156 @@ void grabURL(char *docName, char *pathToDir){
     fclose(fp);
 }
 
-int getWord(char *array){
-	const char s[2] = " ";
-	char *token;
 
-	token = strtok(array, s);
+int getWord(char *array, HashTable *Index){
+    const char s[2] = " ";
+    char *token;
 
-	while(token != NULL)
-	{
-		printf( " %s\n", token);
-		token = strtok(NULL, s);
-	}
+  
+    token = strtok(array, s);
 
-	return 0;
+ 
+    while(token != NULL)
+     {
+     		char *word = malloc(strlen(token)+1);
+     		NormalizeWord(token);
+     		if(token[strlen(token)+1] == '\0'){
+    			strncpy(word, token, strlen(token)-1);
+    		}
+    		else {
+    			strcpy(word, token);
+    		}
+    		returnWord(word, Index);
+            printf( " %s\n", word);
+
+            // now that I have the word I should: 
+
+            // add docs to a doc rank list 
+
+            // merge sort the list
+
+            // grab the docs from the list and print the top 20
+
+
+            token = strtok(NULL, s);
+            free(word);
+     }
+
+ 
+     return 0;
+ }
+////////////////////////////////// Function to rebuild an index from scratch ////////////////////////////////////
+
+
+//readLine
+// make hashtable out of file
+// modelled after code at: http://stackoverflow.com/questions/3081289/how-to-read-a-line-from-a-text-file-in-c-c
+
+int rebuildIndex(char *fileName, HashTable *wordIndex){
+   // open the index filename
+   FILE *fp = fopen(fileName, "r");
+
+   int size = 2048;  // pick an arbitrary starting size
+   int charCount;
+   int c;
+   char *buffer = (char *)malloc(size);
+
+   if(fp){
+      do{
+         charCount=0;
+         
+
+         do {
+            c=fgetc(fp);
+            if(c != EOF)
+            {
+              buffer[charCount++] = (char)c; 
+            } 
+            if(charCount >= size -1)
+            {
+               size = size*2; // double buffer size to prevent overflows if character count is close to size
+               buffer= (char*)realloc(buffer,size);
+               // 
+            }
+         }while(c != EOF && c != '\n');
+
+
+         buffer[charCount] = 0; // set end for protection
+
+         if(buffer){
+
+            parseLine(buffer, wordIndex);
+         }
+      } while (c != EOF);
+   }
+
+   fclose(fp);
+   free(buffer);
+
+return(0);
 }
+
+
+ int parseLine(char *buffer, HashTable *wordIndex){
+   // parse line and add nodes
+   const char s[2] = " ";
+   char *token = strtok(buffer, s);
+   int count = 0;
+   char *word;
+   char *filename;
+   int filecount;
+
+   while (token != NULL){
+      
+      // add first token to as word node
+      // if count = 0 : create word node, increment count
+      if(0 == count){
+         word = malloc(strlen(token)+1);
+         strcpy(word, token);
+         
+         count = count + 1;
+
+
+      }
+      // else: if count is odd, create doc node, save doc name somewhere, increment count
+      else if (count%2){
+         filename = malloc(sizeof(token)+1);
+         strcpy(filename, token); 
+         count = count +1;
+
+
+      }
+      else if(count%2 == 0){
+      // else: if count is even, add number to value of doc node saved, set doc name to null, increment count
+         
+         filecount = atoi(token);
+       
+         int i = 0;
+         
+         while ( i < filecount){
+            
+            addToHash(word, filename, wordIndex);
+            i++;
+            
+         }
+         
+         count = count +1;
+         i = 0;
+         free(filename);
+
+
+      }
+      
+      // create doc node and add 
+      token = strtok(NULL, s);
+   }
+   
+   free(word);
+   return(0);
+}
+
+
+
 
 
 

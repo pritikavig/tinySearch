@@ -25,6 +25,7 @@
 // ---------------- Local includes  e.g., "file.h"
 
 #include "rank.h"  
+#include "hash.h"
 
 // ---------------- Constant definitions 
 
@@ -164,10 +165,10 @@ void printList(wordHead *wNode){
 	if (!wNode->doc){
 		return;
 	}
-	printDocs(wNode->doc);
+	printDoc(wNode->doc);
 }
 
-void printDocs(docRank *node){
+void printDoc(docRank *node){
 
 	docRank *tmpDoc = node;
 	while(tmpDoc){
@@ -178,11 +179,88 @@ void printDocs(docRank *node){
 	}
 }
 
-///////////////////////////////////////////////// FUNCTIONS TO TEST DELETE //////////////////////////////////
+///////////////////////////////////////////////// function to return word node queried //////////////////////////////////
 
 
+wordNode* returnWord(char *word, HashTable *Index){
+	if (!Index){
+		printf("\n No index exists");
+		return NULL;
+	}
+
+	if (!word){
+		printf("\n Not a valid word");
+		return NULL;
+	}
 
 
+	// else find and return the word node queried
+	unsigned long key = JenkinsHash(word, MAX_HASH_SLOT);
+
+	if (Index->table[key] == NULL){
+		printf("Word not in index - no hits");
+		return NULL;
+	}
+
+	wordNode *tmp = Index->table[key];
+	while(tmp){
+
+		// if string matches, return node;
+		if (strcmp(tmp->word, word)==0){
+			printf("found word");
+			return tmp;
+		}
+
+		tmp = tmp->next;
+	}
+
+	printf("No match");
+	return NULL;
+}
+
+
+////////////////////////////////////// Functions to create list //////////////////////////////
+
+wordHead addToList(wordNode *wNode, wordHead *head){
+
+	// make word Node a word head
+	if (!wNode){
+		return;
+	}
+
+	// make a wordHead
+	wordHead *newHead = malloc(sizeof(wordHead));
+	newHead->word = malloc(strlen(wNode->word)+1);
+	strcpy(newHead>word, wNode->word);
+	newHead->doc = null; 
+	newHead->next = null;
+
+	// link head to the list
+	if (head){
+		head->next = newHead;
+	}
+
+	// for docs on the wordNode, add docs to list
+
+	if (wNode->doc){
+		// add all docs to list
+		docNode *tmp = wNode->doc;
+		while(tmp){
+			docRank *newRank = malloc(sizeof(docRank));
+			newRank->docID = malloc(strlen(tmp->docID)+1);
+			strcpy(newRank->docID, tmp->docID);
+			newRank->wordCount = tmp->wordCount;
+			newRank->next = NULL;
+
+			addDocToWord(newRank, newHead);
+
+			tmp=tmp->next;
+		}
+	}
+
+	return newHead;
+
+}
 
 
 

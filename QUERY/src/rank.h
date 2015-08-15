@@ -16,6 +16,7 @@
 #define INC_FILE_H
 
 // ---------------- Prerequisites e.g., Requires "math.h"
+#include "hash.h"
 
 // ---------------- Constants
 
@@ -30,6 +31,7 @@ typedef struct docRank {
 typedef struct wordHead {
 	char *word;
 	struct docRank *doc;
+	struct wordHead *next;
 } wordHead;
 
 // ---------------- Public Variables
@@ -42,7 +44,8 @@ docRank* split (docRank *head);
 docRank* sort(docRank *a, docRank *b);
 docRank* mergeSort(docRank *firstHead);
 int addDocToWord(docRank *dNode, wordHead *wNode);
-void printDocs(docRank *node);
+void printDoc(docRank *node);
+wordNode* returnWord(char *word, HashTable *Index);
 
 
 
