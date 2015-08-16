@@ -86,28 +86,37 @@ int main(int argc, char* argv[]){
 
 	printIndex(Index);
 
+
+
 	// start taking input from command line. run until quit 
 	while(1){
-		char *line = malloc(sizeof(char) * big);
-		char*buffer = malloc(sizeof(char)*big);
+    char line[big];
+    char*buffer = malloc(sizeof(char)*big);
+
 
 		fputs("\n<Query>", stdout);
 
 		// get line 
 		// print line back 
 		if (fgets(line, big, stdin) != NULL){
-			strncpy(buffer, line, (strlen(line)-1));
-			getWord(buffer, Index, argv[1]);
+
+			   line[strlen(line)-1]='\0';
+         strcpy(buffer, line);
+			   getWord(buffer, Index, argv[1]);
+ 
+      
 
 		}
 
 
 		if(feof(stdin)){
 			cleanIndex(Index);
+      //free(line);
+      //free(buffer);
 			free(Index);
         	return 0;
       }
-		
+
 	}
 
 	return 0;
@@ -135,8 +144,6 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
    
   
     token = strtok(array, s);
-
-int track = 0;
  
     while(token != NULL)
      {
@@ -156,23 +163,24 @@ int track = 0;
     			//normalize the word
     			NormalizeWord(word);
     			wordNode *tmp = returnWord(word, Index);
-          printf( "\n%s\n", word);
+                if(!tmp){
+                  printf("\nOne or more of the words that you entered is not in our index.");
+                  return 1;
+                }
 
 
             	   if(flag == 0)
                  {
-            			  andToList(tmp, tmpList);
-                    printf("\nand the docs (take the intersection)\n");
-                    finalPrint(tmpList->doc, pathToDir);
-            			 
+            			  andToList(tmp, tmpList);            			 
             	   }
-
 
             	   else
                  {
-            		    //cpyList(tmpList, finalList);
-            		    //addToList(tmp, tmpList);
-                    printf("\nOR: clena and then just and the docs");
+                    docRank *temp= mergeSort(tmpList->doc);   
+                    finalPrint(temp, pathToDir);
+                    printf("\nOR\n");
+                    tmpList->doc=NULL;
+            		    andToList(tmp, tmpList);
             		    flag = 0;
 
             	   }
@@ -183,15 +191,24 @@ int track = 0;
             free(word);
      }
 
-    mvList(tmpList, finalList);
-
-    printf("\nRESULTS (FINAL):\n");
-    docRank *head = mergeSort(finalList->doc);        
+    docRank *head = mergeSort(tmpList->doc);        
     finalPrint(head, pathToDir);
 
  
      return 0;
  }
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////// Function to rebuild an index from scratch ////////////////////////////////////
 
 

@@ -4,11 +4,11 @@ CC = gcc
 CFlAGS = -Wall -pedantic -std=c11
 
 # my project details
-LIBFLAG = -lcurl -lm
+LIBFLAG = -lm
 
 EXEC = query
-OBJS = rank.o file.o hash.o web.o
-SRCS = ./src/query.c  ./src/rank.c ./src/file.c ./src/hash.c ./src/web.c 
+OBJS = rank.o 
+SRCS = ./src/query.c  ./src/rank.c 
 MAIN = ./src/query.c
 
 
@@ -20,7 +20,7 @@ UTILC=$(UTILDIR)file.c $(UTILDIR)web.c $(UTILDIR)hash.c
 UTILH=$(UTILC:.c=.h) $(UTILDIR)common.h
 
 query: $(SRCS) $(UTILLIB)
-	$(CC) $(CFLAGS) -o query $(SRCS) $(LIBFLAG)
+	$(CC) $(CFLAGS) -o query $(SRCS) -L$(UTILDIR) $(UTILFLAG) -I$(UTILDIR)
 debug: $(SRCS)
 	$(CC) $(CFLAGS) -g -ggdb -c $(SRCS)
 	$(CC) $(CFLAGS) -g -ggdb -o $(EXEC) $(MAIN) $(OBJS)
@@ -30,4 +30,3 @@ clean:
 	rm -f *.o
 	rm -f ./src/*.o
       
- #-L$(UTILDIR) $(UTILFLAG)

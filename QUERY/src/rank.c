@@ -234,18 +234,22 @@ void andToList(wordNode *word, wordHead *head){
 
 		// else loop through doc nodes
 		// loop through listhead hodes
-
 		while(tmpDoc){
 			
 			while(tmpRank){
 
+
 				// on a match, increment count
 				if(strcmp(tmpDoc->docID, tmpRank->docID)==0){
 					tmpRank->wordCount=tmpRank->wordCount + tmpDoc->wordCount;
-					// add to a temp list to hold intersection
-					printf("added doc: %s", tmpRank->docID);
-					tmpRank->next = NULL;
-					addRank(tmpRank, tmpHead);
+					// create a new node and add it
+					docRank *newRank = malloc(sizeof(docRank));
+					newRank->docID = malloc(strlen(tmpRank->docID)+1);
+					strcpy(newRank->docID, tmpRank->docID);
+					newRank->wordCount = tmpRank->wordCount;
+					newRank->next=NULL;
+
+					addRank(newRank, tmpHead);
 
 				}
 
@@ -330,14 +334,46 @@ void mvList(wordHead *tmpList, wordHead *finalList){
 		return;
 	}
 
- return;
+	docRank *tmpRank = tmpList->doc;
+	docRank *finalRank = finalList->doc;
+	wordHead *buffer;
+	buffer->doc=NULL;
 
-	//loop through nodes in tmpList
-	// loop through nodes in final list
-			// if match, increment final list count
-			// else add tmp node to a buffer  list
 
-	// add buffer to end of final list
+	while(tmpRank){
+		while(finalRank){
+
+			// if there is a collision, increment count
+			if(strcmp(tmpRank->docID, finalRank->docID)==0){
+				finalRank->wordCount=finalRank->wordCount + tmpRank->wordCount;
+			}
+			else{
+				// else copy the rank node and add to buffer
+				docRank *newRank = malloc(sizeof(docRank));
+				newRank->docID = malloc(strlen(tmpRank->docID)+1);
+				strcpy(newRank->docID, tmpRank->docID);
+				newRank->wordCount = tmpRank->wordCount;
+				newRank->next=NULL;
+
+				addRank(newRank, buffer);
+			}
+
+			finalRank=finalRank->next;
+		}
+		tmpRank=tmpRank->next;
+	}
+
+	if(buffer->doc){
+		// loop through final list until last node and point its next 
+		docRank *endFinal = finalList->doc;
+		while(endFinal->next){
+			endFinal=endFinal->next;
+		}
+		endFinal->next = buffer->doc;
+		return;
+	}
+	return;
+	
 }
 
 
