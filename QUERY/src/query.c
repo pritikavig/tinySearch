@@ -95,26 +95,14 @@ int main(int argc, char* argv[]){
 		// print line back 
 		if (fgets(line, big, stdin) != NULL){
 			getWord(line, Index, argv[1]);
-			
-
-
-			// parse buffer by word
-
-
-		 // depth 1 searchable words: "aside", "programmable"
-		 // depth 1 words not in index: "maybe", "lovely"
-         // V0: 
-         // normalize word
-         // look words up in hashtable, print word and docs
-         // create a big linked list
-         // sort results
-         // print top 20 + urls
 
 		}
 
 
 		if(feof(stdin)){
-         return 0;
+			cleanIndex(Index);
+			free(Index);
+        	return 0;
       }
 		
 	}
@@ -129,7 +117,7 @@ int main(int argc, char* argv[]){
 int getWord(char *array, HashTable *Index, char *pathToDir){
     const char s[2] = " ";
     char *token;
-
+    int flag = 0; // keeps track of logical operators 0 = AND 1 = OR
   
     token = strtok(array, s);
 
@@ -137,28 +125,45 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     while(token != NULL)
      {
      		char *word = malloc(strlen(token)+1);
-     		NormalizeWord(token);
+     		
      		if(token[strlen(token)+1] == '\0'){
     			strncpy(word, token, strlen(token)-1);
     		}
     		else {
     			strcpy(word, token);
     		}
-    		wordNode *tmp = returnWord(word, Index);
-            printf( " %s\n", word);
+    		if(strcmp(word, "AND")==0){
+    			flag = 0;
+    		}
+    		else if(strcmp(word, "OR")==0){
+    			flag = 1;
+    		}
+    		else {
+    			// pseudocode :
+    			// check flags, if AND -> intersection, else if OR -> union
+    			// plan 
+    			NormalizeWord(word);
+    			wordNode *tmp = returnWord(word, Index);
+            	printf( " %s\n", word);
+            	if(flag == 0){
+            		//take the intersection
+            		printf("INTERSECTION");
+            	}
+            	else{
+            		// take the union
+            		printf("UNION");
+            	}
 
-
-            // now that I have the word I should: 
-
-            // add docs to a doc rank list 
-            if(tmp){
-            	wordHead *tmp2 = addToList(tmp, NULL);
+            	// add docs to a doc rank list 
+            	if(tmp){
+            		wordHead *tmp2 = addToList(tmp, NULL);
 
             // merge sort the list
-            	docRank *head = mergeSort(tmp2->doc);
+            		docRank *head = mergeSort(tmp2->doc);
             
-            	finalPrint(head, pathToDir);
-            }
+            		finalPrint(head, pathToDir);
+            	}
+        	}
 
 
 
