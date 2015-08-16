@@ -211,7 +211,6 @@ void grabURL(char *docName, char *pathToDir){
 ////////////////////////////////////////////// Functions to create list //////////////////////////////////////
 
 void andToList(wordNode *word, wordHead *head){
-	printf("\nEntered AndtoList");
 	if (!head){
 		return;
 	}
@@ -221,7 +220,6 @@ void andToList(wordNode *word, wordHead *head){
 
 	// if there is no word attached, add all docs!
 	if (!head->doc){
-		printf("\n1st: Adding to head");
 		addtoHead(word, head);
 		return;
 	}
@@ -240,13 +238,9 @@ void andToList(wordNode *word, wordHead *head){
 			
 			while(tmpDoc){
 
-				printf("\nLooping through to check for intersect");
-				printf("\ncomparing: %s, %s", tmpDoc->docID, tmpRank->docID);
-
 				// on a match, increment count
 				if(strcmp(tmpDoc->docID, tmpRank->docID)==0){
 					tmpRank->wordCount=tmpRank->wordCount + tmpDoc->wordCount;
-					printf("\nincrement word Count");
 					docRank *newRank = malloc(sizeof(docRank));
 					newRank->docID = malloc(strlen(tmpRank->docID)+1);
 					strcpy(newRank->docID, tmpRank->docID);
@@ -338,47 +332,15 @@ void mvList(wordHead *tmpList, wordHead *finalList){
 		tmpList->doc = NULL;
 		return;
 	}
-
-	docRank *tmpRank = tmpList->doc;
-	docRank *finalRank = finalList->doc;
-	wordHead *buffer;
-	buffer->doc=NULL;
-
-
-	while(tmpRank){
-		while(finalRank){
-
-			// if there is a collision, increment count
-			if(strcmp(tmpRank->docID, finalRank->docID)==0){
-				finalRank->wordCount=finalRank->wordCount + tmpRank->wordCount;
-			}
-			else{
-				// else copy the rank node and add to buffer
-				docRank *newRank = malloc(sizeof(docRank));
-				newRank->docID = malloc(strlen(tmpRank->docID)+1);
-				strcpy(newRank->docID, tmpRank->docID);
-				newRank->wordCount = tmpRank->wordCount;
-				newRank->next=NULL;
-
-				addRank(newRank, buffer);
-			}
-
-			finalRank=finalRank->next;
+	else{
+		// find the end of final, add tmp to it
+		docRank *tmpDoc = finalList->doc;
+		while(tmpDoc->next){
+			tmpDoc=tmpDoc->next;
 		}
-		tmpRank=tmpRank->next;
-	}
-
-	if(buffer->doc){
-		// loop through final list until last node and point its next 
-		docRank *endFinal = finalList->doc;
-		while(endFinal->next){
-			endFinal=endFinal->next;
-		}
-		endFinal->next = buffer->doc;
+		tmpDoc->next=tmpList->doc;
 		return;
 	}
-	return;
-	
 }
 
 
