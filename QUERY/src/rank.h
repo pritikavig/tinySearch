@@ -51,6 +51,7 @@ void finalPrint(docRank *first, char *pathToDir);
 void andToList(wordNode *word, wordHead *head);
 void addtoHead(wordNode *word, wordHead *head);
 void addRank(docRank *docR, wordHead *tmpHead);
+void mvList(wordHead *tmpList, wordHead *finalList);
 
 
 

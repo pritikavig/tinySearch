@@ -243,6 +243,8 @@ void andToList(wordNode *word, wordHead *head){
 				if(strcmp(tmpDoc->docID, tmpRank->docID)==0){
 					tmpRank->wordCount=tmpRank->wordCount + tmpDoc->wordCount;
 					// add to a temp list to hold intersection
+					printf("added doc: %s", tmpRank->docID);
+					tmpRank->next = NULL;
 					addRank(tmpRank, tmpHead);
 
 				}
@@ -314,6 +316,29 @@ void addRank(docRank *docR, wordHead *tmpHead){
 	return;
 }
 
+
+void mvList(wordHead *tmpList, wordHead *finalList){
+	if(!tmpList){
+		return;
+	}
+	if(!finalList){
+		return;
+	}
+	if(finalList->doc == NULL){
+		finalList->doc = tmpList->doc;
+		tmpList->doc = NULL;
+		return;
+	}
+
+ return;
+
+	//loop through nodes in tmpList
+	// loop through nodes in final list
+			// if match, increment final list count
+			// else add tmp node to a buffer  list
+
+	// add buffer to end of final list
+}
 
 
 

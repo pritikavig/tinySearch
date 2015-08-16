@@ -183,9 +183,10 @@ int track = 0;
             free(word);
      }
 
+    mvList(tmpList, finalList);
 
     printf("\nRESULTS (FINAL):\n");
-    docRank *head = mergeSort(tmpList->doc);        
+    docRank *head = mergeSort(finalList->doc);        
     finalPrint(head, pathToDir);
 
  
