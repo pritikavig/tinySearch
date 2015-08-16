@@ -343,5 +343,38 @@ void mvList(wordHead *tmpList, wordHead *finalList){
 	}
 }
 
+void combineNodes(docRank *list){
+	// increment word count for matching docs in sorted list
+	if (!list){
+		return;
+	}
+	if(!list->next){
+		return;
+	}
+
+	docRank *firstDoc = list;
+	docRank *secondDoc = list->next;
+
+	while(secondDoc){
+		if(strcmp(firstDoc->docID, secondDoc->docID)==0){
+			//increment word count of first doc
+			firstDoc->wordCount = firstDoc->wordCount + secondDoc->wordCount;
+			firstDoc->next = secondDoc->next;
+			// link first doc to second docs next
+		}
+		//first doc = first doc next
+		if(firstDoc->next != NULL){
+			firstDoc= firstDoc->next;
+			secondDoc= firstDoc->next;
+		}
+
+		else{
+			return;
+		}
+	
+	}
+	return;
+}
+
 
 

@@ -130,6 +130,7 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     const char s[2] = " ";
     char *token;
     int flag = 0; // keeps track of logical operators 0 = AND 1 = OR
+    int track = 0;
   
 
     // make a word head to keep track of tmp list
@@ -147,6 +148,7 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
  
     while(token != NULL)
      {
+        
      		char *word = malloc(strlen(token)+1);
      		strcpy(word, token);
 
@@ -163,6 +165,7 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     			//normalize the word
     			NormalizeWord(word);
     			wordNode *tmp = returnWord(word, Index);
+          track = track +1;
                 if(!tmp){
                   printf("\nOne or more of the words that you entered is not in our index.");
                   return 1;
@@ -170,16 +173,20 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
 
 
             	   if(flag == 0)
-                 {
-            			  andToList(tmp, tmpList);            			 
+                 { 
+                    if(!tmpList->doc && track > 1){
+                      printf("At least one combination of arguments has no intersection\n");
+                      return 0;
+                    }
+                    else{
+            			  andToList(tmp, tmpList);   
+                    }         			 
             	   }
 
             	   else
                  {
-                    
+                    track = 1;
                     mvList(tmpList, finalList);
-                    //finalPrint(tmpList->doc, pathToDir);
-                    //printf("\nEntered OR\n");
                     tmpList->doc=NULL;
             		    andToList(tmp, tmpList);
             		    flag = 0;
@@ -187,12 +194,13 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
             	   }
 
         	}
-
             token = strtok(NULL, s);
+           
             free(word);
      }
     mvList(tmpList, finalList);
-    docRank *head = mergeSort(finalList->doc);        
+    docRank *head = mergeSort(finalList->doc);    
+    combineNodes(head);    
     finalPrint(head, pathToDir);
 
  
