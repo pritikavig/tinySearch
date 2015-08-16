@@ -176,9 +176,10 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
 
             	   else
                  {
-                    docRank *temp= mergeSort(tmpList->doc);   
-                    finalPrint(temp, pathToDir);
-                    printf("\nOR\n");
+                    
+                    //mvList(tmpList, finalList);
+                    finalPrint(tmpList->doc, pathToDir);
+                    printf("\nEntered OR\n");
                     tmpList->doc=NULL;
             		    andToList(tmp, tmpList);
             		    flag = 0;
@@ -190,7 +191,7 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
             token = strtok(NULL, s);
             free(word);
      }
-
+    //mvList(tmpList, finalList);
     docRank *head = mergeSort(tmpList->doc);        
     finalPrint(head, pathToDir);
 

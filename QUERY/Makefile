@@ -21,9 +21,10 @@ UTILH=$(UTILC:.c=.h) $(UTILDIR)common.h
 
 query: $(SRCS) $(UTILLIB)
 	$(CC) $(CFLAGS) -o query $(SRCS) -L$(UTILDIR) $(UTILFLAG) -I$(UTILDIR)
-debug: $(SRCS)
-	$(CC) $(CFLAGS) -g -ggdb -c $(SRCS)
-	$(CC) $(CFLAGS) -g -ggdb -o $(EXEC) $(MAIN) $(OBJS)
+debug: $(SRCS) $(UTILLIB)
+	$(CC) $(CFLAGS) -g -ggdb -c $(SRCS) -L$(UTILDIR) $(UTILFLAG) -I$(UTILDIR)
+	$(CC) $(CFLAGS) -g -ggdb -o $(EXEC) $(MAIN) $(OBJS) -L$(UTILDIR) $(UTILFLAG) -I$(UTILDIR)
+
 $(UTILLIB): $(UTILC) $(UTILH)
 	cd $(UTILDIR); make
 clean:

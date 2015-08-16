@@ -197,7 +197,7 @@ wordNode* returnWord(char *word, HashTable *Index){
 void grabURL(char *docName, char *pathToDir){
 	char name[30];
 	char string [10000];
-    sprintf(name, "%s%s", pathToDir, docName);
+    sprintf(name, "%s/%s", pathToDir, docName);
     FILE *fp = fopen(name, "r");
     if (fp){
     	fgets(string, 10000, fp);
@@ -211,6 +211,7 @@ void grabURL(char *docName, char *pathToDir){
 ////////////////////////////////////////////// Functions to create list //////////////////////////////////////
 
 void andToList(wordNode *word, wordHead *head){
+	printf("\nEntered AndtoList");
 	if (!head){
 		return;
 	}
@@ -220,6 +221,7 @@ void andToList(wordNode *word, wordHead *head){
 
 	// if there is no word attached, add all docs!
 	if (!head->doc){
+		printf("\n1st: Adding to head");
 		addtoHead(word, head);
 		return;
 	}
@@ -234,15 +236,17 @@ void andToList(wordNode *word, wordHead *head){
 
 		// else loop through doc nodes
 		// loop through listhead hodes
-		while(tmpDoc){
+		while(tmpRank){
 			
-			while(tmpRank){
+			while(tmpDoc){
 
+				printf("\nLooping through to check for intersect");
+				printf("\ncomparing: %s, %s", tmpDoc->docID, tmpRank->docID);
 
 				// on a match, increment count
 				if(strcmp(tmpDoc->docID, tmpRank->docID)==0){
 					tmpRank->wordCount=tmpRank->wordCount + tmpDoc->wordCount;
-					// create a new node and add it
+					printf("\nincrement word Count");
 					docRank *newRank = malloc(sizeof(docRank));
 					newRank->docID = malloc(strlen(tmpRank->docID)+1);
 					strcpy(newRank->docID, tmpRank->docID);
@@ -253,9 +257,10 @@ void andToList(wordNode *word, wordHead *head){
 
 				}
 
-				tmpRank=tmpRank->next;
+				tmpDoc=tmpDoc->next;
 			}
-			tmpDoc=tmpDoc->next;
+			tmpDoc=word->doc;
+			tmpRank=tmpRank->next;
 		}
 		// at the end reset the list to the tmp
 		head->doc = tmpHead->doc;
