@@ -38,7 +38,6 @@ typedef struct wordHead {
 
 // ---------------- Prototypes/Macros
 
-int helloWorld(char *input);
 void printList(wordHead *wNode);
 docRank* split (docRank *head);
 docRank* sort(docRank *a, docRank *b);
@@ -49,6 +48,8 @@ wordNode* returnWord(char *word, HashTable *Index);
 wordHead* addToList(wordNode *wNode, wordHead *head);
 void grabURL(char *docName, char *pathToDir);
 void finalPrint(docRank *first, char *pathToDir);
+void andToList(wordNode *wNode, wordHead *head, int turn);
+void cpyList(wordHead *tmp, wordHead *final);
 
 
 

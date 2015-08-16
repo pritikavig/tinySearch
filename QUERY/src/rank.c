@@ -41,11 +41,6 @@
 
 // ---------------- Public functions
 
-int helloWorld(char *input){
-	printf("Hello Wolrd");
-	return 1;
-}
-
 /*
 * Function to add a doc to a word linked list 
 */
@@ -211,8 +206,6 @@ wordNode* returnWord(char *word, HashTable *Index){
 
 		tmp = tmp->next;
 	}
-
-	printf("No match");
 	return NULL;
 }
 
@@ -226,16 +219,14 @@ wordHead* addToList(wordNode *wNode, wordHead *head){
 		return NULL;
 	}
 
-	// make a wordHead
-	wordHead *newHead = malloc(sizeof(wordHead));
-	newHead->word = malloc(strlen(wNode->word)+1);
-	strcpy(newHead->word, wNode->word);
-	newHead->doc = NULL; 
-	newHead->next = NULL;
+	if (wNode){
+		printf("\nentered add to list with %s", wNode->word);
+	}
+
 
 	// link head to the list
-	if (head){
-		head->next = newHead;
+	if (!head){
+		return NULL;	
 	}
 
 	// for docs on the wordNode, add docs to list
@@ -250,13 +241,13 @@ wordHead* addToList(wordNode *wNode, wordHead *head){
 			newRank->wordCount = tmp->wordCount;
 			newRank->next = NULL;
 
-			addDocToWord(newRank, newHead);
-
+			addDocToWord(newRank, head);
+			printf("\nadded a doc");
 			tmp=tmp->next;
 		}
 	}
 
-	return newHead;
+	return head;
 
 }
 
@@ -291,6 +282,78 @@ void grabURL(char *docName, char *pathToDir){
     return;
 }
 
+void andToList(wordNode *wNode, wordHead *head, int turn){
+	if(!wNode){
+		return;
+	}
+
+	if(!head){
+		return;
+	}
+
+	if(!wNode->doc){
+		return;
+	}
+
+	
+
+
+	if (turn == 0){
+		// add all to head
+		addToList(wNode, head);
+		return;
+	}
+
+	else {
+		docNode *tmpDoc = wNode->doc;
+		wordHead *tmpHead = malloc(sizeof(wordHead));
+		tmpHead->word = "tmp";
+		tmpHead->next = NULL;
+		tmpHead->doc= NULL;
+		// for each doc attached to wordNode
+		while(tmpDoc){
+			// loop through word head
+			docRank *docR = head->doc;
+			while(docR){
+				// on string compare
+				if(strcmp(docR->docID, tmpDoc->docID)==0){
+					docR->wordCount = docR->wordCount+tmpDoc->wordCount;
+					addDocToWord(docR, tmpHead);
+				}
+				//ELSE FREE DOCR NODES
+				docR=docR->next;
+			}
+			tmpDoc=tmpDoc->next;
+		}
+		head->doc = tmpHead->doc;
+		return;
+		
+	}
+	return;
+
+}
+
+void cpyList(wordHead *tmp, wordHead *final){
+	// if final is null, just link final head to end head 
+	if(!final){
+		return;
+	}
+
+	if(!tmp){
+		return;
+	}
+
+	docRank *first = tmp->doc;
+
+	docRank *tmpDoc = first;
+	while(tmpDoc){
+		printf("\nadding Doc ID: %s Rank: %i\n", tmpDoc->docID, tmpDoc->wordCount);
+		addDocToWord(tmpDoc, final);
+		tmpDoc=tmpDoc->next;
+	}
+	return;
+
+}
 
 
 

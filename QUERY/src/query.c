@@ -84,17 +84,20 @@ int main(int argc, char* argv[]){
 	rebuildIndex(argv[2], Index);
 	printf("Rebuilt");
 
+	printIndex(Index);
 
 	// start taking input from command line. run until quit 
 	while(1){
 		char *line = malloc(sizeof(char) * big);
+		char*buffer = malloc(sizeof(char)*big);
 
 		fputs("\n<Query>", stdout);
 
 		// get line 
 		// print line back 
 		if (fgets(line, big, stdin) != NULL){
-			getWord(line, Index, argv[1]);
+			strncpy(buffer, line, (strlen(line)-1));
+			getWord(buffer, Index, argv[1]);
 
 		}
 
@@ -118,58 +121,95 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     const char s[2] = " ";
     char *token;
     int flag = 0; // keeps track of logical operators 0 = AND 1 = OR
+    int turn = 0; // keepp track of words for and
+
+    // make a word head to keep track of tmp list
+    wordHead *tmpList = malloc(sizeof(wordHead));
+    tmpList->word = "temp";
+    tmpList->next=NULL;
+    tmpList->doc=NULL;
+
+    // make a word head to keep track of final list
+    wordHead *finalList = malloc(sizeof(wordHead));
+    finalList->word = "final";
+    finalList->next=NULL;
+    finalList->doc=NULL;
+   
   
     token = strtok(array, s);
 
+int track = 0;
  
     while(token != NULL)
      {
      		char *word = malloc(strlen(token)+1);
-     		
-     		if(token[strlen(token)+1] == '\0'){
-    			strncpy(word, token, strlen(token)-1);
-    		}
-    		else {
-    			strcpy(word, token);
-    		}
+     		strcpy(word, token);
+
+    		// check for logical operators
     		if(strcmp(word, "AND")==0){
     			flag = 0;
     		}
-    		else if(strcmp(word, "OR")==0){
+    	    else if(strcmp(word, "OR")==0){
     			flag = 1;
     		}
+
+    		// otherwise, find docs!
     		else {
-    			// pseudocode :
-    			// check flags, if AND -> intersection, else if OR -> union
-    			// plan 
+    			//normalize the word
     			NormalizeWord(word);
     			wordNode *tmp = returnWord(word, Index);
             	printf( " %s\n", word);
+
+            	// if it is an intersection
             	if(flag == 0){
-            		//take the intersection
-            		printf("INTERSECTION");
+            		// add docs to a doc rank list 
+            		if(tmp){
+            			andToList(tmp, tmpList, turn);
+            			turn = turn +1;
+
+            		}
             	}
+
+
             	else{
-            		// take the union
-            		printf("UNION");
+            		//flush tmp list to final
+            		cpyList(tmpList, finalList);
+            		turn = 0;
+            		// add  OR to temp
+            		addToList(tmp, tmpList);
+            		//printf("\n TEST FINAL:\n");
+            		//finalPrint(finalList->doc, pathToDir);
+            		flag = 0;
+
             	}
 
-            	// add docs to a doc rank list 
-            	if(tmp){
-            		wordHead *tmp2 = addToList(tmp, NULL);
-
-            // merge sort the list
-            		docRank *head = mergeSort(tmp2->doc);
-            
-            		finalPrint(head, pathToDir);
-            	}
         	}
 
 
+        	//DEBUG
+        	//printf("\n word %i TMP LIST: \n", track);
+        	//finalPrint(tmpList->doc, pathToDir);
+        	//printf(" \n FINAL LIST @now\n");
+        	//finalPrint(finalList->doc, pathToDir);
+        	//track++;
 
             token = strtok(NULL, s);
             free(word);
      }
+
+    // merge sort the list
+     //add or to temp
+    printf("\ntesting TMP list\n");
+    docRank *printL = mergeSort(tmpList->doc);
+    finalPrint(printL, pathToDir);
+    printf("\nEnd Test");
+
+
+    cpyList(tmpList, finalList);
+
+    printf("\nRESULTS (FINAL):\n");
+    docRank *head = mergeSort(finalList->doc);        
+    finalPrint(finalList->doc, pathToDir);
 
  
      return 0;
