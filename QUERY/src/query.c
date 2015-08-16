@@ -121,18 +121,16 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     const char s[2] = " ";
     char *token;
     int flag = 0; // keeps track of logical operators 0 = AND 1 = OR
-    int turn = 0; // keepp track of words for and
+  
 
     // make a word head to keep track of tmp list
     wordHead *tmpList = malloc(sizeof(wordHead));
     tmpList->word = "temp";
-    tmpList->next=NULL;
     tmpList->doc=NULL;
 
     // make a word head to keep track of final list
     wordHead *finalList = malloc(sizeof(wordHead));
     finalList->word = "final";
-    finalList->next=NULL;
     finalList->doc=NULL;
    
   
@@ -158,58 +156,37 @@ int track = 0;
     			//normalize the word
     			NormalizeWord(word);
     			wordNode *tmp = returnWord(word, Index);
-            	printf( " %s\n", word);
-
-            	// if it is an intersection
-            	if(flag == 0){
-            		// add docs to a doc rank list 
-            		if(tmp){
-            			andToList(tmp, tmpList, turn);
-            			turn = turn +1;
-
-            		}
-            	}
+          printf( "\n%s\n", word);
 
 
-            	else{
-            		//flush tmp list to final
-            		cpyList(tmpList, finalList);
-            		turn = 0;
-            		// add  OR to temp
-            		addToList(tmp, tmpList);
-            		//printf("\n TEST FINAL:\n");
-            		//finalPrint(finalList->doc, pathToDir);
-            		flag = 0;
+            	   if(flag == 0)
+                 {
+            			  andToList(tmp, tmpList);
+                    printf("\nand the docs (take the intersection)\n");
+                    finalPrint(tmpList->doc, pathToDir);
+            			 
+            	   }
 
-            	}
+
+            	   else
+                 {
+            		    //cpyList(tmpList, finalList);
+            		    //addToList(tmp, tmpList);
+                    printf("\nOR: clena and then just and the docs");
+            		    flag = 0;
+
+            	   }
 
         	}
-
-
-        	//DEBUG
-        	//printf("\n word %i TMP LIST: \n", track);
-        	//finalPrint(tmpList->doc, pathToDir);
-        	//printf(" \n FINAL LIST @now\n");
-        	//finalPrint(finalList->doc, pathToDir);
-        	//track++;
 
             token = strtok(NULL, s);
             free(word);
      }
 
-    // merge sort the list
-     //add or to temp
-    printf("\ntesting TMP list\n");
-    docRank *printL = mergeSort(tmpList->doc);
-    finalPrint(printL, pathToDir);
-    printf("\nEnd Test");
-
-
-    cpyList(tmpList, finalList);
 
     printf("\nRESULTS (FINAL):\n");
-    docRank *head = mergeSort(finalList->doc);        
-    finalPrint(finalList->doc, pathToDir);
+    docRank *head = mergeSort(tmpList->doc);        
+    finalPrint(head, pathToDir);
 
  
      return 0;

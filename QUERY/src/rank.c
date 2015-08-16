@@ -41,40 +41,7 @@
 
 // ---------------- Public functions
 
-/*
-* Function to add a doc to a word linked list 
-*/
 
-int addDocToWord(docRank *dNode, wordHead *wNode){
-	if (!dNode){
-		return 1;
-	}
-
-	if (!wNode){
-		return 1;
-	}
-	// if there is nothing on the end of that word, add the doc and return
-	if (wNode->doc == NULL){
-		wNode->doc = dNode;
-		return 0;
-	}
-
-	// else add node to the end
-	docRank *tmpDoc = wNode->doc;
-	while(tmpDoc->next){
-		// skip matches
-		if (strcmp(tmpDoc->docID, dNode->docID) == 0){
-			return 2;
-		}
-
-		tmpDoc=tmpDoc->next;
-	}
-
-	tmpDoc->next = dNode;
-	dNode->next = NULL;
-	return 0;
-
-}
 /////////////////////////// Merge Sort the linked list //////////////////////
 
 
@@ -150,7 +117,7 @@ docRank* split (docRank *head){
 
 }
 
-///////////////////////////////////////////////////// End rank functions ////////////////////////////////////////
+///////////////////////////////////////////////////// functions to print nodes  ////////////////////////////////////////
 
 void printList(wordHead *wNode){
 	if (!wNode){
@@ -172,6 +139,24 @@ void printDoc(docRank *node){
 		tmpDoc=tmpDoc->next;
 	 
 	}
+}
+
+void finalPrint(docRank *first, char *pathToDir){
+	if(!first){
+		return;
+	}
+
+	// print doc name and rank
+	docRank *tmp = first;
+	while(tmp){
+		// find URL and print that too
+		printf("Doc ID: %s Rank: %i", tmp->docID, tmp->wordCount);
+		// get url
+		grabURL(tmp->docID, pathToDir);
+		tmp=tmp->next;
+	}
+	return;
+	
 }
 
 ///////////////////////////////////////////////// function to return word node queried //////////////////////////////////
@@ -209,66 +194,6 @@ wordNode* returnWord(char *word, HashTable *Index){
 	return NULL;
 }
 
-
-////////////////////////////////////// Functions to create list //////////////////////////////
-
-wordHead* addToList(wordNode *wNode, wordHead *head){
-
-	// make word Node a word head
-	if (!wNode){
-		return NULL;
-	}
-
-	if (wNode){
-		printf("\nentered add to list with %s", wNode->word);
-	}
-
-
-	// link head to the list
-	if (!head){
-		return NULL;	
-	}
-
-	// for docs on the wordNode, add docs to list
-
-	if (wNode->doc){
-		// add all docs to list
-		docNode *tmp = wNode->doc;
-		while(tmp){
-			docRank *newRank = malloc(sizeof(docRank));
-			newRank->docID = malloc(strlen(tmp->docID)+1);
-			strcpy(newRank->docID, tmp->docID);
-			newRank->wordCount = tmp->wordCount;
-			newRank->next = NULL;
-
-			addDocToWord(newRank, head);
-			printf("\nadded a doc");
-			tmp=tmp->next;
-		}
-	}
-
-	return head;
-
-}
-
-void finalPrint(docRank *first, char *pathToDir){
-	if(!first){
-		return;
-	}
-
-	// print doc name and rank
-	docRank *tmp = first;
-	while(tmp){
-		// find URL and print that too
-		printf("Doc ID: %s Rank: %i", tmp->docID, tmp->wordCount);
-		// get url
-		grabURL(tmp->docID, pathToDir);
-		tmp=tmp->next;
-	}
-	return;
-	
-}
-
 void grabURL(char *docName, char *pathToDir){
 	char name[30];
 	char string [10000];
@@ -282,83 +207,112 @@ void grabURL(char *docName, char *pathToDir){
     return;
 }
 
-void andToList(wordNode *wNode, wordHead *head, int turn){
-	if(!wNode){
+
+////////////////////////////////////////////// Functions to create list //////////////////////////////////////
+
+void andToList(wordNode *word, wordHead *head){
+	if (!head){
+		return;
+	}
+	if (!word){
 		return;
 	}
 
-	if(!head){
+	// if there is no word attached, add all docs!
+	if (!head->doc){
+		addtoHead(word, head);
 		return;
 	}
 
-	if(!wNode->doc){
-		return;
-	}
 
-	
+	else{
+		docNode *tmpDoc = word->doc;
+		docRank *tmpRank = head->doc;
+		wordHead *tmpHead;
+		tmpHead->doc = NULL;
+		
 
+		// else loop through doc nodes
+		// loop through listhead hodes
 
-	if (turn == 0){
-		// add all to head
-		addToList(wNode, head);
-		return;
-	}
-
-	else {
-		docNode *tmpDoc = wNode->doc;
-		wordHead *tmpHead = malloc(sizeof(wordHead));
-		tmpHead->word = "tmp";
-		tmpHead->next = NULL;
-		tmpHead->doc= NULL;
-		// for each doc attached to wordNode
 		while(tmpDoc){
-			// loop through word head
-			docRank *docR = head->doc;
-			while(docR){
-				// on string compare
-				if(strcmp(docR->docID, tmpDoc->docID)==0){
-					docR->wordCount = docR->wordCount+tmpDoc->wordCount;
-					addDocToWord(docR, tmpHead);
+			
+			while(tmpRank){
+
+				// on a match, increment count
+				if(strcmp(tmpDoc->docID, tmpRank->docID)==0){
+					tmpRank->wordCount=tmpRank->wordCount + tmpDoc->wordCount;
+					// add to a temp list to hold intersection
+					addRank(tmpRank, tmpHead);
+
 				}
-				//ELSE FREE DOCR NODES
-				docR=docR->next;
+
+				tmpRank=tmpRank->next;
 			}
 			tmpDoc=tmpDoc->next;
 		}
+		// at the end reset the list to the tmp
 		head->doc = tmpHead->doc;
 		return;
-		
 	}
-	return;
 
+	return;
 }
 
-void cpyList(wordHead *tmp, wordHead *final){
-	// if final is null, just link final head to end head 
-	if(!final){
+void addtoHead(wordNode *word, wordHead *head){
+	if(!head){
+		return;
+	}
+	if(!word){
 		return;
 	}
 
-	if(!tmp){
-		return;
-	}
-
-	docRank *first = tmp->doc;
-
-	docRank *tmpDoc = first;
+	docNode *tmpDoc = word->doc;
 	while(tmpDoc){
-		printf("\nadding Doc ID: %s Rank: %i\n", tmpDoc->docID, tmpDoc->wordCount);
-		addDocToWord(tmpDoc, final);
+		// create a docRank Node
+		docRank *newNode = malloc(sizeof(newNode));
+		newNode->next = NULL;
+		newNode->docID = malloc(strlen(tmpDoc->docID)+1);
+		strcpy(newNode->docID, tmpDoc->docID);
+		newNode->wordCount = tmpDoc->wordCount;
+		
+		if(!head->doc){
+			head->doc=newNode;
+		}
+		else{
+			docRank *tmpRank = head->doc;
+			while(tmpRank->next){
+				tmpRank=tmpRank->next;
+			}
+			tmpRank->next = newNode;
+		}
+		// add it to word head
+
 		tmpDoc=tmpDoc->next;
 	}
+
 	return;
 
 }
 
-
-
-
-
+void addRank(docRank *docR, wordHead *tmpHead){
+	if(!tmpHead){
+		return;
+	}
+	if(!docR){
+		return;
+	}
+	if(!tmpHead->doc){
+		tmpHead->doc=docR;
+		return;
+	}
+	docRank *tmp = tmpHead->doc;
+	while(tmp->next){
+		tmp=tmp->next;
+	}
+	tmp->next = docR;
+	return;
+}
 
 
 

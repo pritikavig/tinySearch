@@ -31,7 +31,6 @@ typedef struct docRank {
 typedef struct wordHead {
 	char *word;
 	struct docRank *doc;
-	struct wordHead *next;
 } wordHead;
 
 // ---------------- Public Variables
@@ -42,14 +41,17 @@ void printList(wordHead *wNode);
 docRank* split (docRank *head);
 docRank* sort(docRank *a, docRank *b);
 docRank* mergeSort(docRank *firstHead);
-int addDocToWord(docRank *dNode, wordHead *wNode);
+void cpyList(wordHead *tmp, wordHead *final);
 void printDoc(docRank *node);
 wordNode* returnWord(char *word, HashTable *Index);
-wordHead* addToList(wordNode *wNode, wordHead *head);
 void grabURL(char *docName, char *pathToDir);
 void finalPrint(docRank *first, char *pathToDir);
-void andToList(wordNode *wNode, wordHead *head, int turn);
-void cpyList(wordHead *tmp, wordHead *final);
+
+//new
+void andToList(wordNode *word, wordHead *head);
+void addtoHead(wordNode *word, wordHead *head);
+void addRank(docRank *docR, wordHead *tmpHead);
+
 
 
 
