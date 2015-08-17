@@ -1,0 +1,37 @@
+TinySearchEngine
+Pritika Vig
+CS50
+
+
+Part 1: Crawler
+
+
+	Usage: crawler <url> <directory> <depth>
+	Command line arguments: A head website to crawl, an output directory to store crawls, a crawl depth
+	Command line options: none
+
+	Modes: Crawler defaults to silent mode. To enable the log, change STATUS_LOG in commons.h to equal 1. To change back, switch STATUS_LOG to 0. 
+
+	Assumptions: Current directory input as argument must exist, or the program will return an error and quit. All URLs to be crawled must begin with the prefix: "http://old-www.cs.dartmouth.edu/~cs50/tse". Program checks for 404s and other attachments in the links. Max Depth input must be less than or equal to 4. 
+
+
+Part 2: Indexer
+	
+	Usage: indexer <valid crawl directory> <plaintxt.dat> (<output.dat>)
+	Command line arguments: The Indexer componenet of TinySearchEngine takes two to three input arguments on the command line. The first argument must be a valid directory which Indexer assumes to be full of valid html files. The second argument is a plain text file that will be created with a print out of the hash table. The third argument is optional and if it exists it will enter the program into testing mode in which Indexer will read in the hashtable output file, rehash it and read it out again to the new file. 
+
+	Modes: The Indexer is silent. To enable a test log, make with the test directive. 
+
+	Assumptions: Indexer assumes that valid output from crawler will be in the directory input. 
+
+
+
+Part 3: Query Engine
+
+	Usage: query <valid crawl directory> <valid indexed output.dat>
+	Command line arguments: The first command line argument must be a valid directory of the html file outputs from a crawl session. The second argument must be the indexed output from an indexer run with the crawl directory as the input. 
+
+	Assumptions: This program assumes that if the inputs are valid files and directories, the are valid output from a call to the Crawler and Indexer. If these things are not true, the program will not run correctly. The program fails silently when a user inputs a word not in the hash table and will just prompt for the next word. The ranking system adds rankings for each given collision between "AND" operators. Only "AND" and "OR" are acknowledged as logical operators. All other words are taken as query terms. If there is no logical operator in between two search terms, the program assumes that it is and "AND" search. 
+
+
+

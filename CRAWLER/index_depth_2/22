@@ -1,0 +1,1132 @@
+http://old-www.cs.dartmouth.edu/~cs50/tse/wiki/Pascal%27s_calculator.html
+Depth: 2
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+
+<!-- Mirrored from en.wikipedia.org/wiki/Pascal%27s_calculator by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 29 Mar 2014 23:54:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8" />
+<title>Pascal's calculator - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="generator" content="MediaWiki 1.23wmf19" />
+<link rel="alternate" href="http://en.wikipedia.org/wiki/android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Pascal%27s_calculator" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="http://bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="Pascal%27s_calculator.html" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cteahouse%7Cext.rtlcite%2Cwikihiero%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.ui.button%7Cskins.common.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Pascal's_calculator","wgTitle":"Pascal's calculator","wgCurRevisionId":591575528,"wgRevisionId":591575528,"wgArticleId":1732978,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles using fixed number of columns in reflist","Articles with French-language external links","Pages containing cite templates with deprecated parameters","Mechanical calculators","Blaise Pascal","French inventions"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Pascal's_calculator","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgBetaFeaturesFeatures":[],"wgVisualEditor":{"isPageWatched":false,"magnifyClipIconURL":"//bits.wikimedia.org/static-1.23wmf19/skins/common/images/magnify-clip.png","pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":2048},"wikilove-recipient":"","wikilove-anon":0,"wgGuidedTourHelpGuiderUrl":"Help:Guided tours/guider","wgFlowTermsOfUseEdit":"By saving changes, you agree to our \u003Ca class=\"external text\" href=\"//wikimediafoundation.org/wiki/Terms_of_use\"\u003ETerms of Use\u003C/a\u003E and agree to irrevocably release your text under the \u003Ca rel=\"nofollow\" class=\"external text\" href=\"//creativecommons.org/licenses/by-sa/3.0\"\u003ECC BY-SA 3.0 License\u003C/a\u003E and \u003Ca class=\"external text\" href=\"//en.wikipedia.org/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License\"\u003EGFDL\u003C/a\u003E","wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q873501"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"showhiddencats":false,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,
+"wllimit":250,"useeditwarning":1,"prefershttps":1,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"visualeditor-enable":0,"visualeditor-enable-experimental":0,"visualeditor-betatempdisable":0,"wikilove-enabled":1,"echo-subscriptions-web-page-review":true,"echo-subscriptions-email-page-review":false,"ep_showtoplink":false,"ep_bulkdelorgs":false,"ep_bulkdelcourses":true,"ep_showdyk":true,"echo-subscriptions-web-education-program":true,"echo-subscriptions-email-education-program":false,"echo-notify-show-link":true,"echo-show-alert":true,"echo-email-frequency":0,"echo-email-format":"html","echo-subscriptions-email-system":true,"echo-subscriptions-web-system":true,"echo-subscriptions-email-other":false,"echo-subscriptions-web-other":true,"echo-subscriptions-email-edit-user-talk":false,"echo-subscriptions-web-edit-user-talk":true,"echo-subscriptions-email-reverted":false,
+"echo-subscriptions-web-reverted":true,"echo-subscriptions-email-article-linked":false,"echo-subscriptions-web-article-linked":false,"echo-subscriptions-email-mention":false,"echo-subscriptions-web-mention":true,"echo-subscriptions-web-edit-thank":true,"echo-subscriptions-email-edit-thank":false,"echo-subscriptions-web-flow-discussion":true,"echo-subscriptions-email-flow-discussion":false,"gettingstarted-task-toolbar-show-intro":true,"uls-preferences":"","language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,
+"searchNs109":false,"searchNs118":false,"searchNs119":false,"searchNs446":false,"searchNs447":false,"searchNs710":false,"searchNs711":false,"searchNs828":false,"searchNs829":false,"gadget-teahouse":1,"gadget-ReferenceTooltips":1,"gadget-DRN-wizard":1,"gadget-charinsert":1,"gadget-mySandbox":1,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:868e43d07ede2616d2d1dc3507cd8145 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","skins.vector.compactPersonalBar.defaultTracking","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","wikibase.client.init","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="http://meta.wikimedia.org/" /><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.23wmf19/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Pascal_s_calculator skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<div id="siteNotice"><!-- CentralNotice --></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Pascal's calculator</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="thumb tright">
+<div class="thumbinner" style="width:332px;"><a href="http://en.wikipedia.org/wiki/File:Arts_et_Metiers_Pascaline_dsc03869.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Arts_et_Metiers_Pascaline_dsc03869.jpg/330px-Arts_et_Metiers_Pascaline_dsc03869.jpg" width="330" height="181" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/80/Arts_et_Metiers_Pascaline_dsc03869.jpg/495px-Arts_et_Metiers_Pascaline_dsc03869.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/80/Arts_et_Metiers_Pascaline_dsc03869.jpg/660px-Arts_et_Metiers_Pascaline_dsc03869.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Arts_et_Metiers_Pascaline_dsc03869.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+A Pascaline, signed by Pascal in 1652</div>
+</div>
+</div>
+<p><a href="Blaise_Pascal.html" title="Blaise Pascal">Blaise Pascal</a> invented the <a href="Mechanical_calculator.html" title="Mechanical calculator">mechanical calculator</a> in 1642.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup><sup id="cite_ref-inventor_2-0" class="reference"><a href="#cite_note-inventor-2"><span>[</span>2<span>]</span></a></sup> He was spurred to it by seeing the burden of arithmetical labor involved in his father's official work as supervisor of taxes at Rouen;<sup id="cite_ref-WHY_3-0" class="reference"><a href="#cite_note-WHY-3"><span>[</span>3<span>]</span></a></sup> first called the <b>Arithmetic Machine</b>, <b>Pascal's Calculator</b> and later <b>Pascaline</b>, this calculating machine could add and subtract two numbers directly and multiply and divide by repetition.</p>
+<p>Pascal went through 50 prototypes before presenting his first machine to the public in 1645. He dedicated it to <a href="http://en.wikipedia.org/wiki/Pierre_Séguier" title="Pierre Séguier">Pierre Séguier</a>, the <a href="http://en.wikipedia.org/wiki/Lord_Chancellor_of_France" title="Lord Chancellor of France">chancellor of France</a> at the time.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>4<span>]</span></a></sup> He built around twenty more machines during the next decade, often improving on his original design. Nine machines have survived the centuries,<sup id="cite_ref-mour12_5-0" class="reference"><a href="#cite_note-mour12-5"><span>[</span>5<span>]</span></a></sup> most of them being on display in European museums. In 1649 a <i><a href="http://en.wikipedia.org/wiki/Patent#Etymology" title="Patent">royal privilege</a></i>, signed by <a href="http://en.wikipedia.org/wiki/Louis_XIV_of_France" title="Louis XIV of France">Louis XIV of France</a>,<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span>[</span>6<span>]</span></a></sup> gave him the exclusivity of the design and manufacturing of calculating machines in France.</p>
+<p>Pascal designed the only functional mechanical calculator in the 17th century.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span>[</span>7<span>]</span></a></sup> He succeeded because he was the only person to shrink and adapt for his purpose a <a href="http://en.wikipedia.org/wiki/Gears#Cage_gear" title="Gears" class="mw-redirect">lantern gear</a>, used in <a href="http://en.wikipedia.org/wiki/Turret_clock" title="Turret clock">turret clocks</a> and <a href="http://en.wikipedia.org/wiki/Water_wheels" title="Water wheels" class="mw-redirect">water wheels</a>, which was capable of resisting the strength of any operator input with very little added friction;<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>8<span>]</span></a></sup> he was also the first person to make each digit independent of the state of the others allowing for multiple carries to rapidly cascade from one digit to another regardless of the capacity of the machine.</p>
+<p>Its introduction launched the development of mechanical calculators first in Europe and then all over the world, development which culminated, three centuries later, in the invention of the <a href="http://en.wikipedia.org/wiki/Intel_4004" title="Intel 4004">microprocessor</a> developed for a <a href="http://en.wikipedia.org/wiki/Busicom" title="Busicom">Busicom</a> calculator in 1971&#160;; the microprocessor is now at the heart of all <a href="Computer.html" title="Computer">computers</a> and <a href="Embedded_systems.html" title="Embedded systems" class="mw-redirect">embedded systems</a>.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup></p>
+<p>The mechanical calculator industry owes a lot of its key machines and inventions to the pascaline. First <a href="Gottfried_Leibniz.html" title="Gottfried Leibniz" class="mw-redirect">Gottfried Leibniz</a> invented his <a href="http://en.wikipedia.org/wiki/Leibniz_wheel" title="Leibniz wheel">Leibniz wheels</a> after 1671 while trying to add an automatic multiplication feature to the pascaline,<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup> then in 1820, <a href="Thomas_de_Colmar.html" title="Thomas de Colmar" class="mw-redirect">Thomas de Colmar</a> drew his inspiration from Pascal and Leibniz when he designed his <a href="Arithmometer.html" title="Arithmometer">arithmometer</a>, the first mechanical calculator strong enough and reliable enough to be used daily in an office environment, and finally in 1885, <a href="http://en.wikipedia.org/wiki/Dorr_E._Felt" title="Dorr E. Felt" class="mw-redirect">Dorr E. Felt</a> substituted the input wheels of the pascaline by columns of keys to invent his <a href="http://en.wikipedia.org/wiki/Comptometer" title="Comptometer">comptometer</a>, the first calculator operated by keys and the first calculator to receive an all-electronic calculating engine in 1961.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Precursors"><span class="tocnumber">1.1</span> <span class="toctext">Precursors</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Aids_to_calculation"><span class="tocnumber">1.1.1</span> <span class="toctext">Aids to calculation</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="#Analog_computers.2C_Automatons"><span class="tocnumber">1.1.2</span> <span class="toctext">Analog computers, Automatons</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="#Achievements"><span class="tocnumber">1.2</span> <span class="toctext">Achievements</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Development"><span class="tocnumber">1.3</span> <span class="toctext">Development</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Competing_designs"><span class="tocnumber">1.4</span> <span class="toctext">Competing designs</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Tercentenary_celebration"><span class="tocnumber">1.5</span> <span class="toctext">Tercentenary celebration</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Fields_of_application"><span class="tocnumber">2</span> <span class="toctext">Fields of application</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Known_machines"><span class="tocnumber">3</span> <span class="toctext">Known machines</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#User_interface"><span class="tocnumber">4</span> <span class="toctext">User interface</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="#Overview"><span class="tocnumber">4.1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Input_wheel"><span class="tocnumber">4.2</span> <span class="toctext">Input wheel</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Marks_on_two_adjacent_spokes"><span class="tocnumber">4.3</span> <span class="toctext">Marks on two adjacent spokes</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Inner_wheel_of_complements"><span class="tocnumber">4.4</span> <span class="toctext">Inner wheel of complements</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Quotient_wheel"><span class="tocnumber">4.5</span> <span class="toctext">Quotient wheel</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Inner_mechanism"><span class="tocnumber">5</span> <span class="toctext">Inner mechanism</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Shrinking_a_turret_clock_mechanism"><span class="tocnumber">5.1</span> <span class="toctext">Shrinking a turret clock mechanism</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Pawl_and_Ratchet"><span class="tocnumber">5.2</span> <span class="toctext">Pawl and Ratchet</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Carry_mechanism"><span class="tocnumber">6</span> <span class="toctext">Carry mechanism</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#The_sautoir"><span class="tocnumber">6.1</span> <span class="toctext">The <i>sautoir</i></span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#The_three_phases_of_a_carry_transmission"><span class="tocnumber">6.2</span> <span class="toctext">The three phases of a carry transmission</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="#Operations"><span class="tocnumber">7</span> <span class="toctext">Operations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#Principle"><span class="tocnumber">7.1</span> <span class="toctext">Principle</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#9.27s_complement"><span class="tocnumber">7.2</span> <span class="toctext">9's complement</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Resetting_the_machine"><span class="tocnumber">7.3</span> <span class="toctext">Resetting the machine</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Addition"><span class="tocnumber">7.4</span> <span class="toctext">Addition</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Subtraction"><span class="tocnumber">7.5</span> <span class="toctext">Subtraction</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="#Pascal_versus_Schickard"><span class="tocnumber">8</span> <span class="toctext">Pascal versus Schickard</span></a>
+<ul>
+<li class="toclevel-2 tocsection-30"><a href="#History_2"><span class="tocnumber">8.1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Published_since_1718"><span class="tocnumber">8.2</span> <span class="toctext">Published since 1718</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Addition_of_wheels_and_springs"><span class="tocnumber">8.3</span> <span class="toctext">Addition of wheels and springs</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="#Wrong_carry_mechanism"><span class="tocnumber">8.4</span> <span class="toctext">Wrong carry mechanism</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="#Conclusion"><span class="tocnumber">8.5</span> <span class="toctext">Conclusion</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-35"><a href="#See_also"><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-36"><a href="#Notes"><span class="tocnumber">10</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-37"><a href="#Sources"><span class="tocnumber">11</span> <span class="toctext">Sources</span></a></li>
+<li class="toclevel-1 tocsection-38"><a href="#External_links"><span class="tocnumber">12</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=1" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Precursors">Precursors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=2" title="Edit section: Precursors">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h4><span class="mw-headline" id="Aids_to_calculation">Aids to calculation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=3" title="Edit section: Aids to calculation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>The <a href="Abacus.html" title="Abacus">abacus</a>, probably invented in <a href="http://en.wikipedia.org/wiki/Sumer" title="Sumer">Sumer</a> between 2700 and 2300 BC, is the first computing machine invented by humans, but has no automatically moving parts or gears and only provides an aid to calculation. After the development of the abacus, no significant advances were made until <a href="http://en.wikipedia.org/wiki/John_Napier" title="John Napier">John Napier</a> devised his numbering rods, or <a href="http://en.wikipedia.org/wiki/Napier%27s_Bones" title="Napier's Bones" class="mw-redirect">Napier's Bones</a>, in 1617. Various forms of the Bones appeared, some greatly simplified computations but still needed human intelligence to operate.<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>11<span>]</span></a></sup></p>
+<h4><span class="mw-headline" id="Analog_computers.2C_Automatons">Analog computers, Automatons</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=4" title="Edit section: Analog computers, Automatons">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="thumb tleft">
+<div class="thumbinner" style="width:262px;"><a href="http://en.wikipedia.org/wiki/File:Odomètre-Léonard.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Odomètre-Léonard.jpg/260px-Odomètre-Léonard.jpg" width="260" height="153" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/13/Odom%C3%A8tre-L%C3%A9onard.jpg/390px-Odom%C3%A8tre-L%C3%A9onard.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/13/Odom%C3%A8tre-L%C3%A9onard.jpg/520px-Odom%C3%A8tre-L%C3%A9onard.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Odomètre-Léonard.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+<div align="center">An odometer drawn by Leonardo da Vinci <span class="nowrap">(before 1519)</span></div>
+</div>
+</div>
+</div>
+<p>A short list of other precursors to the mechanical calculator must include the Greek <a href="http://en.wikipedia.org/wiki/Antikythera_mechanism" title="Antikythera mechanism">Antikythera mechanism</a> from around 100 BC, an out of place, unique, geared mechanism followed more than a millennium later by early mechanical <a href="http://en.wikipedia.org/wiki/Clock" title="Clock">clocks</a> and geared <a href="http://en.wikipedia.org/wiki/Astrolabes" title="Astrolabes" class="mw-redirect">astrolabes</a>&#160;; These machines were all made of toothed gears linked by some sort of carry mechanisms. They belong to a group of mechanical <a href="http://en.wikipedia.org/wiki/Analog_computer" title="Analog computer">analog computers</a> which, once set, are only modified by the continuous and repeated action of their actuators (crank handle, weight, wheel...)</p>
+<p>Some measuring instruments and <a href="http://en.wikipedia.org/wiki/Automaton" title="Automaton">automatons</a> were also precursors to the calculating machine.</p>
+<div class="thumb tright">
+<div class="thumbinner" style="width:262px;"><a href="http://en.wikipedia.org/wiki/File:Han_dynasty_odometer_cart.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Han_dynasty_odometer_cart.jpg/260px-Han_dynasty_odometer_cart.jpg" width="260" height="196" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Han_dynasty_odometer_cart.jpg/390px-Han_dynasty_odometer_cart.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Han_dynasty_odometer_cart.jpg/520px-Han_dynasty_odometer_cart.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Han_dynasty_odometer_cart.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+<div align="center">Han dynasty odometer cart.</div>
+</div>
+</div>
+</div>
+<p>An <a href="http://en.wikipedia.org/wiki/Odometer" title="Odometer">odometer</a>, instrument for measuring distances, was first described around 25 BC by the <a href="http://en.wikipedia.org/wiki/Vitruvius" title="Vitruvius">roman engineer Vitruvius</a> in the tenth volume of his <a href="http://en.wikipedia.org/wiki/De_architectura" title="De architectura">De architectura</a>. It was made of a set of toothed gears linked by a carry mechanism&#160;; the first one was driven by one of the chariot wheels and the last one dropped a small pebble in a bag for each <a href="http://en.wikipedia.org/wiki/Mile#Roman_mile" title="Mile">Roman mile</a> traveled.<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span>[</span>12<span>]</span></a></sup></p>
+<p>A Chinese text of the third century AD described a chariot equipped with a geared mechanism that operated two wooden figures. One would strike a drum for every <a href="http://en.wikipedia.org/wiki/Li_(unit)" title="Li (unit)">Chinese Li</a> traveled, the other one would strike a gong for every ten Li traveled.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>13<span>]</span></a></sup></p>
+<p>Around the end of the tenth century, the French monk <a href="http://en.wikipedia.org/wiki/Pope_Sylvester_II" title="Pope Sylvester II">Gerbert d'Aurillac</a>, whose abacus taught the <a href="http://en.wikipedia.org/wiki/Hindu-Arabic_numeral_system" title="Hindu-Arabic numeral system" class="mw-redirect">Hindu-Arabic numeral system</a> to the Europeans,<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>14<span>]</span></a></sup> brought back from Spain the drawings of a <a href="http://en.wikipedia.org/wiki/Brazen_Head" title="Brazen Head" class="mw-redirect">brazen head</a>, invented by the <a href="http://en.wikipedia.org/wiki/Moors" title="Moors">Moors</a>, which answered Yes or No to the questions it was asked (binary arithmetic).<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>15<span>]</span></a></sup></p>
+<p>Again in the thirteenth century, the monks <a href="http://en.wikipedia.org/wiki/Albertus_Magnus" title="Albertus Magnus">Albertus Magnus</a> and <a href="http://en.wikipedia.org/wiki/Roger_Bacon" title="Roger Bacon">Roger Bacon</a> built mechanical speaking heads made of earthware without any further development (Albertus Magnus complained that he had wasted forty years of his life when <a href="http://en.wikipedia.org/wiki/Thomas_Aquinas" title="Thomas Aquinas">Thomas Aquinas</a>, terrified by this speaking machine, destroyed it<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span>[</span>16<span>]</span></a></sup>).</p>
+<p>The Italian <a href="http://en.wikipedia.org/wiki/Polymath" title="Polymath">polymath</a> <a href="http://en.wikipedia.org/wiki/Leonardo_da_Vinci" title="Leonardo da Vinci">Leonardo da Vinci</a> drew an odometer before 1519.</p>
+<p>In 1525, the French craftsman Jean Fernel built the first <a href="http://en.wikipedia.org/wiki/Pedometer" title="Pedometer">pedometer</a>. It was made in the shape of a watch and had 4 dials (units, tens, hundreds, thousands) linked by a single tooth carry mechanism.<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span>[</span>17<span>]</span></a></sup></p>
+<p>In 1623 and 1624, <a href="http://en.wikipedia.org/wiki/Wilhelm_Schickard" title="Wilhelm Schickard">Wilhelm Schickard</a> drew a calculating clock on two letters that he sent to <a href="http://en.wikipedia.org/wiki/Johannes_Kepler" title="Johannes Kepler">Kepler</a>. Schickard's machine was the first of five unsuccessful attempts of designing a <i>direct entry</i> calculating clock in the 17th century (including the designs of <a href="http://en.wikipedia.org/wiki/Tito_Livio_Burattini" title="Tito Livio Burattini">Tito Burattini</a>, <a href="http://en.wikipedia.org/wiki/Samuel_Morland" title="Samuel Morland">Samuel Morland</a> and <a href="http://en.wikipedia.org/wiki/René_Grillet_de_Roven" title="René Grillet de Roven">René Grillet</a>).<sup id="cite_ref-ReferenceA_18-0" class="reference"><a href="#cite_note-ReferenceA-18"><span>[</span>18<span>]</span></a></sup> The first calculating clock worthy of its name was built by the Italian <a href="http://en.wikipedia.org/wiki/Giovanni_Poleni" title="Giovanni Poleni">Giovanni Poleni</a> in the 18th century (1709) and it was a <i>two-motion</i> calculating clock were the numbers are inscribed first and then are processed (see <a href="#Pascal_versus_Schickard">Pascal versus Schickard</a>).</p>
+<h3><span class="mw-headline" id="Achievements">Achievements</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=5" title="Edit section: Achievements">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="thumb tright" style="width: 282px;">
+<div class="thumbinner">
+<div style="margin: 1px; width: 272px">
+<div class="thumbimage"><a href="http://en.wikipedia.org/wiki/File:Pascaline_calculator_front.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pascaline_calculator_front.png/270px-Pascaline_calculator_front.png" width="270" height="108" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pascaline_calculator_front.png/405px-Pascaline_calculator_front.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pascaline_calculator_front.png/540px-Pascaline_calculator_front.png 2x" /></a></div>
+<div class="thumbcaption" style="clear:left">
+<div align="center">Pascaline made for French currency. The least significant denominations, <i>sols</i> and <i>deniers</i>, are on the right.</div>
+</div>
+</div>
+<div style="margin: 1px; width: 272px">
+<div class="thumbimage"><a href="http://en.wikipedia.org/wiki/File:Pascaline_calculator.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Pascaline_calculator.jpg/270px-Pascaline_calculator.jpg" width="270" height="144" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Pascaline_calculator.jpg/405px-Pascaline_calculator.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Pascaline_calculator.jpg/540px-Pascaline_calculator.jpg 2x" /></a></div>
+<div class="thumbcaption" style="clear:left">
+<div align="center">View through back of calculator above showing wheels.</div>
+</div>
+</div>
+<div class="thumbcaption" style="clear: left; text-align: left; background: transparent">
+<div align="center"><b>This machine once belonged to Louis Perrier, Pascal's nephew</b></div>
+</div>
+</div>
+</div>
+<p>Pascal began to work on his calculator in 1642, when he was only 19 years old. He had been assisting his father, who worked as a tax commissioner, and sought to produce a device which could reduce some of his workload. Pascal received a <a href="http://en.wikipedia.org/wiki/Patent" title="Patent">Royal Privilege</a> in 1649 that granted him exclusive rights to make and sell calculating machines in France. By 1654 Pascal had sold about twenty machines, but the cost and complexity of the Pascaline was a barrier to further sales, and production ceased in that year. By that time Pascal had moved on to the study of <a href="http://en.wikipedia.org/wiki/Religion" title="Religion">religion</a> and <a href="Philosophy.html" title="Philosophy">philosophy</a> which gave us both the <i><a href="http://en.wikipedia.org/wiki/Lettres_provinciales" title="Lettres provinciales">Lettres provinciales</a></i> and the <i><a href="http://en.wikipedia.org/wiki/Pensées" title="Pensées">Pensées</a></i>.</p>
+<p>Besides being the first calculating machine made public during its time, the pascaline is also:</p>
+<ul>
+<li>the only operational mechanical calculator in the 17th century.<sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span>[</span>19<span>]</span></a></sup></li>
+<li>the first calculator to have a controlled carry mechanism which allowed for an effective propagation of multiple carries<sup id="cite_ref-20" class="reference"><a href="#cite_note-20"><span>[</span>20<span>]</span></a></sup></li>
+<li>the first calculator to be used in an office (his father's to compute taxes)</li>
+<li>the first calculator commercialized (with around twenty machines built)<sup id="cite_ref-mour12_5-1" class="reference"><a href="#cite_note-mour12-5"><span>[</span>5<span>]</span></a></sup></li>
+<li>the first calculator to be patented (<i>royal privilege</i> of 1649)<sup id="cite_ref-Privi_21-0" class="reference"><a href="#cite_note-Privi-21"><span>[</span>21<span>]</span></a></sup></li>
+<li>the first calculator to be described in an <a href="http://en.wikipedia.org/wiki/Encyclopaedia" title="Encyclopaedia" class="mw-redirect">encyclopaedia</a> (Diderot &amp; d'Alembert, 1751):
+<blockquote class="templatequote">
+<p>"...The first arithmetic machine presented to the public was from Blaise Pascal, born in <a href="http://en.wikipedia.org/wiki/Clermont-Ferrand" title="Clermont-Ferrand">Clermont</a>, <a href="http://en.wikipedia.org/wiki/Auvergne_(province)" title="Auvergne (province)">Auvergne</a> on June 19, 1623&#160;; he invented it at the age of 19. Other machines have been designed since which, in the judgement of Mr of the <a href="http://en.wikipedia.org/wiki/French_Academy_of_Sciences" title="French Academy of Sciences">Academy of Sciences</a>, seem to have more practical advantages&#160;; but Pascal's machine is the oldest one&#160;; it could have served as model to all the others&#160;; this is why we preferred it."<sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span>[</span>22<span>]</span></a></sup></p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>the first calculator sold by a distributor:
+<blockquote class="templatequote">
+<p>"Mr <a href="http://en.wikipedia.org/wiki/Gilles_de_Roberval" title="Gilles de Roberval">de Roberval</a> ... located in the college <i>Maitres Gervais</i> ... every morning until 8..."<sup id="cite_ref-Avis_23-0" class="reference"><a href="#cite_note-Avis-23"><span>[</span>23<span>]</span></a></sup></p>
+</blockquote>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Development">Development</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=6" title="Edit section: Development">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h3><span class="mw-headline" id="Competing_designs">Competing designs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=7" title="Edit section: Competing designs">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="thumb tleft">
+<div class="thumbinner" style="width:262px;"><a href="http://en.wikipedia.org/wiki/File:Leibniz_Calculator_Using_The_Pascaline.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Leibniz_Calculator_Using_The_Pascaline.jpg/260px-Leibniz_Calculator_Using_The_Pascaline.jpg" width="260" height="257" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Leibniz_Calculator_Using_The_Pascaline.jpg/390px-Leibniz_Calculator_Using_The_Pascaline.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Leibniz_Calculator_Using_The_Pascaline.jpg/520px-Leibniz_Calculator_Using_The_Pascaline.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Leibniz_Calculator_Using_The_Pascaline.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Leibniz' drawing showing 365 multiplied by 124.</div>
+</div>
+</div>
+<p><a href="Gottfried_Leibniz.html" title="Gottfried Leibniz" class="mw-redirect">Gottfried Leibniz</a> started to work on his own calculator after Pascal's death. He first tried to build a machine that could multiply automatically while sitting on top of the Pascaline, assuming (wrongly) that all the dials on Pascal's calculator could be operated at the same time. Even though it couldn't be done, this was the first time that a pinwheel was described and used in the drawings of a calculator.</p>
+<p>He then devised a competing design, the <a href="Stepped_Reckoner.html" title="Stepped Reckoner">Stepped Reckoner</a> which was meant to perform additions, subtractions and multiplications automatically and division under operator control; Leibniz struggled for forty years to perfect this design and produced two machines, one in 1694 and one in 1706.<sup id="cite_ref-LEIB_24-0" class="reference"><a href="#cite_note-LEIB-24"><span>[</span>24<span>]</span></a></sup> Only the machine built in 1694 is known to exist; it was rediscovered at the end of the 19th century, having spent 250 years forgotten in an attic in the <a href="http://en.wikipedia.org/wiki/University_of_Göttingen" title="University of Göttingen">University of Göttingen</a>.<sup id="cite_ref-LEIB_24-1" class="reference"><a href="#cite_note-LEIB-24"><span>[</span>24<span>]</span></a></sup></p>
+<p>The German calculating-machine inventor Arthur Burkhardt was asked to put this machine in operating condition if possible. His report was favorable except for the sequence in the carry.<sup id="cite_ref-25" class="reference"><a href="#cite_note-25"><span>[</span>25<span>]</span></a></sup> and "therefore, especially in the case of multiple carry transfers, the operator had to check the result and manually correct the possible errors".<sup id="cite_ref-26" class="reference"><a href="#cite_note-26"><span>[</span>26<span>]</span></a></sup> Leibniz had not succeeded in creating a calculator that worked properly, but he had invented his <a href="http://en.wikipedia.org/wiki/Leibniz_wheel" title="Leibniz wheel">Leibniz wheel</a>, the principle of a two motion mechanical calculator. He was also the first to have cursors to inscribe the first operand and a movable carriage for results.</p>
+<p>There were also five unsuccessful attempts at designing a <i>direct entry</i> calculating clock in the 17th century (including the designs of <a href="http://en.wikipedia.org/wiki/Tito_Livio_Burattini" title="Tito Livio Burattini">Tito Burattini</a>, <a href="http://en.wikipedia.org/wiki/Samuel_Morland" title="Samuel Morland">Samuel Morland</a> and <a href="http://en.wikipedia.org/wiki/René_Grillet_de_Roven" title="René Grillet de Roven">René Grillet</a>)).<sup id="cite_ref-ReferenceA_18-1" class="reference"><a href="#cite_note-ReferenceA-18"><span>[</span>18<span>]</span></a></sup></p>
+<p>Claude Perrault designed an "Abaque Rhabdologique" around 1660 which is often mistaken for a mechanical calculator because it has a carry mechanism in between the numbers. But it is an abacus, because it requires the operator to handle the machine differently when a carry transfer takes place.<sup id="cite_ref-27" class="reference"><a href="#cite_note-27"><span>[</span>27<span>]</span></a></sup></p>
+<p>This makes Pascal's calculator the only working mechanical calculator in the 17th century.<sup id="cite_ref-28" class="reference"><a href="#cite_note-28"><span>[</span>28<span>]</span></a></sup></p>
+<p>Calculating machines did not become commercially viable until 1851, when <a href="http://en.wikipedia.org/wiki/Charles_Xavier_Thomas" title="Charles Xavier Thomas">Thomas de Colmar</a> released, after thirty years of development, his simplified <a href="Arithmometer.html" title="Arithmometer">Arithmometer</a>, the first machine strong enough to be used daily in an office environment. The Arithmometer was designed around <a href="http://en.wikipedia.org/wiki/Leibniz_wheel" title="Leibniz wheel">Leibniz wheels</a> and initially used Pascal's <a href="#9.27s_complement">9's complement</a> method for subtractions.</p>
+<h3><span class="mw-headline" id="Tercentenary_celebration">Tercentenary celebration</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=8" title="Edit section: Tercentenary celebration">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Pascal tercentenary celebration of his invention of the mechanical calculator happened during WWII when France was occupied by Germany and therefore the main celebration was held in London, England. Some of the speeches given best describe his achievement:</p>
+<blockquote class="templatequote">
+<p>...when he invented the calculating machine - essentially a practical instrument - Pascal was already well known in the realm of pure mathematics. His perseverance with this invention helped one to appreciate more fully the character of Pascal. He had to fight not only ill-health but also the ignorance of his time, for his conception far out-stripped the mechanical experience and ability of those to whom the work was entrusted. It was not until Pascal had made more than fifty models that he achieved his final design.<br />
+The invention of the calculating machine illustrated Pascal's extraordinary creative imagination, allied with mathematical genius and precision, and tempered with critical penetration. These qualities were characteristic of the man throughout his life.</p>
+<div class="templatequotecite">—Prof. René Cassin,&#160; <cite>Pascal tercentenary celebration, London, (1942)<sup id="cite_ref-29" class="reference"><a href="#cite_note-29"><span>[</span>29<span>]</span></a></sup></cite></div>
+</blockquote>
+<blockquote class="templatequote">
+<p>Pascal's invention of the calculating machine, just three hundred years ago, was made while he was a youth of nineteen. He was spurred to it by seeing the burden of arithmetical labor involved in his father's official work as supervisor of taxes at Rouen. He conceived the idea of doing the work mechanically, and developed a design appropriate for this purpose&#160;; showing herein the same combination of pure science and mechanical genius that characterized his whole life. But it was one thing to conceive and design the machine, and another to get it made and put into use. Here were needed those practical gifts that he displayed later in his inventions....<br />
+In a sense, Pascal's invention was premature, in that the mechanical arts in his time were not sufficiently advanced to enable his machine to be made at an economic price, with the accuracy and strength needed for reasonably long use. This difficulty was not overcome until well on into the nineteenth century, by which time also a renewed stimulus to invention was given by the need for many kinds of calculation more intricate than those considered by Pascal.</p>
+<div class="templatequotecite">—S. Chapman,&#160; <cite>Pascal tercentenary celebration, London, (1942)<sup id="cite_ref-WHY_3-1" class="reference"><a href="#cite_note-WHY-3"><span>[</span>3<span>]</span></a></sup></cite></div>
+</blockquote>
+<div class="center">
+<div class="thumb tnone">
+<div class="thumbinner" style="width:772px;"><a href="http://en.wikipedia.org/wiki/File:17th-century-mechanical-calculators_-Detail.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/17th-century-mechanical-calculators_-Detail.jpg/770px-17th-century-mechanical-calculators_-Detail.jpg" width="770" height="227" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/6/68/17th-century-mechanical-calculators_-Detail.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/6/68/17th-century-mechanical-calculators_-Detail.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:17th-century-mechanical-calculators_-Detail.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+<div align="center">Four <i>Pascalines</i> and a clone from Lépine on display at the CNAM museum in Paris</div>
+</div>
+</div>
+</div>
+</div>
+<h2><span class="mw-headline" id="Fields_of_application">Fields of application</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=9" title="Edit section: Fields of application">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Pascalines came in both <a href="http://en.wikipedia.org/wiki/Decimal" title="Decimal">decimal</a> and non-decimal varieties, both of which exist in museums today. They were designed to be used by scientists, accountants and surveyors. The simplest Pascaline had five dials&#160;; later production variants had up to ten dials.</p>
+<p>The contemporary <a href="http://en.wikipedia.org/wiki/French_livre" title="French livre">French currency</a> system used <i>livres</i>, <i>sols</i> and <i>deniers</i> with 20 <i>sols</i> to a <i>livre</i> and 12 <i>deniers</i> to a <i>sol</i>. Length was measured in <i><a href="http://en.wikipedia.org/wiki/Toise" title="Toise">toises</a></i>, <a href="http://en.wikipedia.org/wiki/French_units_of_measurement" title="French units of measurement" class="mw-redirect"><i>pieds</i>, <i>pouces</i> and <i>lignes</i></a> with 6 <i>pieds</i> to a <i>toise</i>, 12 <i>pouces</i> to a <i>pied</i> and 12 <i>lignes</i> to a <i>pouce</i>. Therefore the pascaline needed wheels in base 6, 10, 12 and 20. Non decimal wheels were always located before the decimal part.</p>
+<p>In an accounting machine (..10,10,20,12), the decimal part counted the number of <i>livres</i> (20 <i>sols</i>), <i>sols</i> (12 <i>deniers</i>) and <i>deniers</i>. In a surveyor's machine (..10,10,6,12,12), the decimal part counted the number of <i>toises</i> (6 <i>pieds</i>), <i>pieds</i> (12 <i>pouces</i>), <i>pouces</i> (12 <i>lignes</i>) and <i>lignes</i>. Scientific machines just had decimal wheels.</p>
+<table border="1" cellpadding="5" cellspacing="0" align="center" style="text-align:center; width:90%;">
+<caption><b>Various Configurations</b></caption>
+<tr>
+<th style="background-color:#F5FAFF">Machine Type</th>
+<th>All the other wheels</th>
+<th width="15%">4th&#160;wheel</th>
+<th width="15%">3rd&#160;wheel</th>
+<th width="15%">2nd&#160;wheel</th>
+<th width="15%">1st&#160;wheel</th>
+</tr>
+<tr>
+<th scope="row" style="background-color:#F5FAFF">&#160;Decimal&#160;/<br />
+Scientific</th>
+<td style="background-color:#FFFFE0">base 10<br />
+Ten thousands...</td>
+<td style="background-color:#FFFFE0">base 10<br />
+Thousands</td>
+<td style="background-color:#FFFFE0">base 10<br />
+Hundreds</td>
+<td style="background-color:#FFFFE0">base 10<br />
+Tens</td>
+<td style="background-color:#FFFFE0">base 10<br />
+<b>Units</b></td>
+</tr>
+<tr>
+<th scope="row" style="background-color:#F5FAFF">&#160;Accounting&#160;</th>
+<td style="background-color:#FFFFE0">base 10<br />
+Hundreds...</td>
+<td style="background-color:#FFFFE0">base 10<br />
+Tens</td>
+<td style="background-color:#FFFFE0">base 10<br />
+<b>Livres</b></td>
+<td style="background-color:#C0E0F0">base 20<br />
+<b>Sols</b></td>
+<td style="background-color:#C0E0F0">base 12<br />
+<b>Deniers</b></td>
+</tr>
+<tr>
+<th scope="row" style="background-color:#F5FAFF">&#160;Surveying&#160;</th>
+<td style="background-color:#FFFFE0">base 10<br />
+Tens ...</td>
+<td style="background-color:#FFFFE0">base 10<br />
+<b>Toises</b></td>
+<td style="background-color:#C0E0F0">base 6<br />
+<b>Pieds</b></td>
+<td style="background-color:#C0E0F0">base 12<br />
+<b>Pouces</b></td>
+<td style="background-color:#C0E0F0">base 12<br />
+<b>Lignes</b></td>
+</tr>
+<tr>
+<td style="background-color:#F5FAFF">&#160;</td>
+<td colspan="5" align="left" style="background-color:#FFFFE0">&#160;&#160;The decimal part of each machine is highlighted in yellow</td>
+</tr>
+</table>
+<p><br />
+The metric system was adopted in France on December 10, 1799 by which time Pascal's basic design had inspired other craftsmen, although with a similar lack of commercial success.</p>
+<h2><span class="mw-headline" id="Known_machines">Known machines</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=10" title="Edit section: Known machines">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Most of the machines that have survived the centuries are of the accounting type. Seven of them are in European museums, one belongs to the IBM corporation and one is in private hands.</p>
+<table class="wikitable sortable">
+<tr>
+<th>Location<br /></th>
+<th>Country<br /></th>
+<th>&#160;&#160;Machine&#160;Name&#160;&#160;<br /></th>
+<th>Type<br /></th>
+<th>Wheels<br /></th>
+<th>Configuration<br /></th>
+<th>Notes<br /></th>
+</tr>
+<tr>
+<td><a href="http://en.wikipedia.org/wiki/Musée_des_Arts_et_Métiers" title="Musée des Arts et Métiers">CNAM museum</a><br />
+Paris</td>
+<td align="center">France</td>
+<td>Chancelier Séguier</td>
+<td align="center">Accounting</td>
+<td align="center">8</td>
+<td>6 x 10 + 20 + 12</td>
+<td></td>
+</tr>
+<tr>
+<td>CNAM museum<br />
+Paris</td>
+<td align="center">France</td>
+<td><a href="http://en.wikipedia.org/wiki/Christina,_Queen_of_Sweden" title="Christina, Queen of Sweden">Christina, Queen of Sweden</a></td>
+<td align="center">Scientific</td>
+<td align="center">6</td>
+<td>6 x 10</td>
+<td></td>
+</tr>
+<tr>
+<td>CNAM museum<br />
+Paris</td>
+<td align="center">France</td>
+<td>Louis Périer</td>
+<td align="center">Accounting</td>
+<td align="center">8</td>
+<td>6 x 10 + 20 + 12</td>
+<td>Louis Périer, Pascal's nephew, offered it to the <i>Académie des sciences de Paris</i> in 1711.</td>
+</tr>
+<tr>
+<td>CNAM museum<br />
+Paris</td>
+<td align="center">France</td>
+<td>Late (Tardive)</td>
+<td align="center">Accounting</td>
+<td align="center">6</td>
+<td>4 x 10 + 20 + 12</td>
+<td>This machine was assembled in the 18<sup>th</sup> century with unused parts.<sup id="cite_ref-30" class="reference"><a href="#cite_note-30"><span>[</span>30<span>]</span></a></sup></td>
+</tr>
+<tr>
+<td>musée&#160;<a href="http://en.wikipedia.org/wiki/Henri_Lecoq" title="Henri Lecoq">Henri Lecoq</a><sup id="cite_ref-31" class="reference"><a href="#cite_note-31"><span>[</span>31<span>]</span></a></sup><br />
+<a href="http://en.wikipedia.org/wiki/Clermont-Ferrand" title="Clermont-Ferrand">Clermont-Ferrand</a></td>
+<td align="center">France</td>
+<td>Marguerite Périer</td>
+<td align="center">Scientific</td>
+<td align="center">8</td>
+<td>8 x 10</td>
+<td>Marguerite (1646–1733) was Pascal's goddaughter.<sup id="cite_ref-32" class="reference"><a href="#cite_note-32"><span>[</span>32<span>]</span></a></sup></td>
+</tr>
+<tr>
+<td>Musée&#160;Henri&#160;Lecoq&#160;<br />
+Clermont-Ferrand</td>
+<td align="center">France</td>
+<td>Chevalier <span class="nowrap">Durant-Pascal</span></td>
+<td align="center">Accounting</td>
+<td align="center">5</td>
+<td>3 x 10 + 20 + 12</td>
+<td>This is the only known machine that came with a box. This is the smallest machine. Was it meant to be portable?</td>
+</tr>
+<tr>
+<td>Mathematisch-Physikalischer salon,<sup id="cite_ref-33" class="reference"><a href="#cite_note-33"><span>[</span>33<span>]</span></a></sup> <a href="http://en.wikipedia.org/wiki/Dresden" title="Dresden">Dresden</a></td>
+<td align="center">Germany</td>
+<td>Queen of Poland</td>
+<td align="center">Accounting</td>
+<td align="center">10</td>
+<td>8 x 10 + 20 + 12</td>
+<td>The second wheel from the right has a wheel with 10 spokes contained in a fixed wheel with 20 segments. This could be attributed to a bad restoration.</td>
+</tr>
+<tr>
+<td>Léon&#160;Parcé&#160;collection</td>
+<td align="center">France</td>
+<td></td>
+<td align="center">Surveying</td>
+<td align="center">8</td>
+<td>5&#160;x&#160;10&#160;+&#160;6&#160;+&#160;12&#160;+&#160;12&#160;</td>
+<td>This machine was bought as a broken music box in a French antique shop in 1942.</td>
+</tr>
+<tr>
+<td><a href="IBM.html" title="IBM">IBM</a> collection<sup id="cite_ref-34" class="reference"><a href="#cite_note-34"><span>[</span>34<span>]</span></a></sup></td>
+<td align="center">USA</td>
+<td></td>
+<td align="center">&#160;Accounting&#160;</td>
+<td align="center">8</td>
+<td>6 x 10 + 20 + 12</td>
+<td></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="User_interface">User interface</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=11" title="Edit section: User interface">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tnone" style="width: 799px; margin: 0 auto;background-color: #FAF0E6">
+<div class="thumbinner" style="background-color: #FAF0E6">
+<div style="float: left; margin: 1px; width: 395px">
+<div class="thumbimage"><a href="http://en.wikipedia.org/wiki/File:Pascaline_-_top_view_and_mechanism.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pascaline_-_top_view_and_mechanism.jpg/393px-Pascaline_-_top_view_and_mechanism.jpg" width="393" height="329" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pascaline_-_top_view_and_mechanism.jpg/590px-Pascaline_-_top_view_and_mechanism.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Pascaline_-_top_view_and_mechanism.jpg/786px-Pascaline_-_top_view_and_mechanism.jpg 2x" /></a></div>
+<div class="thumbcaption" style="clear:left">
+<div align="center">Top view and overview of the entire mechanism</div>
+</div>
+</div>
+<div style="float: left; margin: 1px; width: 391px">
+<div class="thumbimage"><a href="http://en.wikipedia.org/wiki/File:Detail_of_the_pascaline%27s_carry_mecanism_-_the_sautoir.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Detail_of_the_pascaline%27s_carry_mecanism_-_the_sautoir.jpg/389px-Detail_of_the_pascaline%27s_carry_mecanism_-_the_sautoir.jpg" width="389" height="329" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/31/Detail_of_the_pascaline%27s_carry_mecanism_-_the_sautoir.jpg/584px-Detail_of_the_pascaline%27s_carry_mecanism_-_the_sautoir.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/31/Detail_of_the_pascaline%27s_carry_mecanism_-_the_sautoir.jpg/778px-Detail_of_the_pascaline%27s_carry_mecanism_-_the_sautoir.jpg 2x" /></a></div>
+<div class="thumbcaption" style="clear:left">
+<div align="center">Detail of the carry mechanism and of the <i>sautoir</i></div>
+</div>
+</div>
+<div class="thumbcaption" style="clear: left; text-align: left; background: transparent">
+<div align="center"><b><i>Œuvres de Pascal</i> in 5 volumes, <i>La Haye</i>, 1779</b></div>
+</div>
+</div>
+</div>
+<h3><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=12" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The calculator had spoked metal wheel dials, with the digit 0 through 9 displayed around the circumference of each wheel. To input a digit, the user placed a stylus in the corresponding space between the spokes, and turned the dial until a metal stop at the bottom was reached, similar to the way a <a href="http://en.wikipedia.org/wiki/Rotary_dial" title="Rotary dial">rotary telephone dial</a> is used. This would display the number in the display windows at the top of the calculator. Then, one would simply redial the second number to be added, causing the sum of both numbers to appear in the accumulator.</p>
+<p>Each dial is associated with a one-digit display window located directly above it. It displays the value of the accumulator for this position. The complement of this digit, in the base of the wheel (6, 10, 12, 20), is displayed just above this digit. A horizontal bar hides either all the complement numbers when it is slid to the top or all the direct numbers when it is slid toward the center of the machine and thereby displays either the content of the accumulator or the complement of its value.<sup id="cite_ref-35" class="reference"><a href="#cite_note-35"><span>[</span>35<span>]</span></a></sup></p>
+<p>Since the gears of the calculator rotated in only one direction, negative numbers could not be directly summed. To subtract one number from another, the method of <a href="#9.27s_complement">nine's complement</a> was used. The only two differences between an addition and a subtraction are the position of the display bar (direct versus complement) and the way the first number is entered (direct versus complement).</p>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="http://en.wikipedia.org/wiki/File:Pascaline_roue_d%27inscription.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pascaline_roue_d%27inscription.jpg/220px-Pascaline_roue_d%27inscription.jpg" width="220" height="219" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/6/6c/Pascaline_roue_d%27inscription.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/6/6c/Pascaline_roue_d%27inscription.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Pascaline_roue_d%27inscription.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+<div align="center">Input wheel</div>
+</div>
+</div>
+</div>
+<h3><span class="mw-headline" id="Input_wheel">Input wheel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=13" title="Edit section: Input wheel">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>For a 10-digit wheel (N), the fixed outside wheel is numbered from 0 to 9 (N-1). The numbers are inscribed in a decreasing manner clockwise going from the bottom left to the bottom right of the stop lever. To add a 5, one must insert a stylus between the spokes that surround the number 5 and rotate the wheel clockwise all the way to the stop lever. The number displayed on the corresponding display register will be increased by 5 and, if a carry transfer takes place, the display register to the left of it will be increased by 1. To add 50, use the tens input wheel (second dial from the right on a decimal machine), to add 500, use the hundreds input wheel, etc...</p>
+<h3><span class="mw-headline" id="Marks_on_two_adjacent_spokes">Marks on two adjacent spokes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=14" title="Edit section: Marks on two adjacent spokes">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>On all the wheels of all the known machines, except for the <i>machine tardive</i>,<sup id="cite_ref-36" class="reference"><a href="#cite_note-36"><span>[</span>36<span>]</span></a></sup> two adjacent spokes are marked&#160;; these marks differ from machine to machine, on the wheel pictured on the right, they are drilled dots, on the surveying machine they are carved, some are just scratches or marks made with a bit of varnish,<sup id="cite_ref-37" class="reference"><a href="#cite_note-37"><span>[</span>37<span>]</span></a></sup> some were even marked with little pieces of paper.<sup id="cite_ref-38" class="reference"><a href="#cite_note-38"><span>[</span>38<span>]</span></a></sup></p>
+<p>These marks are used to set the corresponding cylinder to its maximum number, ready to be re-zeroed. To do so, the operator must insert the stylus in between these two spokes and turn the wheel all the way to the stopping lever. This works because each wheel is directly linked to its corresponding display cylinder (it automatically turns by one during a carry operation)&#160;; to mark the spokes during manufacturing, one can move the cylinder so that its highest number is displayed and then mark the spoke under the stopping lever and the one to the right of it.</p>
+<h3><span class="mw-headline" id="Inner_wheel_of_complements">Inner wheel of complements</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=15" title="Edit section: Inner wheel of complements">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Four of the known machines have inner wheels of complements; they were used to enter the first operand in a subtraction. They are mounted at the center of each spoked metal wheel and turn with it. The wheel displayed in the picture above has an inner wheel of complements but the numbers written on it are barely visible. On a decimal machine, the digits 0 through 9 are carved clockwise, with each digit positioned between two spokes so that the operator can directly inscribe its value in the window of complements by positioning his stylus in between them and turning the wheel clockwise all the way to the stop lever.<sup id="cite_ref-39" class="reference"><a href="#cite_note-39"><span>[</span>39<span>]</span></a></sup> The <a href="#Marks_on_two_adjacent_spokes">marks on two adjacent spokes</a> flank the digit 0 inscribed on this wheel.</p>
+<h3><span class="mw-headline" id="Quotient_wheel">Quotient wheel</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=16" title="Edit section: Quotient wheel">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>On four of the known machines, above each wheel, a small quotient wheel is mounted on the display bar. These quotient wheels, which are set by the operator, have numbers from 1 to 10 inscribed clockwise on their peripheries (even above a non decimal wheel). Quotient wheels seem to have been used during a division to memorize the number of times the divisor was subtracted at each given index.<sup id="cite_ref-40" class="reference"><a href="#cite_note-40"><span>[</span>40<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="Inner_mechanism">Inner mechanism</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=17" title="Edit section: Inner mechanism">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Shrinking_a_turret_clock_mechanism">Shrinking a turret clock mechanism</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=18" title="Edit section: Shrinking a turret clock mechanism">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Pascal went through 50 prototypes before settling on his final design; we know that he started with some sort of calculating clock mechanism that used springs but after realizing its problems and limitations he continued to look for a way to make his calculator work properly.<sup id="cite_ref-41" class="reference"><a href="#cite_note-41"><span>[</span>41<span>]</span></a></sup> Eventually he switched from trying to enlarge and reinforce a clock like mechanism to shrinking and adapting for his purpose a much stronger part of a turret clock mechanism called a <a href="http://en.wikipedia.org/wiki/Gears#Cage_gear" title="Gears" class="mw-redirect">lantern gear</a>, itself derived from a water wheel mechanism, which could easily handle the strength of an operator input<sup id="cite_ref-42" class="reference"><a href="#cite_note-42"><span>[</span>42<span>]</span></a></sup></p>
+<table>
+<tr>
+<td>
+<div class="thumb tright">
+<div class="thumbinner" style="width:172px;"><a href="http://en.wikipedia.org/wiki/File:Fotothek_df_tg_0003975_Mühle_%5E_Ochse.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fotothek_df_tg_0003975_Mühle_%5E_Ochse.jpg/170px-Fotothek_df_tg_0003975_Mühle_%5E_Ochse.jpg" width="170" height="226" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fotothek_df_tg_0003975_M%C3%BChle_%5E_Ochse.jpg/255px-Fotothek_df_tg_0003975_M%C3%BChle_%5E_Ochse.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Fotothek_df_tg_0003975_M%C3%BChle_%5E_Ochse.jpg/340px-Fotothek_df_tg_0003975_M%C3%BChle_%5E_Ochse.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Fotothek_df_tg_0003975_Mühle_%5E_Ochse.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+A lantern gear, as seen in this drawing, can resist the force of an animal and of running water</div>
+</div>
+</div>
+</td>
+<td>
+<div class="thumb tright">
+<div class="thumbinner" style="width:172px;"><a href="http://en.wikipedia.org/wiki/File:Lantern_gear_-_Turret_clock_from_1608.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Lantern_gear_-_Turret_clock_from_1608.jpg/170px-Lantern_gear_-_Turret_clock_from_1608.jpg" width="170" height="228" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Lantern_gear_-_Turret_clock_from_1608.jpg/255px-Lantern_gear_-_Turret_clock_from_1608.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Lantern_gear_-_Turret_clock_from_1608.jpg/340px-Lantern_gear_-_Turret_clock_from_1608.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Lantern_gear_-_Turret_clock_from_1608.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Same gear used in turret clocks powered by weights that can weigh hundreds of kilos</div>
+</div>
+</div>
+</td>
+<td>
+<div class="thumb tright">
+<div class="thumbinner" style="width:332px;"><a href="http://en.wikipedia.org/wiki/File:Gears_used_in_Pascal%27s_calculator.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gears_used_in_Pascal%27s_calculator.jpg/330px-Gears_used_in_Pascal%27s_calculator.jpg" width="330" height="248" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gears_used_in_Pascal%27s_calculator.jpg/495px-Gears_used_in_Pascal%27s_calculator.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Gears_used_in_Pascal%27s_calculator.jpg/660px-Gears_used_in_Pascal%27s_calculator.jpg 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Gears_used_in_Pascal%27s_calculator.jpg" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Pascal's adaptation</div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+<p>In the colored drawing above, the blue gear (input) meshes with the yellow gears (processing) which themselves drive the red gear (output). The intersection of two perpendicular cylinders is one point and therefore, in theory, the blue gear and the yellow gear mesh in one single point. Pascal designed a gear that could easily take the strength of the strongest operator and yet added almost zero friction to the entire mechanism.</p>
+<h3><span class="mw-headline" id="Pawl_and_Ratchet">Pawl and Ratchet</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=19" title="Edit section: Pawl and Ratchet">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Pascal adapted a pawl and ratchet mechanism to his own turret wheel design&#160;; the pawl prevents the wheel from turning counterclockwise during an operator input, but it is also used to precisely position the display wheel and the carry mechanism for the next digit when it is pushed up and lands into its next position. Because of this mechanism, each number displayed is perfectly centered in the display window and each digit is precisely positioned for the next operation. This mechanism would be moved six times if the operator dialed a six on its associated input wheel.</p>
+<h2><span class="mw-headline" id="Carry_mechanism">Carry mechanism</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=20" title="Edit section: Carry mechanism">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="The_sautoir">The <i>sautoir</i></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=21" title="Edit section: The sautoir">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="http://en.wikipedia.org/wiki/File:PascalineSautoirColored.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/PascalineSautoirColored.png/220px-PascalineSautoirColored.png" width="220" height="185" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/51/PascalineSautoirColored.png/330px-PascalineSautoirColored.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/51/PascalineSautoirColored.png/440px-PascalineSautoirColored.png 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:PascalineSautoirColored.png" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+<div align="center">The <i>sautoir</i><br /></div>
+</div>
+</div>
+</div>
+<p>The <i>sautoir</i> is the centerpiece of the pascaline's carry mechanism. In his "<a href="http://en.wikisource.org/wiki/fr:La_Machine_d’arithmétique#Avis_n.C3.A9cessaire_.C3.A0_ceux_qui_auront_curiosit.C3.A9_de_voir_la_Machine_d.27Arithm.C3.A9tique_et_de_s.27en_servir" class="extiw" title="s:fr:La Machine d’arithmétique">Avis nécessaire...</a>", Pascal wrote:</p>
+<blockquote class="templatequote">
+<p>... as for the ease of use of this ... movement ... moving one thousand or even ten thousand wheels if they were there, each one performing their motion perfectly, is as easy as moving only one (I don't know if, after the principle that I perfected to design this device, there is another one left to be found in nature)...<sup id="cite_ref-43" class="reference"><a href="#cite_note-43"><span>[</span>43<span>]</span></a></sup></p>
+</blockquote>
+<p>A machine with 10,000 wheels would work as well as a machine with two wheels because each wheel is independent of the other. When it is time to propagate a carry, the sautoir, under the sole influence of gravity,<sup id="cite_ref-44" class="reference"><a href="#cite_note-44"><span>[</span>44<span>]</span></a></sup> is thrown toward the next wheel without any contact between the wheels. During its free fall the sautoir behaves like an acrobat jumping from one trapeze to the next without the trapezes touching each other (<i>sautoir</i> comes from the French verb <i>sauter</i> which means to jump). All the wheels (including gears and sautoir) have therefore the same size and weight independently of the capacity of the machine.</p>
+<p>Pascal used gravity to arm the <i>sautoirs</i>. One must turn the wheel five steps from 4 to 9 in order to fully arm a sautoir, but the carry transfer will move the next wheel only one step. Thus much extra energy is accumulated during the arming of a <i>sautoir</i>.</p>
+<p>All the sautoirs are armed by either an operator input or a carry forward. To re-zero a 10,000-wheel machine, if one existed, the operator would have to set every wheel to its maximum and then add a 1 to the "unit" wheel. The carry would turn every input wheel one by one in a very rapid <a href="http://en.wikipedia.org/wiki/Domino_effect" title="Domino effect">Domino effect</a> fashion and all the display registers would be reset.</p>
+<h3><span class="mw-headline" id="The_three_phases_of_a_carry_transmission">The three phases of a carry transmission</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=22" title="Edit section: The three phases of a carry transmission">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="thumb tright">
+<div class="thumbinner" style="width:262px;"><a href="http://en.wikipedia.org/wiki/File:Sautoir-Animation.gif" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Sautoir-Animation.gif/260px-Sautoir-Animation.gif" width="260" height="185" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Sautoir-Animation.gif/390px-Sautoir-Animation.gif 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Sautoir-Animation.gif/520px-Sautoir-Animation.gif 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Sautoir-Animation.gif" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+<div align="center">The three phases of a carry transfer operation</div>
+</div>
+</div>
+</div>
+<p>The animation on the right shows the three phases of a carry transmission.</p>
+<ol>
+<li>The first phase happens when the display register goes from 4 to 9. The two carry pins (one after the other) lift the sautoir pushing on its protruding part marked (3,4,5). At the same time the kicking <span class="nowrap">pawl (1)</span> is pulled up, using a pin on the receiving wheel as guidance, but without effect on this wheel because of the top <span class="nowrap">pawl/ratchet (C)</span>.</li>
+<li>The second phase starts when the display register goes from 9 to 0. The kicking pawl passes its guiding pin and its <span class="nowrap">spring (z,u)</span> positions it above this pin ready to push back on it. The sautoir keeps on moving up and suddenly the second carry pin drops it. The sautoir is falling of its own weight.</li>
+<li>The kicking <span class="nowrap">pawl (1)</span> pushes the pin on the receiving wheel and starts turning it. The upper <span class="nowrap">pawl/ratchet (C)</span> is moved to the next space. The operation stops when the protruding <span class="nowrap">part (T)</span> hits the <span class="nowrap">buffer stop (R)</span>. The upper <span class="nowrap">pawl/ratchet (C)</span> position the entire receiving mechanism in its proper place.</li>
+</ol>
+<ul>
+<li>During the first phase, the <i>active wheel</i> touches the one that will receive the carry through the sautoir, but it never moves it or modifies it and therefore the status of the receiving wheel has no impact whatsoever on the active wheel.</li>
+<li>During the second phase, the sautoir and the two wheels are completely disconnected.</li>
+<li>During the third phase the sautoir, which no longer touches the active wheel, adds one to the receiving wheel.</li>
+</ul>
+<h2><span class="mw-headline" id="Operations">Operations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=23" title="Edit section: Operations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Principle">Principle</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=24" title="Edit section: Principle">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The Pascaline is a direct adding machine (it has no crank), so the value of a number is added to the accumulator as it is being dialed in. By moving a display bar, the operator can see either the number stored in the calculator or the complement of its value. Subtractions are performed like additions using some properties of <a href="#9.27s_complement">9's complement</a> arithmetic.</p>
+<h3><span class="mw-headline" id="9.27s_complement">9's complement</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=25" title="Edit section: 9's complement">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The 9's complement of any one digit decimal number <i><b>d</b></i> is <i><b>9 - d</b></i>. So the 9's complement of 4 is 5 and the 9's complement of 9 is 0. Similarly the 11's complement of 3 is 8.</p>
+<p>In a decimal machine with n dials the 9's complement of a number A is:</p>
+<dl>
+<dd><i>CP(A)=</i> 10<sup>n</sup> - 1 - A</dd>
+</dl>
+<p>and therefore the 9's complement of (A - B) is:</p>
+<dl>
+<dd><i>CP(A - B)=</i> 10<sup>n</sup> -1 - (A - B) = 10<sup>n</sup> -1 - A + B = <i>CP(A) + B</i></dd>
+</dl>
+<dl>
+<dd><b><i>CP(A - B)=</i> CP(A) + B</b></dd>
+</dl>
+<p>In other words, the 9's complement of the difference of two numbers is equal to the sum of the 9's complement of the minuend added to the subtrahend. The same principle is valid and can be used with numbers composed of digits of various bases (base 6, 12, 20) like in the surveying or the accounting machines.</p>
+<p>This can also be extended to:</p>
+<dl>
+<dd><b><i>CP(A - B - C - D)=</i> CP(A) + B + C + D</b></dd>
+</dl>
+<p>This principle applied to the pascaline:</p>
+<table border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td valign="top"><i>CP(A):</i></td>
+<td>First the complement of the minuend is entered. The operator can either use the <a href="#Inner_wheel_of_complements">inner wheels of complements</a> or dial the complement of the minuend directly. The display bar is shifted to show the complement's window so that the operator sees the direct number displayed because <span class="nowrap">CP(CP(A))= A</span>.</td>
+</tr>
+<tr>
+<td valign="top"><i>B:&#160;&#160;&#160;</i></td>
+<td>Then the second number is dialed in and adds its value to the accumulator.</td>
+</tr>
+<tr>
+<td valign="top"><i><span class="nowrap">CP(A - B):</span></i></td>
+<td>The result (A - B) is displayed in the complement window because <span class="nowrap">CP(CP(A - B))= A - B</span>. The last step can be repeated as long as the subtrahend is smaller than the minuend displayed in the accumulator,.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Resetting_the_machine">Resetting the machine</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=26" title="Edit section: Resetting the machine">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The machine has to be re-zeroed before each new operation.</p>
+<p>To reset his machine, the operator has to set all the wheels to their maximum, using the <a href="#Marks_on_two_adjacent_spokes">marks on two adjacent spokes</a>, and then add 1 to the rightmost wheel.<sup id="cite_ref-CR_RESET_45-0" class="reference"><a href="#cite_note-CR_RESET-45"><span>[</span>45<span>]</span></a></sup></p>
+<p>The method of re-zeroing that Pascal chose, which propagates a carry right through the machine, is the most demanding task for a mechanical calculator and proves, before each operation, that the machine is fully functional.</p>
+<p>This is a testament to the quality of the Pascaline because none of the 18<sup>th</sup> century criticisms of the machine mentioned a problem with the carry mechanism and yet this feature was fully tested on all the machines, by their resets, all the time.<sup id="cite_ref-NO_BLOC_46-0" class="reference"><a href="#cite_note-NO_BLOC-46"><span>[</span>46<span>]</span></a></sup></p>
+<table style="width: 80%" align="center" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td style="width: 20%; background: lightgrey" align="center"><b>Re-zero</b></td>
+<td style="background: silver">Set all the wheels to their maximum using the marks on two adjacent spokes. Every single wheel is ready for a carry transfer.</td>
+<td style="background: brown">
+<table style="background: lightgrey; color: grey">
+<tr>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+</tr>
+<tr style="background: black; color: yellow">
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background: lightgrey">&#160;</td>
+<td style="background: silver">Add 1 to the right-most wheel. Each wheel sends its sautoir to the next one, the zeros appear one after another, like in a domino effect, from right to left.</td>
+<td style="background: brown">
+<table style="background: lightgrey; color: grey">
+<tr>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+</tr>
+<tr style="background: black; color: yellow">
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Addition">Addition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=27" title="Edit section: Addition">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Additions are performed with the display bar moved closest to the edge of the machine, showing the direct value of the accumulator.</p>
+<p>After re-zeroing the machine, numbers are dialed in one after the other.</p>
+<p>The following table shows all the steps required to compute: <b>12,345</b> + <b>56,789</b> = <b>69,134</b></p>
+<table style="width: 80%" align="center" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td style="width: 20%; background: lightgrey" align="center"><b>Addition</b></td>
+<td style="background: silver">The machine is at zero, the operator enters 12,345.</td>
+<td style="background: brown">
+<table style="background: lightgrey; color: grey">
+<tr>
+<td>&#160;8&#160;</td>
+<td>&#160;7&#160;</td>
+<td>&#160;6&#160;</td>
+<td>&#160;5&#160;</td>
+<td>&#160;4&#160;</td>
+</tr>
+<tr style="background: black; color: yellow">
+<td>&#160;1&#160;</td>
+<td>&#160;2&#160;</td>
+<td>&#160;3&#160;</td>
+<td>&#160;4&#160;</td>
+<td>&#160;5&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background: lightgrey" align="center"></td>
+<td style="background: silver">The operator enters the second operand: 56,789. If he starts with the rightmost number, the second wheel will go from 4 to 5, during the inscription of the 9, because of a carry transmission....</td>
+<td style="background: brown">
+<table style="background: lightgrey; color: grey">
+<tr>
+<td>&#160;3&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;8&#160;</td>
+<td>&#160;6&#160;</td>
+<td>&#160;5&#160;</td>
+</tr>
+<tr style="background: black; color: yellow">
+<td>&#160;6&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;1&#160;</td>
+<td>&#160;3&#160;</td>
+<td>&#160;4&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Subtraction">Subtraction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=28" title="Edit section: Subtraction">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Subtractions are performed with the display bar moved closest to the center of the machine showing the complement value of the accumulator.</p>
+<p>The accumulator contains <i>CP( A )</i> during the first step and <i>CP( A - B)</i> after adding B. In displaying that data in the complement window, the operator sees <i>CP( CP( A))</i> which is A and then <i>CP(CP( A - B ))</i> which is (A - B). It feels like an addition since the only two differences in between an addition and a subtraction are the position of the display bar (direct versus complement) and the way the first number is entered (direct versus complement).</p>
+<p>The following table shows all the steps required to compute: <b>54,321</b> - <b>12,345</b> = <b>41,976</b></p>
+<table style="width: 80%" align="center" border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td style="width: 20%; background: silver;" align="center"><b>Change display space</b></td>
+<td style="background: lightgrey">Move the display bar down to uncover the complement part of each result cylinder. From this point on, every number dialed into the machine adds its value to the accumulator and therefore decreases the total displayed in the complement window.</td>
+<td style="background: brown">
+<table style="background: lightgrey; color: grey">
+<tr style="background: black; color: yellow">
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;9&#160;</td>
+</tr>
+<tr style="background: lightgrey; color: grey">
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;0&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background: lightgrey" align="center"><b>Subtraction</b></td>
+<td style="background: silver">Enter the 9's complement of the minuend. The operator can either use the <a href="#Inner_wheel_of_complements">inner wheels of complements</a> or dial the 9's complement of 54,321 (45,678) directly.</td>
+<td style="background: brown">
+<table style="background: lightgrey; color: grey">
+<tr style="background: black; color: yellow">
+<td>&#160;5&#160;</td>
+<td>&#160;4&#160;</td>
+<td>&#160;3&#160;</td>
+<td>&#160;2&#160;</td>
+<td>&#160;1&#160;</td>
+</tr>
+<tr style="background: lightgrey; color: grey">
+<td>&#160;4&#160;</td>
+<td>&#160;5&#160;</td>
+<td>&#160;6&#160;</td>
+<td>&#160;7&#160;</td>
+<td>&#160;8&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background: lightgrey" align="center"></td>
+<td style="background: silver">Dial the subtrahend (12,345) on the spoked metal wheels. This is an addition. The result, 41,976, is in the 9's complement window.</td>
+<td style="background: brown">
+<table style="background: lightgrey; color: grey">
+<tr style="background: black; color: yellow">
+<td>&#160;4&#160;</td>
+<td>&#160;1&#160;</td>
+<td>&#160;9&#160;</td>
+<td>&#160;7&#160;</td>
+<td>&#160;6&#160;</td>
+</tr>
+<tr style="background: lightgrey; color: grey">
+<td>&#160;5&#160;</td>
+<td>&#160;8&#160;</td>
+<td>&#160;0&#160;</td>
+<td>&#160;2&#160;</td>
+<td>&#160;3&#160;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Pascal_versus_Schickard">Pascal versus Schickard</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=29" title="Edit section: Pascal versus Schickard">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:222px;"><a href="http://en.wikipedia.org/wiki/File:Rechenmaschine_wilhelm_schickard.png" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rechenmaschine_wilhelm_schickard.png/220px-Rechenmaschine_wilhelm_schickard.png" width="220" height="294" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rechenmaschine_wilhelm_schickard.png/330px-Rechenmaschine_wilhelm_schickard.png 1.5x, //upload.wikimedia.org/wikipedia/commons/c/c2/Rechenmaschine_wilhelm_schickard.png 2x" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="http://en.wikipedia.org/wiki/File:Rechenmaschine_wilhelm_schickard.png" class="internal" title="Enlarge"><img src="http://bits.wikimedia.org/static-1.23wmf17/skins/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Schickard's calculating clock</div>
+</div>
+</div>
+<h3><span class="mw-headline" id="History_2">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=30" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>From the introduction of the Pascaline and for more than three centuries Pascal was known as the inventor of the mechanical calculator, but then, in 1957, Franz Hammer, a biographer of <a href="http://en.wikipedia.org/wiki/Johannes_Kepler" title="Johannes Kepler">Johannes Kepler</a>, challenged this fact by announcing that the drawings of a previously unknown working calculating clock, predating Pascal's work by twenty years had been rediscovered, after three centuries of absence, in two letters that <a href="http://en.wikipedia.org/wiki/Wilhelm_Schickard" title="Wilhelm Schickard">Wilhelm Schickard</a> had written to his friend Johannes Kepler in 1623 and 1624.<sup id="cite_ref-47" class="reference"><a href="#cite_note-47"><span>[</span>47<span>]</span></a></sup> The 1624 letter stated that the first machine to be built by a professional had been destroyed in a fire during its construction and that he was abandoning his project.<sup id="cite_ref-48" class="reference"><a href="#cite_note-48"><span>[</span>48<span>]</span></a></sup></p>
+<p>Franz Hammer asserted that because these letters had been lost for three hundred years, <a href="Blaise_Pascal.html" title="Blaise Pascal">Blaise Pascal</a> had been called<sup id="cite_ref-49" class="reference"><a href="#cite_note-49"><span>[</span>49<span>]</span></a></sup> and celebrated as<sup id="cite_ref-50" class="reference"><a href="#cite_note-50"><span>[</span>50<span>]</span></a></sup> the inventor of the <a href="Mechanical_calculator.html" title="Mechanical calculator">mechanical calculator</a> in error during all this time.</p>
+<h3><span class="mw-headline" id="Published_since_1718">Published since 1718</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=31" title="Edit section: Published since 1718">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>After careful examination it was found that Schikard's drawings had been published at least once per century starting from 1718.<sup id="cite_ref-51" class="reference"><a href="#cite_note-51"><span>[</span>51<span>]</span></a></sup> This alone invalidated the first part of Franz Hammer's claim. The other part of Franz Hammer's claim, which was also erroneous, was that the two letters contained the drawings of a calculating clock that actually worked.</p>
+<h3><span class="mw-headline" id="Addition_of_wheels_and_springs">Addition of wheels and springs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=32" title="Edit section: Addition of wheels and springs">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Bruno von Freytag Loringhoff, a mathematics professor at the <a href="http://en.wikipedia.org/wiki/University_of_Tübingen" title="University of Tübingen">University of Tübingen</a> built the first replica of Schickard's machine but not without adding wheels and springs to finish the design:</p>
+<blockquote class="templatequote">
+<p>This simple-looking device actually presents a host of problems to anyone attempting to construct an adding machine based on this principle. The major problem is caused by the fact that the single tooth must enter into the teeth of the intermediate wheel, rotate it 36 degrees (one tenth of a revolution), and exit from the teeth, all while only rotating 36 degrees itself. The most elementary solution to this problem consists of the intermediate wheel being, in effect, two different gears, one with long and one with short teeth together with a spring-loaded detente (much like the pointer used on the big wheel of the gambling game generally known as Crown and Anchor) which would allow the gears to stop only in specific locations. <b>It is not known if Schickard used this mechanism, but it certainly works well on the reproductions constructed by von Freytag Loringhoff</b>.</p>
+<div class="templatequotecite">—Michael R. Williams<sup id="cite_ref-52" class="reference"><a href="#cite_note-52"><span>[</span>52<span>]</span></a></sup>,&#160;<cite>History of Computing Technology, IEEE (1997)</cite></div>
+</blockquote>
+<p>Without this twentieth-century improvement in the carry mechanism, which is not described in any of Schickard's letters or drawings, the replicas would not have worked.</p>
+<h3><span class="mw-headline" id="Wrong_carry_mechanism">Wrong carry mechanism</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=33" title="Edit section: Wrong carry mechanism">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Another problem was found after the replicas were built:</p>
+<blockquote class="templatequote">
+<p>... it is almost certain that Pascal would not have known of Schickard's machine ...<br />
+Pascal seems to have realized right from the start that <b>the single-tooth gear, like that used by Schickard, would not do for a general carry mechanism</b>. The single-tooth gear works fine if the carry is only going to be propagated a few places but, if the carry has to be propagated several places along the accumulator, the force needed to operate the machine would be of such magnitude that it would do damage to the delicate gear works.</p>
+<div class="templatequotecite">—Michael R. Williams,&#160;<cite>History of Computing Technology, IEEE (1997)<sup id="cite_ref-53" class="reference"><a href="#cite_note-53"><span>[</span>53<span>]</span></a></sup></cite></div>
+</blockquote>
+<p>Schickard's machine used clock wheels which were made stronger and were therefore heavier, to prevent them from being damaged by the force of an operator input. Each digit used a display wheel, an input wheel and an intermediate wheel. During a carry transfer all these wheels meshed with the wheels of the digit receiving the carry. The cumulative friction and inertia of all these wheels could "...potentially damage the machine if a carry needed to be propagated through the digits, for example like adding 1 to a number like 9,999".<sup id="cite_ref-54" class="reference"><a href="#cite_note-54"><span>[</span>54<span>]</span></a></sup></p>
+<p>In Pascal's calculator each input wheel is totally independent from all the others and carries are propagated in sequence. Pascal chose, for his machine, a <a href="#Resetting_the_machine">method of <span class="nowrap">re-zeroing</span></a> that propagates a carry right through the machine.<sup id="cite_ref-CR_RESET_45-1" class="reference"><a href="#cite_note-CR_RESET-45"><span>[</span>45<span>]</span></a></sup> It is the most demanding operation to execute for a mechanical calculator and proved, before each operation, that the Pascaline was fully functional. This is a testament to the quality of the Pascaline because none of the 18th century criticisms of the machine mentioned a problem with the carry mechanism and yet this feature was fully tested on all the machines, by their resets, all the time.<sup id="cite_ref-NO_BLOC_46-1" class="reference"><a href="#cite_note-NO_BLOC-46"><span>[</span>46<span>]</span></a></sup></p>
+<h3><span class="mw-headline" id="Conclusion">Conclusion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=34" title="Edit section: Conclusion">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Pascal is recognized for inventing the first practical mechanical calculator. Although Schickard designed his machine twenty years earlier, the drawings of Schickard's calculating clock described a machine that was neither complete (it was missing wheels and springs) nor fully usable (it had a non-functioning carry mechanism). Schickard's <i>calculating clock</i> had been known since his two letters were first made public in 1718 but its design had little or no influence on the development of mechanical calculators.<sup id="cite_ref-55" class="reference"><a href="#cite_note-55"><span>[</span>55<span>]</span></a></sup> Schickard had subsequently abandoned the project to study astronomy and invent astronomical instruments. The calculating clock was not successfully constructed until a century later by <a href="http://en.wikipedia.org/wiki/Giovanni_Poleni" title="Giovanni Poleni">Giovanni Poleni</a>. This version featured two-motions: the numbers are input during the first motion and are processed in a second motion.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=35" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Adding_machine" title="Adding machine">Adding machine</a></li>
+<li><a href="Arithmometer.html" title="Arithmometer">Arithmometer</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Comptometer" title="Comptometer">Comptometer</a></li>
+<li><a href="Difference_engine.html" title="Difference engine">Difference engine</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Analytical_engine" title="Analytical engine" class="mw-redirect">Analytical engine</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Z1_(computer)" title="Z1 (computer)">Z1 (computer)</a></li>
+</ul>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=36" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist columns references-column-count references-column-count-2" style="-moz-column-count: 2; -webkit-column-count: 2; column-count: 2; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><a href="#DOCAGNE">Maurice d'Ocagne</a> p.245 (1893)</span></li>
+<li id="cite_note-inventor-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-inventor_2-0">^</a></b></span> <span class="reference-text"><a href="#MARG">Jean Marguin</a>, p. 48 (1994)&#160;; Quoting <a href="#TATON63">René Taton</a> (1963)</span></li>
+<li id="cite_note-WHY-3"><span class="mw-cite-backlink">^ <a href="#cite_ref-WHY_3-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-WHY_3-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><a href="#NAT_CHAP">Magazine Nature</a>, (1942)</span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text">(fr) <a href="http://en.wikisource.org/wiki/fr:La_Machine_d’arithmétique" class="extiw" title="s:fr:La Machine d’arithmétique">La Machine d’arithmétique, Blaise Pascal</a>, Wikisource</span></li>
+<li id="cite_note-mour12-5"><span class="mw-cite-backlink">^ <a href="#cite_ref-mour12_5-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-mour12_5-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><a href="#MOUR">Guy Mourlevat</a>, p.12 (1988)</span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><a href="http://en.wikipedia.org/wiki/Anne_of_Austria" title="Anne of Austria">Anne of Austria</a> was <a href="http://en.wikipedia.org/wiki/Queen_consort" title="Queen consort">Queen consort</a> of France at the time.</span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text">See the paragraph <a href="#Competing_designs">Competing designs</a> in this article</span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text">See the paragraph <a href="#Inner_mechanism">Inner mechanism</a> in this article</span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text">All computers regardless of size or purpose are powered by microprocessors and yet only 2% of the microprocessors produced worldwide in the year 2000 were used as <i>computer central processing units</i> the other 98% were used in embedded processor designs, Jim Turley, The essential guide to semiconductors, Prentice Hall, New Jersey, 2003, p. 123</span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><a href="#SCRI">Leland Locke</a>, p. 316 (1933)</span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><a href="Howard_Aiken.html" title="Howard Aiken" class="mw-redirect">Howard Aiken</a>, Proposed automatic calculating machine, presented to IBM in 1937</span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://penelope.uchicago.edu/Thayer/E/Roman/Texts/Vitruvius/10*.html">Book X, Chapter 9</a> retreaved 10-15-2010</span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><a href="#NEEDHAM">Needham</a>, volume 4, p.281 (1986)</span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><a href="#IFRAHNUMBERS">Georges Ifrah</a>, p.579 (2000)</span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text">"Gerbert, who, under the name of Sylvester II occupied the papal chair from 999 to 1003, constructed a speaking head [...] For this exertion of his ingenuity he was, of course, accused of magic, the common charge against mechanical inventors in those times." <span class="citation journal"><a rel="nofollow" class="external text" href="http://books.google.co.uk/books?id=Xt4PAAAAYAAJ&amp;pg=PT38&amp;dq=the+parlour+review+january+1838&amp;hl=en&amp;ei=0yqzTN3kLMTHswa2wMjSDQ&amp;sa=X&amp;oi=book_result&amp;ct=result&amp;resnum=1&amp;ved=0CCsQ6AEwAA#v=onepage&amp;q&amp;f=false">"Speaking machines"</a>. <i>The parlour review, Philadelphia</i> <b>1</b> (3). January 20, 1838<span class="reference-accessdate">. Retrieved October 11, 2010</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.atitle=Speaking+machines&amp;rft.date=January+20%2C+1838&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fbooks.google.co.uk%2Fbooks%3Fid%3DXt4PAAAAYAAJ%26pg%3DPT38%26dq%3Dthe%2Bparlour%2Breview%2Bjanuary%2B1838%26hl%3Den%26ei%3D0yqzTN3kLMTHswa2wMjSDQ%26sa%3DX%26oi%3Dbook_result%26ct%3Dresult%26resnum%3D1%26ved%3D0CCsQ6AEwAA%23v%3Donepage%26q%26f%3Dfalse&amp;rft.issue=3&amp;rft.jtitle=The+parlour+review%2C+Philadelphia&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=1" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text">"In the thirteenth century Albert Magnus, the extent of whose knowledge was astonishing for the age in which he lived, made a head of earthenware. It is said that his disciple Thomas Aquinas, was so terrified when he heard it speak that he broke it to pieces, upon which the mechanist exclaimed, <i>There goes the labour of forty years.</i> In the same century lived the celebrated Roger Bacon, who is reported to have made a similar automaton." <span class="citation journal"><a rel="nofollow" class="external text" href="http://books.google.co.uk/books?id=Xt4PAAAAYAAJ&amp;pg=PT38&amp;dq=the+parlour+review+january+1838&amp;hl=en&amp;ei=0yqzTN3kLMTHswa2wMjSDQ&amp;sa=X&amp;oi=book_result&amp;ct=result&amp;resnum=1&amp;ved=0CCsQ6AEwAA#v=onepage&amp;q&amp;f=false">"Speaking machines"</a>. <i>The parlour review, Philadelphia</i> <b>1</b> (3). January 20, 1838<span class="reference-accessdate">. Retrieved October 11, 2010</span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.atitle=Speaking+machines&amp;rft.date=January+20%2C+1838&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fbooks.google.co.uk%2Fbooks%3Fid%3DXt4PAAAAYAAJ%26pg%3DPT38%26dq%3Dthe%2Bparlour%2Breview%2Bjanuary%2B1838%26hl%3Den%26ei%3D0yqzTN3kLMTHswa2wMjSDQ%26sa%3DX%26oi%3Dbook_result%26ct%3Dresult%26resnum%3D1%26ved%3D0CCsQ6AEwAA%23v%3Donepage%26q%26f%3Dfalse&amp;rft.issue=3&amp;rft.jtitle=The+parlour+review%2C+Philadelphia&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=1" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><a href="#IFRAHCOMPUTING">Georges Ifrah</a>, p.124 (2001). <i>Single tooth</i> carry mechanisms worked well in pedometers of the 16th century and were still used in mechanical odometers and gas meters during the 20th century</span></li>
+<li id="cite_note-ReferenceA-18"><span class="mw-cite-backlink">^ <a href="#cite_ref-ReferenceA_18-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-ReferenceA_18-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">Please see <a href="Mechanical_calculator.html#Calculating_clocks:_unsuccessful_mechanical_calculators" title="Mechanical calculator">Mechanical calculator#Calculating clocks: unsuccessful mechanical calculators</a></span></li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text">See paragraph: <a href="#Competing_designs">Competing designs</a></span></li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="#cite_ref-20">^</a></b></span> <span class="reference-text"><a href="#MARG">Jean Marguin</a>, p. 46 (1994)</span></li>
+<li id="cite_note-Privi-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-Privi_21-0">^</a></b></span> <span class="reference-text">(fr) Wikisource: <a href="http://en.wikisource.org/wiki/fr:La_Machine_d’arithmétique#Privil.C3.A8ge_du_Roi.2C_pour_la_Machine_Arithm.C3.A9tique" class="extiw" title="s:fr:La Machine d’arithmétique">Privilège du Roi, pour la Machine Arithmétique</a> La Machine d’arithmétique, Blaise Pascal</span></li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="#cite_ref-22">^</a></b></span> <span class="reference-text">The <a class="external text" href="http://fr.wikipedia.org/w/index.php?title=Fichier:Diderot_-_Encyclopedie_1ere_edition_tome_1.djvu&amp;page=739">French text ( Encyclopédie de Diderot &amp; d'Alembert, Tome I, 1ère édition, p.680-681) reads</a>: "La première machine arithmétique qui ait paru, est de Blaise Pascal, né à Clermont en Auvergne le 19 juin 1623&#160;; il l'inventa à l'âge de dix-neuf ans. On en a fait quelques autres depuis qui, au jugement même de MM. de l’Académie des Sciences, paraissent avoir sur celle de Pascal des avantages dans la pratique&#160;; mais celle de Pascal est la plus ancienne&#160;; elle a pu servir de modèle à toutes les autres&#160;; c'est pourquoi nous l'avons préférée"</span></li>
+<li id="cite_note-Avis-23"><span class="mw-cite-backlink"><b><a href="#cite_ref-Avis_23-0">^</a></b></span> <span class="reference-text">Wikisource: <a href="http://en.wikisource.org/wiki/fr:La_Machine_d’arithmétique#Avis_n.C3.A9cessaire_.C3.A0_ceux_qui_auront_curiosit.C3.A9_de_voir_la_Machine_d.27Arithm.C3.A9tique_et_de_s.27en_servir" class="extiw" title="s:fr:La Machine d’arithmétique">Avis nécessaire à ceux qui auront curiosité de voir la Machine d'Arithmétique et de s'en servir</a> La Machine d’arithmétique, Blaise Pascal</span></li>
+<li id="cite_note-LEIB-24"><span class="mw-cite-backlink">^ <a href="#cite_ref-LEIB_24-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-LEIB_24-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><a href="#MARG">Jean Marguin, p. 64-65 (1994)</a></span></li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><b><a href="#cite_ref-25">^</a></b></span> <span class="reference-text"><a href="#SCRI">Scripta Mathematica</a>, p.149 (1932)</span></li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><b><a href="#cite_ref-26">^</a></b></span> <span class="reference-text"><a href="#MARGUIN">Jean Marguin</a>, p.66 translated from french: "L'opérateur devait donc, surtout dans le cas de retenues multiples, surveiller les reports et corriger, à la main, les éventuelles erreurs."</span></li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><b><a href="#cite_ref-27">^</a></b></span> <span class="reference-text"><a href="#PERRAULT">Claude Perrault</a>, p.38 (1700).</span></li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><b><a href="#cite_ref-28">^</a></b></span> <span class="reference-text">The 1694 Stepped Reckoner had a problem in the carry mechanism after more than two consecutive carries and the calculating clocks either had the wrong carry mechanism (one tooth wheel) or had no carry mechanism in between the digits of the accumulator. See <a href="http://en.wikipedia.org/wiki/Mechanical_Calculator#The_17th_century" title="Mechanical Calculator" class="mw-redirect">Mechanical Calculator#The 17th century</a></span></li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><b><a href="#cite_ref-29">^</a></b></span> <span class="reference-text"><a href="#NAT_MEP">Magazine Nature</a>, (1942)</span></li>
+<li id="cite_note-30"><span class="mw-cite-backlink"><b><a href="#cite_ref-30">^</a></b></span> <span class="reference-text"><a href="#MOUR">Guy Mourlevat</a>, p. 38 (1988)</span></li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><b><a href="#cite_ref-31">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.clermont-ferrand.fr/-Museum-Henri-Lecoq-.html">http://www.clermont-ferrand.fr/-Museum-Henri-Lecoq-.html</a></span></li>
+<li id="cite_note-32"><span class="mw-cite-backlink"><b><a href="#cite_ref-32">^</a></b></span> <span class="reference-text"><a href="#MOUR">Guy Mourlevat</a>, Genealogy, (1988)</span></li>
+<li id="cite_note-33"><span class="mw-cite-backlink"><b><a href="#cite_ref-33">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.skd.museum/en/museums-institutions/zwinger-with-semperbau/mathematisch-physikalischer-salon/index.html">http://www.skd.museum/en/museums-institutions/zwinger-with-semperbau/mathematisch-physikalischer-salon/index.html</a></span></li>
+<li id="cite_note-34"><span class="mw-cite-backlink"><b><a href="#cite_ref-34">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www-03.ibm.com/ibm/history/exhibits/attic3/attic3_room3.html">http://www-03.ibm.com/ibm/history/exhibits/attic3/attic3_room3.html</a></span></li>
+<li id="cite_note-35"><span class="mw-cite-backlink"><b><a href="#cite_ref-35">^</a></b></span> <span class="reference-text">One should note that on the above drawing of the mechanism, printed more than one hundred years after Pascal's death, only two of the eight display cylinders have their numbers properly aligned with their nine's complements.</span></li>
+<li id="cite_note-36"><span class="mw-cite-backlink"><b><a href="#cite_ref-36">^</a></b></span> <span class="reference-text"><a href="#MOUR">Guy Mourlevat</a>, p.29 (1988). "Toutes les machines arithmétiques inventoriées....sauf la machine tardive du C.N.A.M....ont deux rayons contigus marqués".</span></li>
+<li id="cite_note-37"><span class="mw-cite-backlink"><b><a href="#cite_ref-37">^</a></b></span> <span class="reference-text"><a href="#MOUR">Guy Mourlevat</a>, p.29 (1988). "...palmette, petits ronds, griffures, vernis".</span></li>
+<li id="cite_note-38"><span class="mw-cite-backlink"><b><a href="#cite_ref-38">^</a></b></span> <span class="reference-text"><i>Usage de la machine</i>, Courrier du centre international Blaise Pascal, Clermont-Ferrand, no 8, 1986</span></li>
+<li id="cite_note-39"><span class="mw-cite-backlink"><b><a href="#cite_ref-39">^</a></b></span> <span class="reference-text"><a href="#MOUR">Guy Mourlevat</a>, pp.31-33 (1988)</span></li>
+<li id="cite_note-40"><span class="mw-cite-backlink"><b><a href="#cite_ref-40">^</a></b></span> <span class="reference-text"><a href="#MOUR">Guy Mourlevat</a>, p.27 (1988)</span></li>
+<li id="cite_note-41"><span class="mw-cite-backlink"><b><a href="#cite_ref-41">^</a></b></span> <span class="reference-text">"...I devised a third which works by springs and which has a very simple design. This is the one, as I have already stated, that I used many times, hidden in the plain sight of an infinity of persons and which is still in operating order. Nevertheless, while always improving on it, I found reasons to change its design..." translated from "j'en composai une troisième qui va par ressorts et qui est très simple en sa construction. C'est celle de laquelle, comme j'ai déjà dit, je me suis servi plusieurs fois, au vu et su d'une infinité de personnes, et qui est encore en état de servir autant que jamais. Toutefois, en la perfectionnant toujours, je trouvai des raisons de la changer" <a href="http://en.wikisource.org/wiki/fr:La_Machine_d’arithmétique#Avis_n.C3.A9cessaire_.C3.A0_ceux_qui_auront_curiosit.C3.A9_de_voir_la_Machine_d.27Arithm.C3.A9tique_et_de_s.27en_servir" class="extiw" title="s:fr:La Machine d’arithmétique">Avis nécessaire à ceux qui auront curiosité de voir la Machine d'Arithmétique et de s'en servir</a> Wikisource: La Machine d’arithmétique, Blaise Pascal</span></li>
+<li id="cite_note-42"><span class="mw-cite-backlink"><b><a href="#cite_ref-42">^</a></b></span> <span class="reference-text"><a href="#MARGUIN">Jean Marguin</a>, p.41 (1994)</span></li>
+<li id="cite_note-43"><span class="mw-cite-backlink"><b><a href="#cite_ref-43">^</a></b></span> <span class="reference-text">The French text reads: "...pour la facilité de ce ... mouvement .... il est aussi facile de faire mouvoir mille et dix mille roues tout à la fois, si elles y étaient, quoique toutes achèvent leur mouvement très parfait, que d'en faire mouvoir une seule (je ne sais si, après le principe sur lequel j'ai fondé cette facilité, il en reste un autre dans la nature)...". Translated by Serge Roubé on December 1, 2010.</span></li>
+<li id="cite_note-44"><span class="mw-cite-backlink"><b><a href="#cite_ref-44">^</a></b></span> <span class="reference-text"><a href="#MOUR">Guy Mourlevat</a>, p.17 (1988)</span></li>
+<li id="cite_note-CR_RESET-45"><span class="mw-cite-backlink">^ <a href="#cite_ref-CR_RESET_45-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-CR_RESET_45-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><a href="#COURRIER">Courrier du CIBP</a>, N°8, p.9, (1986)</span></li>
+<li id="cite_note-NO_BLOC-46"><span class="mw-cite-backlink">^ <a href="#cite_ref-NO_BLOC_46-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-NO_BLOC_46-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">"...et si blocage il y avait, la machine était pratiquement inutilisable, ce qui ne fut jamais signalé dans les textes du XVIIIe siecle parmi ses défaults" <a href="#MOUR">Guy Mourlevat</a>, p.30 (1988)</span></li>
+<li id="cite_note-47"><span class="mw-cite-backlink"><b><a href="#cite_ref-47">^</a></b></span> <span class="reference-text"><a href="#AUGARTEN">Stan Augarten</a>, p.20, (1984)</span></li>
+<li id="cite_note-48"><span class="mw-cite-backlink"><b><a href="#cite_ref-48">^</a></b></span> <span class="reference-text"><a href="#MARG">Jean Marguin</a>, p. 46-48 (1994)</span></li>
+<li id="cite_note-49"><span class="mw-cite-backlink"><b><a href="#cite_ref-49">^</a></b></span> <span class="reference-text">"[...] but it was not until 1642 that Blaise Pascal gave us the first mechanical calculating machine in the sense that the term is used today." <a href="Howard_Aiken.html" title="Howard Aiken" class="mw-redirect">Howard Aiken</a>, Proposed automatic calculating machine, presented to IBM in 1937</span></li>
+<li id="cite_note-50"><span class="mw-cite-backlink"><b><a href="#cite_ref-50">^</a></b></span> <span class="reference-text">"Pascal's invention of the calculating machine, just three hundred years ago, was made while he was a youth of nineteen. He was spurred to it by seeing the burden of arithmetical labor involved in his father's official work as supervisor of taxes at Rouen. He conceived the idea of doing the work mechanically, and developed a design appropriate for this purpose&#160;; showing herein the same combination of pure science and mechanical genius that characterized his whole life. But it was one thing to conceive and design the machine, and another to get it made and put into use. Here were needed those practical gifts that he displayed later in his inventions..." <a href="#NAT_CHAP">Magazine Nature</a>, Prof. S. Chapman, <i>Pascal tercentenary celebration</i>, London, (1942)</span></li>
+<li id="cite_note-51"><span class="mw-cite-backlink"><b><a href="#cite_ref-51">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://history-computer.com/MechanicalCalculators/Pioneers/Schickard.html">History of computers</a> The calculating Clock of Wilhelm Schickard. Retrieved January 31, 2012</span></li>
+<li id="cite_note-52"><span class="mw-cite-backlink"><b><a href="#cite_ref-52">^</a></b></span> <span class="reference-text"><a href="#WILLIAMS">Michael Williams</a>, p.122 (1997)</span></li>
+<li id="cite_note-53"><span class="mw-cite-backlink"><b><a href="#cite_ref-53">^</a></b></span> <span class="reference-text"><a href="#WILLIAMS">Michael Williams</a>, p.124,128 (1997)</span></li>
+<li id="cite_note-54"><span class="mw-cite-backlink"><b><a href="#cite_ref-54">^</a></b></span> <span class="reference-text"><a href="#SWED">Eric Swedin</a>, p.11 (2005)</span></li>
+<li id="cite_note-55"><span class="mw-cite-backlink"><b><a href="#cite_ref-55">^</a></b></span> <span class="reference-text"><a href="#t198">René Taton</a>, p. 81 (1969)</span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Sources">Sources</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=37" title="Edit section: Sources">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="refbegin" style="">
+<ul>
+<li><span class="citation book">Vidal, Nathalie; Vogt, Dominique (2011). <i>Les Machines Arithmétiques de Blaise Pascal</i> (in French). Clermont-Ferrand: Muséum Henri-Lecoq. <a href="International_Standard_Book_Number.html" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-2-9528068-4-8" title="Special:BookSources/978-2-9528068-4-8">978-2-9528068-4-8</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Nathalie&amp;rft.aulast=Vidal&amp;rft.au=Vidal%2C+Nathalie&amp;rft.au=Vogt%2C+Dominique&amp;rft.btitle=Les+Machines+Arithm%C3%A9tiques+de+Blaise+Pascal&amp;rft.date=2011&amp;rft.genre=book&amp;rft.isbn=978-2-9528068-4-8&amp;rft.place=Clermont-Ferrand&amp;rft.pub=Mus%C3%A9um+Henri-Lecoq&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span class="citation book">Pascal, Blaise (1779). <i>Oeuvres de Blaise Pascal</i> (in French). La Haye: Chez Detune.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Blaise&amp;rft.aulast=Pascal&amp;rft.au=Pascal%2C+Blaise&amp;rft.btitle=Oeuvres+de+Blaise+Pascal&amp;rft.date=1779&amp;rft.genre=book&amp;rft.place=La+Haye&amp;rft.pub=Chez+Detune&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span class="citation book">Ellenberger, Michel; Collin, Marie-Marthe (1993). <i>La machine à calculer de Blaise Pascal</i> (in French). Paris: Nathan.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.au=Ellenberger%2C+Michel&amp;rft.aufirst=Michel&amp;rft.aulast=Ellenberger&amp;rft.btitle=La+machine+%C3%A0+calculer+de+Blaise+Pascal&amp;rft.date=1993&amp;rft.genre=book&amp;rft.place=Paris&amp;rft.pub=Nathan&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> <span style="display:none;font-size:100%" class="error citation-comment">Cite uses deprecated parameters (<a href="http://en.wikipedia.org/wiki/Help:CS1_errors#deprecated_params" title="Help:CS1 errors">help</a>)</span></li>
+<li><span id="MOUR" class="citation book">Mourlevat, Guy (1988). <i>Les machines arithmétiques de Blaise Pascal</i> (in French). Clermont-Ferrand: La Française d'Edition et d'Imprimerie.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Guy&amp;rft.aulast=Mourlevat&amp;rft.au=Mourlevat%2C+Guy&amp;rft.btitle=Les+machines+arithm%C3%A9tiques+de+Blaise+Pascal&amp;rft.date=1988&amp;rft.genre=book&amp;rft.place=Clermont-Ferrand&amp;rft.pub=La+Fran%C3%A7aise+d%27Edition+et+d%27Imprimerie&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="MARG" class="citation book">Marguin, Jean (1994). <i>Histoire des instruments et machines à calculer, trois siècles de mécanique pensante 1642-1942</i> (in French). Hermann. <a href="International_Standard_Book_Number.html" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-2-7056-6166-3" title="Special:BookSources/978-2-7056-6166-3">978-2-7056-6166-3</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Jean&amp;rft.aulast=Marguin&amp;rft.au=Marguin%2C+Jean&amp;rft.btitle=Histoire+des+instruments+et+machines+%C3%A0+calculer%2C+trois+si%C3%A8cles+de+m%C3%A9canique+pensante+1642-1942&amp;rft.date=1994&amp;rft.genre=book&amp;rft.isbn=978-2-7056-6166-3&amp;rft.pub=Hermann&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span class="citation book">Taton, René (1949). <i>Le calcul mécanique. Que sais-je&#160;? n° 367</i> (in French). Presses universitaires de France.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Ren%C3%A9&amp;rft.aulast=Taton&amp;rft.au=Taton%2C+Ren%C3%A9&amp;rft.btitle=Le+calcul+m%C3%A9canique.+Que+sais-je+%3F+n%C2%B0+367&amp;rft.date=1949&amp;rft.genre=book&amp;rft.pub=Presses+universitaires+de+France&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="TATON63" class="citation book">Taton, René (1963). <i>Le calcul mécanique. Que sais-je&#160;? n° 367</i> (in French). Presses universitaires de France. pp.&#160;20–28.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Ren%C3%A9&amp;rft.aulast=Taton&amp;rft.au=Taton%2C+Ren%C3%A9&amp;rft.btitle=Le+calcul+m%C3%A9canique.+Que+sais-je+%3F+n%C2%B0+367&amp;rft.date=1963&amp;rft.genre=book&amp;rft.pages=20%E2%80%9328&amp;rft.pub=Presses+universitaires+de+France&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="t198" class="citation book">Taton, René (1969). <i>Histoire du calcul. Que sais-je&#160;? n° 198</i> (in French). Presses universitaires de France.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Ren%C3%A9&amp;rft.aulast=Taton&amp;rft.au=Taton%2C+Ren%C3%A9&amp;rft.btitle=Histoire+du+calcul.+Que+sais-je+%3F+n%C2%B0+198&amp;rft.date=1969&amp;rft.genre=book&amp;rft.pub=Presses+universitaires+de+France&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span class="citation book">Collectif (1942). <i>Catalogue du musée - Section A Instruments et machines à calculer</i> (in French). Paris: Conservatoire National des Arts et Métiers.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.au=Collectif&amp;rft.aulast=Collectif&amp;rft.btitle=Catalogue+du+mus%C3%A9e+-+Section+A+Instruments+et+machines+%C3%A0+calculer&amp;rft.date=1942&amp;rft.genre=book&amp;rft.place=Paris&amp;rft.pub=Conservatoire+National+des+Arts+et+M%C3%A9tiers&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="SCRI" class="citation book">Ginsburg, Jekuthiel (2003). <i>Scripta Mathematica (Septembre 1932-Juin 1933)</i>. Kessinger Publishing, LLC. <a href="International_Standard_Book_Number.html" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/978-0-7661-3835-3" title="Special:BookSources/978-0-7661-3835-3">978-0-7661-3835-3</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Jekuthiel&amp;rft.au=Ginsburg%2C+Jekuthiel&amp;rft.aulast=Ginsburg&amp;rft.btitle=Scripta+Mathematica+%28Septembre+1932-Juin+1933%29&amp;rft.date=2003&amp;rft.genre=book&amp;rft.isbn=978-0-7661-3835-3&amp;rft.pub=Kessinger+Publishing%2C+LLC&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="NEEDHAM" class="citation book">Needham, Joseph (1986). <i>Science and Civilization in China: Volume 4, Physics and Physical Technology, Part 2, Mechanical Engineering</i>. Taipei: Caves Books, Ltd.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Joseph&amp;rft.aulast=Needham&amp;rft.au=Needham%2C+Joseph&amp;rft.btitle=Science+and+Civilization+in+China%3A+Volume+4%2C+Physics+and+Physical+Technology%2C+Part+2%2C+Mechanical+Engineering&amp;rft.date=1986&amp;rft.genre=book&amp;rft.place=Taipei&amp;rft.pub=Caves+Books%2C+Ltd&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="IFRAHNUMBERS" class="citation book">Ifrah, Georges (2000). <i>The Universal History of Numbers</i>. John Wiley &amp; Sons, Inc. <a href="International_Standard_Book_Number.html" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-471-39671-0" title="Special:BookSources/0-471-39671-0">0-471-39671-0</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Georges&amp;rft.au=Ifrah%2C+Georges&amp;rft.aulast=Ifrah&amp;rft.btitle=The+Universal+History+of+Numbers&amp;rft.date=2000&amp;rft.genre=book&amp;rft.isbn=0-471-39671-0&amp;rft.pub=John+Wiley+%26+Sons%2C+Inc.&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="IFRAHCOMPUTING" class="citation book">Ifrah, Georges (2001). <i>The Universal History of Computing</i>. John Wiley &amp; Sons, Inc. <a href="International_Standard_Book_Number.html" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-471-39671-0" title="Special:BookSources/0-471-39671-0">0-471-39671-0</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Georges&amp;rft.au=Ifrah%2C+Georges&amp;rft.aulast=Ifrah&amp;rft.btitle=The+Universal+History+of+Computing&amp;rft.date=2001&amp;rft.genre=book&amp;rft.isbn=0-471-39671-0&amp;rft.pub=John+Wiley+%26+Sons%2C+Inc.&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="FELT" class="citation book">Felt, Dorr E. (1916). <a rel="nofollow" class="external text" href="http://www.archive.org/details/mechanicalarithm00feltrich"><i>Mechanical arithmetic, or The history of the counting machine</i></a>. Chicago: Washington Institute.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.au=Felt%2C+Dorr+E.&amp;rft.aufirst=Dorr+E.&amp;rft.aulast=Felt&amp;rft.btitle=Mechanical+arithmetic%2C+or+The+history+of+the+counting+machine&amp;rft.date=1916&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.archive.org%2Fdetails%2Fmechanicalarithm00feltrich&amp;rft.place=Chicago&amp;rft.pub=Washington+Institute&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="DOCAGNE" class="citation book">d'Ocagne, Maurice (1893). <a rel="nofollow" class="external text" href="http://cnum.cnam.fr/CGI/fpage.cgi?8KU54-2.5/249/150/369/363/369"><i>Annales du Conservatoire national des arts et métier, 2e série, tome 5, Le calcul simplifié</i></a> (in French). Paris: Gauthiers-Villars et files, Imprimeurs-Libraires.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.au=d%27Ocagne%2C+Maurice&amp;rft.aufirst=Maurice&amp;rft.aulast=d%27Ocagne&amp;rft.btitle=Annales+du+Conservatoire+national+des+arts+et+m%C3%A9tier%2C+2e+s%C3%A9rie%2C+tome+5%2C+Le+calcul+simplifi%C3%A9&amp;rft.date=1893&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fcnum.cnam.fr%2FCGI%2Ffpage.cgi%3F8KU54-2.5%2F249%2F150%2F369%2F363%2F369&amp;rft.place=Paris&amp;rft.pub=Gauthiers-Villars+et+files%2C+Imprimeurs-Libraires&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="WILLIAMS" class="citation book">Williams, Michael R. (1997). <i>History of Computing Technology</i>. Los Alamitos, California: IEEE Computer Society. <a href="International_Standard_Book_Number.html" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-8186-7739-2" title="Special:BookSources/0-8186-7739-2">0-8186-7739-2</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Michael+R.&amp;rft.aulast=Williams&amp;rft.au=Williams%2C+Michael+R.&amp;rft.btitle=History+of+Computing+Technology&amp;rft.date=1997&amp;rft.genre=book&amp;rft.isbn=0-8186-7739-2&amp;rft.place=Los+Alamitos%2C+California&amp;rft.pub=IEEE+Computer+Society&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="BISHOP" class="citation book">Bishop, Morris (1936). <i>Pascal, The life of genius</i>. New York: Reynal &amp; Hitchcock.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.au=Bishop%2C+Morris&amp;rft.aufirst=Morris&amp;rft.aulast=Bishop&amp;rft.btitle=Pascal%2C+The+life+of+genius&amp;rft.date=1936&amp;rft.genre=book&amp;rft.place=New+York&amp;rft.pub=Reynal+%26+Hitchcock&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="SWED" class="citation book">Swedin, Eric G.; Ferro, David L. (2005). <i>Computers: The Life Story of a Technology</i>. Westport, CT: Greenwood. <a href="International_Standard_Book_Number.html" title="International Standard Book Number">ISBN</a>&#160;<a href="http://en.wikipedia.org/wiki/Special:BookSources/0-8018-8774-7" title="Special:BookSources/0-8018-8774-7">0-8018-8774-7</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.au=Ferro%2C+David+L.&amp;rft.aufirst=Eric+G.&amp;rft.aulast=Swedin&amp;rft.au=Swedin%2C+Eric+G.&amp;rft.btitle=Computers%3A+The+Life+Story+of+a+Technology&amp;rft.date=2005&amp;rft.genre=book&amp;rft.isbn=0-8018-8774-7&amp;rft.place=Westport%2C+CT&amp;rft.pub=Greenwood&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="PERRAULT" class="citation book">Perrault, Claude (1700). <a rel="nofollow" class="external text" href="http://books.google.co.uk/books?id=IGw_AAAAcAAJ&amp;printsec=frontcover&amp;source=gbs_ge_summary_r&amp;cad=0#v=onepage&amp;q&amp;f=false"><i>Recueil de plusieurs machines de nouvelle invention</i></a>. Paris, France: Jean Batiste Coignard.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.aufirst=Claude&amp;rft.aulast=Perrault&amp;rft.au=Perrault%2C+Claude&amp;rft.btitle=Recueil+de+plusieurs+machines+de+nouvelle+invention&amp;rft.date=1700&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fbooks.google.co.uk%2Fbooks%3Fid%3DIGw_AAAAcAAJ%26printsec%3Dfrontcover%26source%3Dgbs_ge_summary_r%26cad%3D0%23v%3Donepage%26q%26f%3Dfalse&amp;rft.place=Paris%2C+France&amp;rft.pub=Jean+Batiste+Coignard&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><span id="NAT_MEP" class="citation journal">M.E.P (October 31, 1942). "Pascal tercentenary celebration". <i>Nature</i> (London) <b>150</b>: 527.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.atitle=Pascal+tercentenary+celebration&amp;rft.aulast=M.E.P&amp;rft.au=M.E.P&amp;rft.date=October+31%2C+1942&amp;rft.genre=article&amp;rft.jtitle=Nature&amp;rft.pages=527&amp;rft.place=London&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=150" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="NAT_CHAP" class="citation journal">Prof. S. Chapman (October 31, 1942). "Blaise Pascal (1623-1662) Tercentenary of the calculating machine". <i>Nature</i> (London) <b>150</b>: 508–509.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.atitle=Blaise+Pascal+%281623-1662%29+Tercentenary+of+the+calculating+machine&amp;rft.aulast=Prof.+S.+Chapman&amp;rft.au=Prof.+S.+Chapman&amp;rft.date=October+31%2C+1942&amp;rft.genre=article&amp;rft.jtitle=Nature&amp;rft.pages=508%E2%80%93509&amp;rft.place=London&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=150" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="COURRIER" class="citation journal">"Usage de la machine". <i>Courrier du centre international Blaise Pascal</i> (in French) (Clermont-Ferrand) (8): 4–25. 1986.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3APascal%27s+calculator&amp;rft.atitle=Usage+de+la+machine&amp;rft.date=1986&amp;rft.genre=article&amp;rft.issue=8&amp;rft.jtitle=Courrier+du+centre+international+Blaise+Pascal&amp;rft.pages=4%E2%80%9325&amp;rft.place=Clermont-Ferrand&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit&amp;section=38" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.macs.hw.ac.uk/~greg/calculators/pascal/About_Pascaline.htm">Website explaining the operation of a Pascaline.</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.youtube.com/watch?v=3h71HAJWnVU">Detailed animation explaining how the Pascaline works.</a></li>
+</ul>
+<table cellspacing="0" class="navbox" style="border-spacing:0;">
+<tr>
+<td style="padding:2px;">
+<table cellspacing="0" class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit;">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="http://en.wikipedia.org/wiki/Template:Blaise_Pascal" title="Template:Blaise Pascal"><span title="View this template" style=";;background:none transparent;border:none;;">v</span></a></li>
+<li class="nv-talk"><a href="http://en.wikipedia.org/wiki/Template_talk:Blaise_Pascal" title="Template talk:Blaise Pascal"><span title="Discuss this template" style=";;background:none transparent;border:none;;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="http://en.wikipedia.org/w/index.php?title=Template:Blaise_Pascal&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%;"><a href="Blaise_Pascal.html" title="Blaise Pascal">Blaise Pascal</a></div>
+</th>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">
+<div class="hlist plainlist" style="margin-left: 0em;">
+<ul>
+<li>Innovations</li>
+<li>Career</li>
+</ul>
+</div>
+</th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Pascal%27s_barrel" title="Pascal's barrel">Pascal's barrel</a></li>
+<li><strong class="selflink">Pascal's calculator</strong></li>
+<li><a href="http://en.wikipedia.org/wiki/Pascal%27s_law" title="Pascal's law">Pascal's law</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Pascal%27s_theorem" title="Pascal's theorem">Pascal's theorem</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Pascal%27s_triangle" title="Pascal's triangle">Pascal's triangle</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Pascal%27s_Wager" title="Pascal's Wager">Pascal's Wager</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Works</th>
+<td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><i><a href="http://en.wikipedia.org/wiki/Lettres_provinciales" title="Lettres provinciales">Lettres provinciales</a></i> <small style="font-size:85%;">(1656–1657)</small></li>
+<li><i><a href="http://en.wikipedia.org/wiki/Pensées" title="Pensées">Pensées</a></i> <small style="font-size:85%;">(1669)</small></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Family</th>
+<td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Étienne_Pascal" title="Étienne Pascal">Étienne Pascal</a> <small style="font-size:85%;">(father)</small></li>
+<li><a href="http://en.wikipedia.org/wiki/Jacqueline_Pascal" title="Jacqueline Pascal">Jacqueline Pascal</a> <small style="font-size:85%;">(sister)</small></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1213
+CPU time usage: 1.064 seconds
+Real time usage: 1.177 seconds
+Preprocessor visited node count: 2869/1000000
+Preprocessor generated node count: 13799/1500000
+Post‐expand include size: 55736/2048000 bytes
+Template argument size: 7365/2048000 bytes
+Highest expansion depth: 16/40
+Expensive parser function count: 2/500
+Lua time usage: 0.085/10.000 seconds
+Lua memory usage: 2.02 MB/50 MB
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1732978-0!*!0!!en!4!* and timestamp 20140315215022
+ -->
+<noscript><img src="http://en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>								<div class="printfooter">
+				Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;oldid=591575528">http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;oldid=591575528</a>"				</div>
+												<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Mechanical_calculators" title="Category:Mechanical calculators">Mechanical calculators</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Blaise_Pascal" title="Category:Blaise Pascal">Blaise Pascal</a></li><li><a href="http://en.wikipedia.org/wiki/Category:French_inventions" title="Category:French inventions">French inventions</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="http://en.wikipedia.org/wiki/Category:Articles_using_fixed_number_of_columns_in_reflist" title="Category:Articles using fixed number of columns in reflist">Articles using fixed number of columns in reflist</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Articles_with_French-language_external_links" title="Category:Articles with French-language external links">Articles with French-language external links</a></li><li><a href="http://en.wikipedia.org/wiki/Category:Pages_containing_cite_templates_with_deprecated_parameters" title="Category:Pages containing cite templates with deprecated parameters">Pages containing cite templates with deprecated parameters</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-createaccount"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Pascal%27s+calculator&amp;type=signup">Create account</a></li><li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Pascal%27s+calculator" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="Pascal%27s_calculator.html"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+					<li  id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Pascal%27s_calculator"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="Pascal%27s_calculator.html" >Read</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=edit"  title="You can edit this page. &#10;Please review your changes before saving. [e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://en.wikipedia.org/w/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel">
+					<div id="p-logo" role="banner"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="Main_Page.html"  title="Visit the main page"></a></div>
+				<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+	<h3 id='p-navigation-label'>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="Main_Page.html" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+			<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+			<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+			<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+			<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+			<li id="n-shoplink"><a href="http://shop.wikimedia.org/" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+	<h3 id='p-interaction-label'>Interaction</h3>
+	<div class="body">
+		<ul>
+			<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+			<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+			<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+			<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-contactpage"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+	<h3 id='p-tb-label'>Tools</h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Pascal%27s_calculator" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Pascal%27s_calculator" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+			<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+			<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;oldid=591575528" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;action=info">Page information</a></li>
+			<li id="t-wikibase"><a href="http://www.wikidata.org/wiki/Q873501" title="Link to connected data repository item [g]" accesskey="g">Data item</a></li>
+<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Pascal%27s_calculator&amp;id=591575528" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+	<h3 id='p-coll-print_export-label'>Print/export</h3>
+	<div class="body">
+		<ul>
+			<li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Pascal%27s+calculator">Create a book</a></li>
+			<li id="coll-download-as-rl"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Pascal%27s+calculator&amp;oldid=591575528&amp;writer=rl">Download as PDF</a></li>
+			<li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Pascal%27s_calculator&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+	<h3 id='p-lang-label'>Languages</h3>
+	<div class="body">
+		<ul>
+			<li class="interlanguage-link interwiki-zh-min-nan"><a href="http://zh-min-nan.wikipedia.org/wiki/Pascaline" title="Pascaline – Chinese (Min Nan)" lang="zh-min-nan" hreflang="zh-min-nan">Bân-lâm-gú</a></li>
+			<li class="interlanguage-link interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Pascalina" title="Pascalina – Catalan" lang="ca" hreflang="ca">Català</a></li>
+			<li class="interlanguage-link interwiki-de"><a href="http://de.wikipedia.org/wiki/Pascaline" title="Pascaline – German" lang="de" hreflang="de">Deutsch</a></li>
+			<li class="interlanguage-link interwiki-es"><a href="http://es.wikipedia.org/wiki/Pascalina" title="Pascalina – Spanish" lang="es" hreflang="es">Español</a></li>
+			<li class="interlanguage-link interwiki-eo"><a href="http://eo.wikipedia.org/wiki/Paskala_kalkulilo" title="Paskala kalkulilo – Esperanto" lang="eo" hreflang="eo">Esperanto</a></li>
+			<li class="interlanguage-link interwiki-fa"><a href="http://fa.wikipedia.org/wiki/ماشین_حساب_پاسکال" title="ماشین حساب پاسکال – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+			<li class="interlanguage-link interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Pascaline" title="Pascaline – French" lang="fr" hreflang="fr">Français</a></li>
+			<li class="interlanguage-link interwiki-ko"><a href="http://ko.wikipedia.org/wiki/파스칼_계산기" title="파스칼 계산기 – Korean" lang="ko" hreflang="ko">한국어</a></li>
+			<li class="interlanguage-link interwiki-hr"><a href="http://hr.wikipedia.org/wiki/Pascalina" title="Pascalina – Croatian" lang="hr" hreflang="hr">Hrvatski</a></li>
+			<li class="interlanguage-link interwiki-it"><a href="http://it.wikipedia.org/wiki/Pascalina" title="Pascalina – Italian" lang="it" hreflang="it">Italiano</a></li>
+			<li class="interlanguage-link interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Paskalina" title="Paskalina – Lithuanian" lang="lt" hreflang="lt">Lietuvių</a></li>
+			<li class="interlanguage-link interwiki-hu"><a href="http://hu.wikipedia.org/wiki/Pascaline" title="Pascaline – Hungarian" lang="hu" hreflang="hu">Magyar</a></li>
+			<li class="interlanguage-link interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Pascaline" title="Pascaline – Dutch" lang="nl" hreflang="nl">Nederlands</a></li>
+			<li class="interlanguage-link interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Pascalina" title="Pascalina – Polish" lang="pl" hreflang="pl">Polski</a></li>
+			<li class="interlanguage-link interwiki-pt"><a href="http://pt.wikipedia.org/wiki/La_pascaline" title="La pascaline – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+			<li class="interlanguage-link interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Суммирующая_машина_Паскаля" title="Суммирующая машина Паскаля – Russian" lang="ru" hreflang="ru">Русский</a></li>
+			<li class="interlanguage-link interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Pascaline" title="Pascaline – Slovenian" lang="sl" hreflang="sl">Slovenščina</a></li>
+			<li class="interlanguage-link interwiki-sr"><a href="http://sr.wikipedia.org/wiki/Паскалина" title="Паскалина – Serbian" lang="sr" hreflang="sr">Српски / srpski</a></li>
+			<li class="interlanguage-link interwiki-sh"><a href="http://sh.wikipedia.org/wiki/Paskalina" title="Paskalina – Serbo-Croatian" lang="sh" hreflang="sh">Srpskohrvatski / српскохрватски</a></li>
+			<li class="interlanguage-link interwiki-uk"><a href="http://uk.wikipedia.org/wiki/Паскаліна" title="Паскаліна – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+			<li class="uls-p-lang-dummy"><a href="#"></a></li>
+			<li class="wbc-editpage"><a href="http://www.wikidata.org/wiki/Q873501#sitelinks-wikipedia" title="Edit interlanguage links">Edit links</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 20 January 2014 at 15:59.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy.</a> <br/>
+Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a class="external" href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikipedia.org/wiki/Pascal%27s_calculator" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="http://bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/static-1.23wmf19/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mobile.desktop","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","mw.MwEmbedSupport.style","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="http://bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<!-- Served by mw1052 in 0.504 secs. -->
+	</body>
+
+<!-- Mirrored from en.wikipedia.org/wiki/Pascal%27s_calculator by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 29 Mar 2014 23:54:45 GMT -->
+</html>
