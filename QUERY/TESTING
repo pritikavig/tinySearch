@@ -1,0 +1,9 @@
+
+
+
+TESTING
+Query
+
+
+
+To unit test the Query Engine, execute the QEBEATS.sh script in the /test/ diretory. This will execute a C program to unit test functions and out put it to a log. Additionally, it tests the hash rebuild as well as incorrect arguments. The script cleans and builds the library, program and test script. 

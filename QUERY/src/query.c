@@ -59,7 +59,7 @@ int getWord(char *array, HashTable *Index, char *pathToDir);
 
 int main(int argc, char* argv[]){
 
-	printf("Rebuilding index ...");
+	
 	// check command line arguments
 	if(argc != 3){
 		perror("Incorrect number of arguments");
@@ -80,11 +80,12 @@ int main(int argc, char* argv[]){
 
 	// rebuild index with readFile
 	HashTable *Index = malloc(sizeof(HashTable));
+  printf("Rebuilding index ...");
 	initializeIndex(Index);
 	rebuildIndex(argv[2], Index);
 	printf("Rebuilt");
 
-	printIndex(Index);
+	//printIndex(Index);
 
 
 
@@ -161,7 +162,7 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     			wordNode *tmp = returnWord(word, Index);
           track = track +1;
                 if(!tmp){
-                  printf("\nOne or more of the words that you entered is not in our index.");
+                  printf("One or more of the words that you entered is not in our index.");
                   return 1;
                 }
 
@@ -196,6 +197,9 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     docRank *head = mergeSort(finalList->doc);    
     combineNodes(head);    
     finalPrint(head, pathToDir);
+    if(!head){
+      printf("One or more of the words that you entered is not in our index.");
+    }
     cleanHead(head);
  
      return 0;

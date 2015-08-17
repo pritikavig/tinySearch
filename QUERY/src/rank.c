@@ -27,6 +27,7 @@
 #include "rank.h"  
 #include "hash.h"
 
+
 // ---------------- Constant definitions 
 
 // ---------------- Macro definitions
@@ -135,7 +136,7 @@ void printDoc(docRank *node){
 	docRank *tmpDoc = node;
 	while(tmpDoc){
 		
-		printf("\nDoc Id: %s, rank: %i", tmpDoc->docID, tmpDoc->wordCount);
+		printf("\nDoc Id: %s", tmpDoc->docID);
 		tmpDoc=tmpDoc->next;
 	 
 	}
@@ -150,7 +151,7 @@ void finalPrint(docRank *first, char *pathToDir){
 	docRank *tmp = first;
 	while(tmp){
 		// find URL and print that too
-		printf("Doc ID: %s Rank: %i", tmp->docID, tmp->wordCount);
+		printf("Doc ID: %s", tmp->docID);
 		// get url
 		grabURL(tmp->docID, pathToDir);
 		tmp=tmp->next;
@@ -391,5 +392,7 @@ void cleanHead(docRank *head){
 		}
 	}
 }
+
+
 
 
