@@ -41,6 +41,7 @@ void printList(wordHead *wNode);
 docRank* split (docRank *head);
 docRank* sort(docRank *a, docRank *b);
 docRank* mergeSort(docRank *firstHead);
+docRank* mergeSortID(docRank *firstHead);
 void cpyList(wordHead *tmp, wordHead *final);
 void printDoc(docRank *node);
 wordNode* returnWord(char *word, HashTable *Index);

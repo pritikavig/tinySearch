@@ -37,7 +37,8 @@
 // ---------------- Private variables 
 
 // ---------------- Private prototypes 
-
+docRank* splitID(docRank *head);
+docRank* sortID(docRank *a, docRank *b);
 /*====================================================================*/
 
 // ---------------- Public functions
@@ -391,6 +392,82 @@ void cleanHead(docRank *head){
 			tmp1 = tmp1->next;
 		}
 	}
+}
+
+
+/////////////////////////// Merge Sort the linked list //////////////////////
+
+
+// implementation modelled after:
+// http://www.geeksforgeeks.org/merge-sort-for-linked-list/
+// and http://ideone.com/kq0hZP
+
+// returns 0 on successful sort
+docRank* mergeSortID(docRank *firstHead){
+
+	if (!firstHead){
+		return firstHead;
+	}
+
+	if (!firstHead->next){
+		return firstHead;
+	}
+
+	// otherwise merge sort!
+
+	// split the list in two
+	docRank *tmp = splitID(firstHead);
+
+	// sort the first half
+	firstHead = mergeSortID(firstHead);
+
+	// sort the second half
+	tmp = mergeSortID(tmp);
+
+	// put them together and return it
+	return sortID(firstHead, tmp);
+
+
+}
+
+//sort 
+docRank* sortID(docRank *a, docRank *b){
+	// base case (either are null)
+	if (!a){
+		return b;
+	}
+	if (!b){
+		return a;
+	}
+
+	docRank *tmp;
+
+	// recursively sort 
+	if (atoi(a->docID) >= atoi(b->docID)){
+		tmp = a;
+		tmp->next = sortID(a->next, b);
+	}
+	else
+	{
+		tmp = b;
+		tmp->next = sortID(a, b->next);
+	}
+	
+	return(tmp);
+}
+
+docRank* splitID(docRank *head){
+	docRank *tmp = head;
+	docRank *tmp2 = head;
+	while(tmp->next && tmp->next->next){
+		tmp = tmp->next->next;
+		tmp2 = tmp2->next;
+	}
+
+	docRank *tmp3 = tmp2->next;
+	tmp2->next = NULL;
+	return tmp3;
+
 }
 
 

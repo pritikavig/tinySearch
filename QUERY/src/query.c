@@ -194,9 +194,10 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
             free(word);
      }
     mvList(tmpList, finalList);
-    docRank *head = mergeSort(finalList->doc);    
-    combineNodes(head);    
-    finalPrint(head, pathToDir);
+    docRank *head = mergeSortID(finalList->doc);    
+    combineNodes(head); 
+    docRank *newHead = mergeSort(head);   
+    finalPrint(newHead, pathToDir);
     if(!head){
       printf("One or more of the words that you entered is not in our index.");
     }
