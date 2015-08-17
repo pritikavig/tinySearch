@@ -53,6 +53,7 @@ void addtoHead(wordNode *word, wordHead *head);
 void addRank(docRank *docR, wordHead *tmpHead);
 void mvList(wordHead *tmpList, wordHead *finalList);
 void combineNodes(docRank *list);
+void cleanHead(docRank *head);
 
 
 

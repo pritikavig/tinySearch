@@ -376,5 +376,20 @@ void combineNodes(docRank *list){
 	return;
 }
 
+void cleanHead(docRank *head){
+	if(!head){
+		return;
+	}
+	docRank *tmp = head;
+	docRank *tmp1 = head->next;
+	while(tmp){
+		free(tmp->docID);
+		free(tmp);
+		tmp = tmp1;
+		if(tmp1){
+			tmp1 = tmp1->next;
+		}
+	}
+}
 
 

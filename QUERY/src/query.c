@@ -103,20 +103,14 @@ int main(int argc, char* argv[]){
 			   line[strlen(line)-1]='\0';
          strcpy(buffer, line);
 			   getWord(buffer, Index, argv[1]);
- 
-      
-
 		}
-
 
 		if(feof(stdin)){
 			cleanIndex(Index);
-      //free(line);
-      //free(buffer);
+      free(buffer);
 			free(Index);
         	return 0;
       }
-
 	}
 
 	return 0;
@@ -202,7 +196,7 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     docRank *head = mergeSort(finalList->doc);    
     combineNodes(head);    
     finalPrint(head, pathToDir);
-
+    cleanHead(head);
  
      return 0;
  }
