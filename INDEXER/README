@@ -3,8 +3,30 @@ Pritika Vig
 TinySearchEngine
 
 
+Usage:
+index ../directory_name/ outfile.dat
+
+Example:
+index ../CRAWLER/index_depth_2/ d2.dat
+	will create a file of the index of words in the 1747 html pages in index_depth_2 in the file d2.dat. 
+
+
+-----------------------------------------------------------------------------------------------
+
+SHOWCASE:
+	If you do not wish to run the indexer (it may take time), indexes of the crawler output at depth 0, 1, and 2 are saved here, titled depthX.dat. They may be used as input into the query interface. 
+
+
+-------------------------------------------------------------------------------------------------
+
 
 The Indexer componenet of TinySearchEngine takes two to three input arguments on the command line. The first argument must be a valid directory which Indexer assumes to be full of valid html files. The second argument is a plain text file that will be created with a print out of the hash table. The third argument is optional and if it exists it will enter the program into testing mode in which Indexer will read in the hashtable output file, rehash it and read it out again to the new file. 
 
-Indexer assumes that valid output from crawler will be in the directory input. 
+------------------------------------------------------------------------------------------------
 
+Assumptions: Indexer assumes that valid output from crawler will be in the directory input. 
+
+
+Documentation: Available as PDF.
+
+TESTING: See BATS.sh

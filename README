@@ -3,12 +3,27 @@ Pritika Vig
 CS50
 
 
+
+DEMO:
+
+To run the whole process, cd into QUERY and run:
+
+	make
+	query ../CRAWLER/index_depth_2/ ../INDEXER/depth2.dat
+
+
+Else, see local READMEs to run part by part. Parts briefly summarized below (more details and examples in each directory.)
+
+
+
+-----------------------------------------------------------
+To Run By Parts 
+
 Part 1: Crawler
 
 
 	Usage: crawler <url> <directory> <depth>
 	Command line arguments: A head website to crawl, an output directory to store crawls, a crawl depth
-	Command line options: none
 
 	Modes: Crawler defaults to silent mode. To enable the log, change STATUS_LOG in commons.h to equal 1. To change back, switch STATUS_LOG to 0. 
 

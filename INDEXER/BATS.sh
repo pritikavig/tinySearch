@@ -14,7 +14,7 @@
 # 1. specify the log file
 
 logfile=indexTestLog.$(date +"%a_%b_%d_%T_%Y")
-datapath=./src/data/
+datapath=../CRAWLER/index_depth_1/
 indexfile=index.dat
 reIndexfile=reInd.dat
 
@@ -44,7 +44,7 @@ echo -e "\n" >> $logfile
 
 # 4. test indexer in testing mode and compare results
 # run indexer
-index $datapath $indexfile $reIndexfile
+index $datapath $indexfile $reIndexfile >> $logfile
 # sort index and tmpnewindex
 sort $indexfile > test1
 sort $reIndexfile > test2

@@ -77,10 +77,12 @@ int main(int argc, char* argv[]){
 		return 0;
 	}
 
+  //Welcome message
+  printf("Rebuilding Index. Enter AND and OR query strings when you see the <Query> prompt. Query engine will ignore trivial words and only return the top 20 hits.");
 
 	// rebuild index with readFile
 	HashTable *Index = malloc(sizeof(HashTable));
-  printf("Rebuilding index ...");
+  printf("\nRebuilding index ...");
 	initializeIndex(Index);
 	rebuildIndex(argv[2], Index);
 	printf("Rebuilt");
@@ -153,7 +155,13 @@ int getWord(char *array, HashTable *Index, char *pathToDir){
     		}
     	    else if(strcmp(word, "OR")==0){
     			flag = 1;
-    		}
+    		} else if(strcmp(word, "the") == 0){
+          flag = 0;
+        } else if(strcmp(word, "it") == 0 || strcmp(word, "what") == 0 || strcmp(word, "how") == 0 || strcmp(word, "why") == 0 || strcmp(word, "a") == 0){
+          flag = 0;
+        } else if (strcmp(word, "at") == 0 || strcmp(word, "be") == 0 || strcmp(word, "by") == 0){
+          flag = 0;
+        }
 
     		// otherwise, find docs!
     		else {
@@ -232,6 +240,7 @@ int rebuildIndex(char *fileName, HashTable *wordIndex){
    int charCount;
    int c;
    char *buffer = (char *)malloc(size);
+   int i = 0;
 
    if(fp){
       do{
@@ -256,6 +265,8 @@ int rebuildIndex(char *fileName, HashTable *wordIndex){
          buffer[charCount] = 0; // set end for protection
 
          if(buffer){
+            //printf("%i", i);
+            i++;
 
             parseLine(buffer, wordIndex);
          }

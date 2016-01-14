@@ -6,8 +6,8 @@ CFLAGS = -Wall -pedantic -std=c11
 # my project details
 LIBFLAG = -lcurl -lm
 EXEC = crawler
-OBJS = hashtable.o list.o web.o
-SRCS = crawler.c hashtable.c list.c web.c
+OBJS = ./src/hashtable.o ./src/list.o web.o
+SRCS = ./src/crawler.c ./src/hashtable.c ./src/list.c ./src/web.c
 
 # luckily, make has comments too!  
 
@@ -24,7 +24,7 @@ test:
 	rm -rf testHold/
 
 force:
-	touch crawler.c
+	touch ./src/crawler.c
 	make
 
 clean:

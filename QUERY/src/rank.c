@@ -147,15 +147,16 @@ void finalPrint(docRank *first, char *pathToDir){
 	if(!first){
 		return;
 	}
-
+	int i = 0;
 	// print doc name and rank
 	docRank *tmp = first;
-	while(tmp){
+	while(tmp && i < 20){
 		// find URL and print that too
 		printf("Doc ID: %s", tmp->docID);
 		// get url
 		grabURL(tmp->docID, pathToDir);
 		tmp=tmp->next;
+		i++;
 	}
 	return;
 	

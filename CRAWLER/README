@@ -4,9 +4,22 @@ Tiny Search Enging
 Part 1: Crawler
 
 
-Usage: crawler url directory depth
-Command line options: none
+Usage: 
+crawler url directory depth
+Example: crawler http://old-www.cs.dartmouth.edu/~cs50/tse/ temp/ 1
 
-Modes: Crawler defaults to silent mode. To enable the log, change STATUS_LOG in commons.h to equal 1. To change back, switch STATUS_LOG to 0. 
+The above command will preform a crawl at depth one and save the html files into an already existing folder named temp. 
 
-Assumptions: Current directory input as argument must exist, or the program will return an error and quit. All URLs to be crawled must begin with the prefix: "http://old-www.cs.dartmouth.edu/~cs50/tse". Program checks for 404s and other attachments in the links. Max Depth input must be less than or equal to 4. 
+
+---------------------------------------------------------------------------------------
+
+SHOWCASE:
+	To showcase all parts of TinySearchEngine without having to run the crawler (which may take some time at a large depth and stores files locally), I included three example directories with outputs from crawls at depth 0 (1 html file), depth 1 (7 html files), and depth 2 (1747 html files). The crawler is capable of crawler further, but it will create sizeable directory sizes. To see a demonstration the indexer and query engine in action, I recommend that you use the directory "index_depth_2" of 1747 files as an input into the next part of the project, Indexer. 
+
+----------------------------------------------------------------------------------------
+
+Assumptions: Current directory input as argument must exist, or the program will return an error and quit. All URLs to be crawled must begin with the prefix: "http://old-www.cs.dartmouth.edu/~cs50/tse/". Program checks for 404s and other attachments in the links. Max Depth input must be less than or equal to 4. 
+
+--------------------------------------------------------------------------------------------
+Log Mode: Crawler defaults to silent mode. To enable the log, change STATUS_LOG in commons.h to equal 1. To change back, switch STATUS_LOG to 0. 
+

@@ -86,6 +86,8 @@ int parseLine(char *buffer, HashTable *wordIndex);
  	//////////////////// build directory and write it to file ////////////////
  	
  		// initialize data structures
+     // char *indDir = argv[1];
+      //strcat(indDir, "/");
 
  		// create and initialize index
       HashTable *myIndex = malloc(sizeof(HashTable));
@@ -181,7 +183,7 @@ int parseLine(char *buffer, HashTable *wordIndex);
       {
 
          char name[30];
-         sprintf(name, "%s%s", path, filenames[i]);
+         sprintf(name, "%s/%s", path, filenames[i]);
 
          // looping through files in index here. 
          // Open file and make buffer

@@ -6,7 +6,24 @@ Pritika Vig
 
 Part 3: Query Engine
 
-	Usage: query <valid crawl directory> <valid indexed output.dat>
+	Usage: query ../CRAWLER/validcrawldirectory/ ../INDEXER/valid_indexed_output.dat/
+
+	Example: 
+		This will work with the crawl of depth 1 (7 files):
+		query ../CRAWLER/index_depth_1/ ../INDEXER/depth1.dat
+
+
+		This will work with the crawl of depth 2 (1747 files):
+		query ../CRAWLER/index_depth_2/ ../INDEXER/depth2.dat
+
+	IMPT NOTE: the query engine takes ~30 seconds to rebuild a hashtable from the input index file. Then you will be prompted with <Query>. You can enter AND and OR strings to return unions and intersections.
+
+
+---------------------------------------------------------------------------------------------------
+
+
 	Command line arguments: The first command line argument must be a valid directory of the html file outputs from a crawl session. The second argument must be the indexed output from an indexer run with the crawl directory as the input. 
+
+--------------------------------------------------------------------------------------------------
 
 	Assumptions: This program assumes that if the inputs are valid files and directories, the are valid output from a call to the Crawler and Indexer. If these things are not true, the program will not run correctly. The program fails silently when a user inputs a word not in the hash table and will just prompt for the next word. The ranking system adds rankings for each given collision between "AND" operators. Only "AND" and "OR" are acknowledged as logical operators. All other words are taken as query terms. If there is no logical operator in between two search terms, the program assumes that it is and "AND" search. 
